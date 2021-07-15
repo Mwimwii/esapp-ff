@@ -1,0 +1,75 @@
+<div class="table-responsive text-wrap">
+  <nz-tabset class="tabs" [nzSelectedIndex]="0">
+    <nz-tab nzTitle="Topics" [nzForceRender]="true">
+      <nz-table #basicTable [nzData]="tableData"
+                [nzShowPagination]="false" class="table mb-4">
+        <thead>
+          <tr>
+            <th class="bg-transparent">#</th>
+
+            <th class="bg-transparent">Topic</th>
+            <th class="bg-transparent">Category</th>
+            <th class="bg-transparent">Sub-Component</th>
+            <th class="bg-transparent">Output Level Indicator</th>
+
+            <th class="bg-transparent">View</th>
+            <th class="bg-transparent">Edit</th>
+            <th class="bg-transparent">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let data of basicTable.data">
+
+          <tr >
+            <td><div>{{data.id}}</div></td>
+            <td><div>{{data.topic}}</div></td>
+            <td>{{data.category}}</td>
+            <td><div class="text-gray-4">{{data.sub}}</div></td>
+
+            <td>
+              <a href="javascript: void(0);" class="text-blue">
+                {{data.oli.slice(0,8)+"..."}}
+              </a>
+            </td>
+
+            <td [nzExpand]="expandSet.has(data.id)"
+                (nzExpandChange)="onExpandChange(data.id, $event)">
+            </td>
+
+            <td >
+              <button type="button" class="btn">
+                <i class="fe fe-edit"></i>
+              </button>
+            </td>
+            <td>
+              <button type="button" class="btn">
+                <i class="fe fe-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr [nzExpand]="expandSet.has(data.id)">
+          <app-view-story-form></app-view-story-form>
+          </tr>
+        </ng-container>
+
+        </tbody>
+      </nz-table>
+    </nz-tab>
+    <nz-tab nzTitle="Create Topic">
+      <nz-steps nzType="navigation" [nzCurrent]="current" >
+        <nz-step nzTitle="Create / Choose" nzStatus="process" nzIcon="paper-clip">
+        </nz-step>
+      </nz-steps>
+      <div class="steps-content">
+        <app-cbb-topics-form *ngIf="createTable"></app-cbb-topics-form>
+      </div>
+      <div class="steps-action">
+        <button
+          class="btn btn-default mt-3 mr-2"
+          nz-button nzType="primary" (click)="done()" *ngIf="current === 2">
+          <span>Done</span>
+        </button>
+      </div>
+    </nz-tab>
+  </nz-tabset>
+</div>

@@ -25,9 +25,12 @@ import { AppStoriesOfChangeTablesBootstrap4Component } from './lmk/storiesOfChan
 import { AppStoriesOfChangeDataTableComponent } from './lmk/storiesOfChange/soc-stories-table/3.component'
 import { ViewStoriesOfChangeFormComponent } from './lmk/storiesOfChange/view-stories-of-change-form/view-story-form.component'
 import { StoriesOfChangeInstructionsComponent } from './lmk/storiesOfChange/soc-instructions/soc-instructions.component'
+import { CbTopicsTableComponent } from './cbb/topics/cbb-topics-table/cbb-topics-table.component'
+import { CbTopicsFormComponent } from './cbb/topics/cbb-topics-form/cbb-topics-form.component'
 import { AppAttendanceMainTableComponent } from './cbb/attendance/attendance-main-table/3.component'
 import { RegisterAttendantsFormComponent } from './cbb/attendance/register-attendance-form/view-story-form.component'
 import { ViewPastRegistrationFormComponent } from './cbb/attendance/view-past-registration-form/view-past-registration-form.component'
+
 
 const COMPONENTS = [
   FooterComponent,
@@ -45,6 +48,8 @@ const COMPONENTS = [
   AppStoriesOfChangeDataTableComponent,
   ViewStoriesOfChangeFormComponent,
   StoriesOfChangeInstructionsComponent,
+  CbTopicsTableComponent,
+  CbTopicsFormComponent,
   ViewStoryFormComponent,
   FileValueAccessor,
   AppAttendanceMainTableComponent,

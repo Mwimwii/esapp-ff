@@ -4,13 +4,20 @@
       <div class="card card-top card-top-primary">
         <div class="card-header">
           <vb-headers-heading-2
-            [data]="{'title':'FaaBS Training Topics ','description':'Welcome to the FaaBS Training Topics section.'}"
+            [data]="{'title':'FaaBS Training topics','description':'Welcome to FaaBS Training topics section.'}"
           ></vb-headers-heading-2>
-          <button></button>
         </div>
-      </div>
-      <div class="card">
-        <div class="card-body"><vb-widgets-tables-3></vb-widgets-tables-3></div>
+        <div class="card-body">
+          <div>
+            <dl class="row">
+              <dt class="col-sm-3">Instructions</dt>
+              <dd class="col-sm-9">
+                1. Click Create FaaBs Topic below to add new Faabs Topic.
+              </dd>
+            </dl>
+          </div>
+        </div>
+        <div class="card-body"><app-cbb-topics-tables></app-cbb-topics-tables></div>
       </div>
     </div>
   </div>

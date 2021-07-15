@@ -1,29 +1,18 @@
 [
   {
     "id": "1",
-    "avatar": "assets/images/avatars/5.jpg",
-    "userName": {
-      "name": "Mary Stanform",
-      "position": "Administrator"
-    },
-    "location": "New York"
-  },
-  {
+    "topic": "Fishing",
+    "sub": "Aquaculture",
+    "oli": "Number of smallholders who have been trained in improved pre- and Post-harvest technologies (at least 2 improved post-harvest technologies) to minimize losses and increase market value of their produce"
+  },{
     "id": "2",
-    "avatar": "assets/images/avatars/1.jpg",
-    "userName": {
-      "name": "Garry Morge",
-      "position": "Support"
-    },
-    "location": "Palo Alto"
-  },
-  {
+    "topic": "Fishing",
+    "sub": "Aquaculture",
+    "oli": "Number of smallholders who have been trained in improved pre- and Post-harvest technologies (at least 2 improved post-harvest technologies) to minimize losses and increase market value of their produce"
+  },{
     "id": "3",
-    "avatar": "assets/images/avatars/2.jpg",
-    "userName": {
-      "name": "Silinda Veyron",
-      "position": "Developer"
-    },
-    "location": "Las Vegas"
+    "topic": "Fishing",
+    "sub": "Aquaculture",
+    "oli": "Number of smallholders who have been trained in improved pre- and Post-harvest technologies (at least 2 improved post-harvest technologies) to minimize losses and increase market value of their produce"
   }
 ]

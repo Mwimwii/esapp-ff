@@ -3,11 +3,11 @@ declare var require: any
 const data: any = require('./data.json')
 
 @Component({
-  selector: 'app-my-story-tables-3',
-  templateUrl: './3.component.html',
-  styleUrls: ['./3.component.scss'],
+  selector: 'app-cbb-topics-tables',
+  templateUrl: './cbb-topics-table.component.html',
+  styleUrls: ['./cbb-topics-table.component.scss'],
 })
-export class AppMyStoryTableComponent implements OnInit {
+export class CbTopicsTableComponent implements OnInit {
   tableData = data
   createTable = true
   current: number = 0
