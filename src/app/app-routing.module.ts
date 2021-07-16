@@ -57,7 +57,7 @@ const routes: Routes = [
       // VB:REPLACE-START:ROUTER-CONFIG
       {
         path: 'dashboard',
-        data: { title: 'Dashboards' },
+        data: { title: 'Dashboard' },
         component: DashboardComponent,
       },
       {
