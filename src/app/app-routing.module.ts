@@ -137,18 +137,13 @@ const routes: Routes = [
       },
       {
         path: 'cbb/topics',
-        data: { title: 'FaaBS Training topic s' },
+        data: { title: 'FaaBS Training topics' },
         component: CbbTopicsComponent,
       },
       {
         path: 'cbb/attendance',
         data: { title: 'FaaBS Training Attendance' },
         component: CbbAttendanceComponent,
-      },
-      {
-        path: 'cbb/schedules',
-        data: { title: 'Camp Monthly Schedules' },
-        component: CbbSchedulesComponent,
       },
       {
         path: 'market',

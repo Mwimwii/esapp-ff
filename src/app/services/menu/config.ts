@@ -92,7 +92,7 @@ export const getMenuData: any[] = [
     icon: 'fe fe-package',
     children: [
       {
-        title: 'FaaBS Training topic s',
+        title: 'FaaBS Training Topics',
         key: 'n2afl',
         url: '/cbb/topics',
       },
@@ -100,11 +100,6 @@ export const getMenuData: any[] = [
         title: 'FaaBS Training Attendance',
         key: 'ih5ba',
         url: '/cbb/attendance',
-      },
-      {
-        title: 'Camp Monthly Schedules',
-        key: 'refa2h',
-        url: '/cbb/schedules',
       },
     ],
   },
