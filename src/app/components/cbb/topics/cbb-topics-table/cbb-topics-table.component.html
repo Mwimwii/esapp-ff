@@ -6,12 +6,10 @@
         <thead>
           <tr>
             <th class="bg-transparent">#</th>
-
             <th class="bg-transparent">Topic</th>
             <th class="bg-transparent">Category</th>
             <th class="bg-transparent">Sub-Component</th>
             <th class="bg-transparent">Output Level Indicator</th>
-
             <th class="bg-transparent">View</th>
             <th class="bg-transparent">Edit</th>
             <th class="bg-transparent">Delete</th>
@@ -19,13 +17,11 @@
         </thead>
         <tbody>
         <ng-container *ngFor="let data of basicTable.data">
-
           <tr >
             <td><div>{{data.id}}</div></td>
             <td><div>{{data.topic}}</div></td>
             <td>{{data.category}}</td>
             <td><div class="text-gray-4">{{data.sub}}</div></td>
-
             <td>
               <a href="javascript: void(0);" class="text-blue">
                 {{data.oli.slice(0,8)+"..."}}

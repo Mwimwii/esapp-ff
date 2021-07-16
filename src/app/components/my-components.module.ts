@@ -30,7 +30,10 @@ import { CbTopicsFormComponent } from './cbb/topics/cbb-topics-form/cbb-topics-f
 import { AppAttendanceMainTableComponent } from './cbb/attendance/attendance-main-table/3.component'
 import { RegisterAttendantsFormComponent } from './cbb/attendance/register-attendance-form/view-story-form.component'
 import { ViewPastRegistrationFormComponent } from './cbb/attendance/view-past-registration-form/view-past-registration-form.component'
-
+import { PricesTableComponent } from './market/prices/prices-table/prices-table.component'
+import { ViewPriceComponent } from './market/prices/prices-view-price/prices-view-price.component'
+import { PricesFormComponent } from './market/prices/prices-form/prices-form.component'
+import { HttpClientModule } from '@angular/common/http'
 
 const COMPONENTS = [
   FooterComponent,
@@ -51,6 +54,9 @@ const COMPONENTS = [
   CbTopicsTableComponent,
   CbTopicsFormComponent,
   ViewStoryFormComponent,
+  PricesTableComponent,
+  ViewPriceComponent,
+  PricesFormComponent,
   FileValueAccessor,
   AppAttendanceMainTableComponent,
   RegisterAttendantsFormComponent,
@@ -61,6 +67,7 @@ const COMPONENTS = [
     SharedModule,
     FormsModule,
     QuillModule,
+    HttpClientModule,
     ReactiveFormsModule,
     PerfectScrollbarModule,
     WidgetsComponentsModule,

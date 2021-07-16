@@ -1,0 +1,17 @@
+<div class="container">
+  <br>
+  <b>Instructions</b>
+  <ol>
+    <li> Fields marked with * are required </li>
+  </ol>
+  <hr>
+  <form [formGroup]="form" (ngSubmit)="submit(model)" nz-form [nzLayout]="'vertical'">
+    <formly-form [form]="form" [fields]="fields" [model]="model">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-danger ml-2">Reset</button>
+    </formly-form>
+    <div></div>
+
+  </form>
+</div>
+
