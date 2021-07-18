@@ -34,6 +34,10 @@ import { PricesTableComponent } from './market/prices/prices-table/prices-table.
 import { ViewPriceComponent } from './market/prices/prices-view-price/prices-view-price.component'
 import { PricesFormComponent } from './market/prices/prices-form/prices-form.component'
 import { HttpClientModule } from '@angular/common/http'
+import { CbTopicsDetailComponent } from './cbb/topics/cbb-topics-detail/cbb-topics-detail.component'
+import { MGFTableComponent } from './mgf/mgf-table/mgf-table.component'
+import { MGFItemDetailComponent } from './mgf/mgf-item-detail/mgf-item-detail.component'
+import { MGFFormComponent } from './mgf/mgf-form/mgf-form.component'
 
 const COMPONENTS = [
   FooterComponent,
@@ -53,6 +57,7 @@ const COMPONENTS = [
   StoriesOfChangeInstructionsComponent,
   CbTopicsTableComponent,
   CbTopicsFormComponent,
+  CbTopicsDetailComponent,
   ViewStoryFormComponent,
   PricesTableComponent,
   ViewPriceComponent,
@@ -60,6 +65,9 @@ const COMPONENTS = [
   FileValueAccessor,
   AppAttendanceMainTableComponent,
   RegisterAttendantsFormComponent,
+  MGFTableComponent,
+  MGFItemDetailComponent,
+  MGFFormComponent,
 ]
 
 @NgModule({

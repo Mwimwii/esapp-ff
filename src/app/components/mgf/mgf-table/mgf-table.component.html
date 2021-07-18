@@ -1,36 +1,22 @@
 <div class="table-responsive text-wrap">
+
   <nz-tabset class="tabs" [nzSelectedIndex]="0">
-    <nz-tab nzTitle="Topics" [nzForceRender]="true">
-      <nz-table #basicTable [nzData]="tableData"
+    <nz-tab nzTitle="{{data.tab}}s" [nzForceRender]="true">
+      <nz-table #basicTable [nzData]="tableData" [nzScroll]="{ x: '1100px' }"
                 [nzShowPagination]="false" class="table mb-4">
         <thead>
           <tr>
             <th class="bg-transparent">#</th>
-            <th class="bg-transparent">Topic</th>
-            <th class="bg-transparent">Category</th>
-            <th class="bg-transparent">Sub-Component</th>
-            <th class="bg-transparent">Output Level Indicator</th>
-            <th class="bg-transparent">View</th>
+            <th *ngFor='let title of data.titles' class="bg-transparent">{{title}}</th>
             <th class="bg-transparent">Edit</th>
             <th class="bg-transparent">Delete</th>
           </tr>
         </thead>
         <tbody>
-        <ng-container *ngFor="let data of basicTable.data">
-          <tr >
-            <td><div>{{data.id}}</div></td>
-            <td><div>{{data.topic}}</div></td>
-            <td>{{data.category}}</td>
-            <td><div class="text-gray-4">{{data.sub}}</div></td>
-            <td>
-              <a href="javascript: void(0);" class="text-blue">
-                {{data.oli.slice(0,8)+"..."}}
-              </a>
-            </td>
+        <ng-container >
+          <tr *ngFor="let row of basicTable.data">
+            <td *ngFor='let title of row  | keyvalue' ><div>{{title.value}}</div></td>
 
-            <td [nzExpand]="expandSet.has(data.id)"
-                (nzExpandChange)="onExpandChange(data.id, $event)">
-            </td>
 
             <td >
               <button type="button" class="btn">
@@ -51,13 +37,15 @@
         </tbody>
       </nz-table>
     </nz-tab>
-    <nz-tab nzTitle="Create Topic">
+    <nz-tab *ngIf="data.hasForm" nzTitle="Create {{data.tab}}">
       <nz-steps nzType="navigation" [nzCurrent]="current" >
         <nz-step nzTitle="Create / Choose" nzStatus="process" nzIcon="paper-clip">
         </nz-step>
       </nz-steps>
       <div class="steps-content">
-        <app-cbb-topics-form *ngIf="createTable"></app-cbb-topics-form>
+        <app-mgf-form *ngIf="createTable"
+            [formFieldsData]='data.fields'
+        ></app-mgf-form>
       </div>
       <div class="steps-action">
         <button
