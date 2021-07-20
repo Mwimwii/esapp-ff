@@ -101,11 +101,11 @@ export const getMenuData: any[] = [
         key: 'ih5ba',
         url: '/cbb/attendance',
       },
-      {
-        title: 'Camp Monthly Schedules',
-        key: 'refa2h',
-        url: '/cbb/schedules',
-      },
+      // {
+      //   title: 'Camp Monthly Schedules',
+      //   key: 'refa2h',
+      //   url: '/cbb/schedules',
+      // },
     ],
   },
   {
