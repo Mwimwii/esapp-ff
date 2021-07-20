@@ -1,0 +1,17 @@
+<div class="table-responsive mb-1">
+  <table class="table table-striped">
+    <tbody>
+    <tr>
+      <th>Contact</th>
+      <td>{{data.contact}}</td>
+    </tr>
+    <tr>
+      <th *ngIf='data.order == "sell"; else orderPlaced'>Date of Price Captured</th>
+      <ng-template #orderPlaced>
+        <th>Date of Order Placed</th>
+      </ng-template>
+      <td>{{data.month}}/{{data.year}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

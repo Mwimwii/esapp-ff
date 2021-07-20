@@ -4,21 +4,24 @@
       <div class="card card-top card-top-primary">
         <div class="card-header">
           <vb-headers-heading-2
-            [data]="{'title':'Commodity Prices','description':'Welcome to the commodity prices section.'}"
+            [data]="{'title':'Commodity Prices','description':''}"
           ></vb-headers-heading-2>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-lg-4 col-md-12">
-      <div class="card card-top card-top-primary">
-        <div class="card-body"><vb-crypto-crypto-list></vb-crypto-crypto-list></div>
-      </div>
-    </div>
-    <div class="col-lg-8 col-md-12">
-      <div class="card card-top card-top-primary">
-        <div class="card-body"><vb-crypto-crypto-chart></vb-crypto-crypto-chart></div>
+        <div class="card-body">
+          <div>
+            <dl *ngFor='let instruction of instructions' class="row">
+              <dt class="col-sm-3">{{instruction.number}}</dt>
+               <dd  class="col-sm-9">{{instruction.description}}</dd>
+            </dl>
+          </div>
+
+        </div>
+        <div class="card-body">
+<!--          <vb-controls-button-2-->
+<!--            [data]="{'title':'New Commodity Price','icon':'fe fe-plus-circle','type':'primary'}"-->
+<!--          ></vb-controls-button-2>-->
+        </div>
+        <div class="card-body"><app-prices-table></app-prices-table></div>
       </div>
     </div>
   </div>

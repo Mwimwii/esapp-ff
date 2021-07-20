@@ -1,7 +1,7 @@
 export const getMenuData: any[] = [
   // VB:REPLACE-START:MENU-CONFIG
   {
-    title: 'Dashboards',
+    title: 'Dashboard',
     key: '__dashboard',
     url: '/dashboard',
     icon: 'fe fe-home',
@@ -92,7 +92,7 @@ export const getMenuData: any[] = [
     icon: 'fe fe-package',
     children: [
       {
-        title: 'FaaBS Training topic s',
+        title: 'FaaBS Training Topics',
         key: 'n2afl',
         url: '/cbb/topics',
       },
@@ -101,11 +101,6 @@ export const getMenuData: any[] = [
         key: 'ih5ba',
         url: '/cbb/attendance',
       },
-      // {
-      //   title: 'Camp Monthly Schedules',
-      //   key: 'refa2h',
-      //   url: '/cbb/schedules',
-      // },
     ],
   },
   {

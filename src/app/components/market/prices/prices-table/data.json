@@ -1,0 +1,99 @@
+[
+  {
+    "id": "1",
+    "market": "Chilienge",
+    "commodity_type": "Grain",
+    "vendor": {
+      "name": "Stanform Grains"
+    },
+    "price_level": "Low",
+    "unit": "100g",
+    "price": "10.00",
+    "average_price": "9.33",
+    "year": "2021",
+    "month": "August",
+    "contact":"097348293",
+    "order": "sell"
+
+
+  }, {
+  "id": "2",
+  "market": "Chilienge",
+  "commodity_type": "Cattle",
+  "vendor": {
+    "name": "Sendinah Livestock"
+  },
+  "price_level": "Low",
+  "unit": "800kg",
+  "price": "6000.00",
+  "average_price": "6449.33",
+  "year": "2021",
+  "month": "July",
+  "contact":"0979388384",
+  "order": "sell"
+
+}, {
+  "id": "3",
+  "market": "Chilienge",
+  "commodity_type": "Poultry",
+  "vendor": {
+    "name": "Mweemba Chicks"
+  },
+  "price_level": "Low",
+  "unit": "100g",
+  "price": "10.00",
+  "average_price": "9.33",
+  "year": "2021",
+  "month": "August",
+  "contact":"0966476637",
+  "order": "sell"
+},
+  {
+    "id": "4",
+    "market": "Chilienge",
+    "commodity_type": "Succulents",
+    "vendor": {
+      "name": "Good China Greens"
+    },
+    "price_level": "Low",
+    "unit": "100g",
+    "price": "20.00",
+    "average_price": "9.33",
+    "year": "2021",
+    "month": "August",
+    "contact":"0966499997",
+    "order": "buy"
+  },
+  {
+    "id": "5",
+    "market": "Chilienge",
+    "commodity_type": "Oats",
+    "vendor": {
+      "name": "NewTree"
+    },
+    "price_level": "Low",
+    "unit": "1kg",
+    "price": "144.00",
+    "average_price": "182.33",
+    "year": "2021",
+    "month": "June",
+    "contact":"098784737",
+    "order": "buy"
+  },
+  {
+    "id": "6",
+    "market": "Chilienge",
+    "commodity_type": "Poultry",
+    "vendor": {
+      "name": "VillageBred"
+    },
+    "price_level": "Low",
+    "unit": "1kg",
+    "price": "80.00",
+    "average_price": "110.33",
+    "year": "2021",
+    "month": "October",
+    "contact":"0966474487",
+    "order": "buy"
+  }
+]
