@@ -38,6 +38,9 @@ import { CbTopicsDetailComponent } from './cbb/topics/cbb-topics-detail/cbb-topi
 import { MGFTableComponent } from './mgf/mgf-table/mgf-table.component'
 import { MGFItemDetailComponent } from './mgf/mgf-item-detail/mgf-item-detail.component'
 import { MGFFormComponent } from './mgf/mgf-form/mgf-form.component'
+import { DashboardDownloadListComponent } from './dashboard/dashboard-download-list/dashboard-download-list.component'
+import { DashboardTasksTableComponent } from './dashboard/dashboard-tasks-table/dashboard-tasks-table.component'
+import { DashboardHeadComponent } from './dashboard/dashboard-head/dashboard-head.component'
 
 const COMPONENTS = [
   FooterComponent,
@@ -68,6 +71,9 @@ const COMPONENTS = [
   MGFTableComponent,
   MGFItemDetailComponent,
   MGFFormComponent,
+  DashboardDownloadListComponent,
+  DashboardTasksTableComponent,
+  DashboardHeadComponent
 ]
 
 @NgModule({
@@ -86,7 +92,7 @@ const COMPONENTS = [
     FormlySelectModule,
     NgSelectModule,
   ],
-  declarations: [...COMPONENTS, ViewPastRegistrationFormComponent],
-  exports: [...COMPONENTS],
+  declarations: [...COMPONENTS, ViewPastRegistrationFormComponent, DashboardHeadComponent],
+  exports: [...COMPONENTS, DashboardHeadComponent],
 })
 export class MyComponentsModule {}

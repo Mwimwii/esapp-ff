@@ -51,6 +51,7 @@ registerLocaleData(localeEn, 'en')
       extras: { lazyRender: true },
       types: [
         { name: 'file', component: FormlyFieldFile, wrappers: ['form-field'] },
+
         { name: 'ng-select', component: FieldNgSelect, wrappers: ['form-field'] },
         {
           name: 'custom-text-area',
