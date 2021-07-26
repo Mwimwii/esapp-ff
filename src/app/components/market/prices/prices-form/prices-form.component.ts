@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormGroup } from '@angular/forms'
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core'
+import {EsappRequestHandlerService} from '../../../../esapp-request-handler.service'
 
 @Component({
   selector: 'app-prices-form',
@@ -11,6 +12,7 @@ export class PricesFormComponent implements OnInit {
   form = new FormGroup({})
   model: any = {}
   options: FormlyFormOptions = {}
+  loading: boolean = false
 
   formFields = [
     // Group 1
@@ -117,11 +119,14 @@ export class PricesFormComponent implements OnInit {
     },
   ]
 
-  constructor() {}
+  constructor(private post: EsappRequestHandlerService) {}
 
   ngOnInit(): void {}
 
-  submit(model: any): void {
-    if (!this.form.valid) return
+  submit(model: any): any {
+  this.loading = true
+    this.post.postDataUnAuthenticated('/prices', this.model).subscribe(data=> {
+      this.loading = false
+    })
   }
 }

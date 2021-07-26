@@ -14,20 +14,20 @@
         </thead>
         <tbody>
         <ng-container *ngFor="let data of basicTable.data">
-          <tr *ngIf='data.order == "sell"' >
+          <tr>
             <td [nzExpand]="expandSet.has(data.id)"
                 (nzExpandChange)="onExpandChange(data.id, $event)">
             </td>
 
             <td>
-              <div>{{data.vendor.name}}</div>
-              <div class="text-gray-4">{{data.market}}</div>
+              <div>{{data.market_id}}</div>
+              <div class="text-gray-4">{{data.market_id}}</div>
             </td>
             <td>
-              {{data.commodity_type}}
+              {{data.commodity_type_id}}
             </td>
             <td>
-              <div>{{data.unit}}</div>
+              <div>{{data.unit_of_measure}}</div>
             </td>
             <td>
               <div>K{{data.price}}</div>
@@ -43,48 +43,48 @@
       </nz-table>
     </nz-tab>
 
-    <nz-tab nzTitle="Commodities (Buy)" [nzForceRender]="true">
-    <nz-table #basicTable [nzData]="tableData"
-              [nzShowPagination]="false" class="table mb-4">
-      <thead>
-      <tr >
-        <th class="bg-transparent"></th>
-        <th class="bg-transparent">Market/Vendor</th>
-        <th class="bg-transparent">Commodity Type</th>
-        <th class="bg-transparent">Unit</th>
-        <th class="bg-transparent">Price(ZMW)</th>
-      </tr>
-      </thead>
-      <tbody>
-      <ng-container *ngFor="let data of basicTable.data">
-        <tr *ngIf='data.order == "buy"'>
-          <td [nzExpand]="expandSet.has(data.id)"
-              (nzExpandChange)="onExpandChange(data.id, $event)">
-          </td>
+<!--    <nz-tab nzTitle="Commodities (Buy)" [nzForceRender]="true">-->
+<!--    <nz-table #basicTable [nzData]="tableData"-->
+<!--              [nzShowPagination]="false" class="table mb-4">-->
+<!--      <thead>-->
+<!--      <tr >-->
+<!--        <th class="bg-transparent"></th>-->
+<!--        <th class="bg-transparent">Market/Vendor</th>-->
+<!--        <th class="bg-transparent">Commodity Type</th>-->
+<!--        <th class="bg-transparent">Unit</th>-->
+<!--        <th class="bg-transparent">Price(ZMW)</th>-->
+<!--      </tr>-->
+<!--      </thead>-->
+<!--      <tbody>-->
+<!--      <ng-container *ngFor="let data of basicTable.data">-->
+<!--        <tr *ngIf='data.order == "buy"'>-->
+<!--          <td [nzExpand]="expandSet.has(data.id)"-->
+<!--              (nzExpandChange)="onExpandChange(data.id, $event)">-->
+<!--          </td>-->
 
-          <td>
-            <div>{{data.vendor.name}}</div>
-            <div class="text-gray-4">{{data.market}}</div>
-          </td>
-          <td>
-            {{data.commodity_type}}
-          </td>
-          <td>
-            <div>{{data.unit}}</div>
-          </td>
-          <td>
-            <div>K{{data.price}}</div>
-          </td>
+<!--          <td>-->
+<!--            <div>{{data.vendor.name}}</div>-->
+<!--            <div class="text-gray-4">{{data.market}}</div>-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            {{data.commodity_type}}-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            <div>{{data.unit}}</div>-->
+<!--          </td>-->
+<!--          <td>-->
+<!--            <div>K{{data.price}}</div>-->
+<!--          </td>-->
 
-        </tr>
-        <tr [nzExpand]="expandSet.has(data.id)">
-          <app-prices-view-price [data]='data'></app-prices-view-price>
-        </tr>
-      </ng-container>
+<!--        </tr>-->
+<!--        <tr [nzExpand]="expandSet.has(data.id)">-->
+<!--          <app-prices-view-price [data]='data'></app-prices-view-price>-->
+<!--        </tr>-->
+<!--      </ng-container>-->
 
-      </tbody>
-    </nz-table>
-  </nz-tab>
+<!--      </tbody>-->
+<!--    </nz-table>-->
+<!--  </nz-tab>-->
     <nz-tab nzTitle="New Commodity Price">
       <nz-steps nzType="navigation" [nzCurrent]="current" >
         <nz-step nzTitle="Create / Choose" nzStatus="process" nzIcon="paper-clip">

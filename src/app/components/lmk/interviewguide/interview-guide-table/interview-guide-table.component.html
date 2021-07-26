@@ -11,15 +11,15 @@
       <tr *ngFor="let data of basicTable.data; let i=index">
         <td>
           <div class="text-wrap width-30">
-            <div class="text-dark mb-3">{{i}}</div>
+            <div class="text-dark mb-3">{{data.number}}</div>
           </div>
         </td>
         <td>
           <a href="javascript: void(0);" class="text-blue">
-            {{data.location}}
+            {{data.section}}
           </a>
         </td>
-        <td class="font-weight-bold">{{data.value}}</td>
+        <td class="font-weight-bold">{{data.question}}</td>
       </tr>
     </tbody>
   </nz-table>

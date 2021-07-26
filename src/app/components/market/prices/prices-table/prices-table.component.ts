@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 declare var require: any
-import { PricesService } from '../../../../prices.service'
+import { EsappRequestHandlerService } from '../../../../esapp-request-handler.service'
 
 @Component({
   selector: 'app-prices-table',
@@ -12,9 +12,17 @@ export class PricesTableComponent implements OnInit {
   createTable = true
   current: number = 0
   checklist: boolean = false
-  constructor(private pricesService: PricesService) {}
+  loading: boolean = false
+  constructor(private pricesService: EsappRequestHandlerService) {}
   getPrices(): void {
-    this.pricesService.getData().subscribe(data => (this.tableData = data))
+    this.loading = true
+    this.pricesService.getDataAuthenticated('/price')
+      .subscribe(data => {
+        this.tableData = data
+        console.log(data)
+        this.loading = false
+      }, error => {this.loading=false})
+
   }
   ngOnInit() {
     this.getPrices()

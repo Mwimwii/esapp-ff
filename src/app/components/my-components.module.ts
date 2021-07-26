@@ -6,7 +6,7 @@ import { WidgetsComponentsModule } from 'src/app/@vb/widgets/widgets-components.
 import { FooterComponent } from './Footer/footer.component'
 import { AppTypography3Component } from './lmk/interviewguide/instructions-3/3.component'
 import { AppControlsButton2Component } from './lmk/interviewguide/Button2-download/button-2.component'
-import { AppTable2Component } from './lmk/interviewguide/tables-interview/2.component'
+import { InterviewGuideTableComponent } from './lmk/interviewguide/interview-guide-table/interview-guide-table.component'
 import { AppMyStoryTableComponent } from './lmk/myStories/stories-table/3.component'
 import { FormlyNgZorroAntdModule } from '@ngx-formly/ng-zorro-antd'
 import { FormlyModule } from '@ngx-formly/core'
@@ -45,7 +45,7 @@ import { DashboardHeadComponent } from './dashboard/dashboard-head/dashboard-hea
 const COMPONENTS = [
   FooterComponent,
   AppMyStoryTableComponent,
-  AppTable2Component,
+  InterviewGuideTableComponent,
   AppTypography3Component,
   AppControlsButton2Component,
   CreateStoryFormComponent,
