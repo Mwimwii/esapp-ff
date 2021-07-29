@@ -18,7 +18,6 @@ export class InterviewGuideTableComponent implements OnInit {
     this.httpService.getDataAuthenticated('/ig')
       .subscribe(data => {
         this.tableData = data
-        console.log(data)
         this.loading = false
       }, error => {this.loading=false})
 

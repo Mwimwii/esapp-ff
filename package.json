@@ -7,6 +7,7 @@
     "local-start": "ng serve --host 0.0.0.0",
     "start": "ng serve --open",
     "hmr": "ng serve --configuration=hmr --open",
+    "hmr-proxy": "ng serve --proxy-config proxy.config.json --configuration=hmr --open",
     "build": "ng build --prod --build-optimizer",
     "test": "ng test",
     "e2e": "ng e2e",

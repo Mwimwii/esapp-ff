@@ -19,7 +19,6 @@ export class PricesTableComponent implements OnInit {
     this.pricesService.getDataAuthenticated('/price')
       .subscribe(data => {
         this.tableData = data
-        console.log(data)
         this.loading = false
       }, error => {this.loading=false})
 
