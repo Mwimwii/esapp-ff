@@ -5,7 +5,7 @@ import { SharedModule } from 'src/app/shared.module'
 import { WidgetsComponentsModule } from 'src/app/@vb/widgets/widgets-components.module'
 import { FooterComponent } from './Footer/footer.component'
 import { AppTypography3Component } from './lmk/interviewguide/instructions-3/3.component'
-import { AppControlsButton2Component } from './lmk/interviewguide/Button2-download/button-2.component'
+import { InterviewGuideDownloadBtnComponent } from './lmk/interviewguide/interview-guide-download-btn/interview-guide-download-btn.component'
 import { InterviewGuideTableComponent } from './lmk/interviewguide/interview-guide-table/interview-guide-table.component'
 import { AppMyStoryTableComponent } from './lmk/myStories/stories-table/3.component'
 import { FormlyNgZorroAntdModule } from '@ngx-formly/ng-zorro-antd'
@@ -19,13 +19,12 @@ import { QuillModule } from 'ngx-quill'
 import { FileValueAccessor } from './formly/file-accessor'
 import { FormlyFieldFile } from './formly/file-component'
 import { NgSelectModule } from '@ng-select/ng-select'
-import { ViewStoryFormComponent } from './lmk/mystories/view-story-form/view-story-form.component'
-import { AppMyStoriesTablesBootstrap4Component } from './lmk/myStories/my-Stories-table/4.component'
-import { AppStoriesOfChangeTablesBootstrap4Component } from './lmk/storiesOfChange/soc-stories-detail-table/4.component'
-import { AppStoriesOfChangeDataTableComponent } from './lmk/storiesOfChange/soc-stories-table/3.component'
+import { AppSocTableDetailComponent } from './lmk/myStories/soc-table-detail/soc-table-detail.component'
+import { AppStoriesOfChangeTablesBootstrap4Component } from './lmk/storiesOfChange/soc-stories-detail-table/soc-stories-detail-table.component'
+import { AppStoriesOfChangeTableComponent } from './lmk/storiesOfChange/soc-stories-table/soc-stories-table.component'
 import { ViewStoriesOfChangeFormComponent } from './lmk/storiesOfChange/view-stories-of-change-form/view-story-form.component'
 import { StoriesOfChangeInstructionsComponent } from './lmk/storiesOfChange/soc-instructions/soc-instructions.component'
-import { CbTopicsTableComponent } from './cbb/topics/cbb-topics-table/cbb-topics-table.component'
+import { CbTopicsTabsComponent } from './cbb/topics/cbb-topics-tabs/cbb-topics-tabs.component'
 import { CbTopicsFormComponent } from './cbb/topics/cbb-topics-form/cbb-topics-form.component'
 import { AppAttendanceMainTableComponent } from './cbb/attendance/attendance-main-table/3.component'
 import { RegisterAttendantsFormComponent } from './cbb/attendance/register-attendance-form/view-story-form.component'
@@ -41,27 +40,29 @@ import { MGFFormComponent } from './mgf/mgf-form/mgf-form.component'
 import { DashboardDownloadListComponent } from './dashboard/dashboard-download-list/dashboard-download-list.component'
 import { DashboardTasksTableComponent } from './dashboard/dashboard-tasks-table/dashboard-tasks-table.component'
 import { DashboardHeadComponent } from './dashboard/dashboard-head/dashboard-head.component'
+import { DashboardHeadItemComponent } from './dashboard/dashboard-head-item/dashboard-head-item.component'
+import { SocCreateStoryFormComponent } from './lmk/myStories/soc-create-story-form/soc-create-story-form.component'
+import { CbTopicsTableComponent } from './cbb/topics/cbb-topics-table/cbb-topics-table.component'
 
 const COMPONENTS = [
   FooterComponent,
   AppMyStoryTableComponent,
   InterviewGuideTableComponent,
   AppTypography3Component,
-  AppControlsButton2Component,
+  InterviewGuideDownloadBtnComponent,
   CreateStoryFormComponent,
   ChecklistStoryFormComponent,
   FieldNgSelect,
   FieldQuillType,
   FormlyFieldFile,
-  AppMyStoriesTablesBootstrap4Component,
+  AppSocTableDetailComponent,
   AppStoriesOfChangeTablesBootstrap4Component,
-  AppStoriesOfChangeDataTableComponent,
+  AppStoriesOfChangeTableComponent,
   ViewStoriesOfChangeFormComponent,
   StoriesOfChangeInstructionsComponent,
-  CbTopicsTableComponent,
+  CbTopicsTabsComponent,
   CbTopicsFormComponent,
   CbTopicsDetailComponent,
-  ViewStoryFormComponent,
   PricesTableComponent,
   ViewPriceComponent,
   PricesFormComponent,
@@ -73,7 +74,10 @@ const COMPONENTS = [
   MGFFormComponent,
   DashboardDownloadListComponent,
   DashboardTasksTableComponent,
-  DashboardHeadComponent
+  DashboardHeadComponent,
+  DashboardHeadItemComponent,
+  SocCreateStoryFormComponent,
+  CbTopicsTableComponent
 ]
 
 @NgModule({

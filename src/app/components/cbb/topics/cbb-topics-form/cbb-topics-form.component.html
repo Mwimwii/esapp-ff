@@ -1,3 +1,9 @@
+<nz-steps nzType="navigation" [nzCurrent]="current" >
+  <nz-step nzTitle="Create / Choose" nzStatus="process" nzIcon="paper-clip">
+  </nz-step>
+</nz-steps>
+<div class="steps-content">
+
 <div class="container">
   <br>
   <b>Instructions</b>
@@ -13,3 +19,11 @@
   </form>
 </div>
 
+</div>
+<div class="steps-action">
+  <button
+    class="btn btn-default mt-3 mr-2"
+    nz-button nzType="primary" (click)="done()" *ngIf="current === 2">
+    <span>Done</span>
+  </button>
+</div>

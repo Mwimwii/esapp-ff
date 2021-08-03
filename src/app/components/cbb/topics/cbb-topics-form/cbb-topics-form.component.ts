@@ -8,6 +8,9 @@ import { FormlyFieldConfig } from '@ngx-formly/core'
   styleUrls: ['./cbb-topics-form.component.scss'],
 })
 export class CbTopicsFormComponent implements OnInit {
+  createTable = true
+  current: number = 0
+  checklist: boolean = false
   constructor() {}
 
   ngOnInit(): void {}
@@ -61,5 +64,38 @@ export class CbTopicsFormComponent implements OnInit {
 
   submit(model: any): void {
     if (!this.form.valid) return
+  }
+  pre(): void {
+    this.current -= 1
+    this.changeContent()
+  }
+  next(): void {
+    this.current += 1
+    this.changeContent()
+  }
+  done(): void {
+    console.log('done')
+  }
+  changeContent(): void {
+    this.createTable = false
+    this.checklist = false
+    switch (this.current) {
+      case 0: {
+        this.createTable = true
+        break
+      }
+      case 1: {
+        this.checklist = true
+        // this.index = 'Second-content';
+        break
+      }
+      case 2: {
+        // this.index = 'third-content';
+        break
+      }
+      default: {
+        // this.index = 'error';
+      }
+    }
   }
 }
