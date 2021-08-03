@@ -1,0 +1,28 @@
+
+<nz-steps nzType="navigation" [nzCurrent]="current" >
+  <nz-step nzTitle="Create / Choose" nzStatus="process" nzIcon="paper-clip">
+  </nz-step>
+  <nz-step nzTitle="Checklist for Story" nzStatus="wait" nzIcon="solution"></nz-step>
+  <!--        <ng-template #iconTemplate><i nz-icon nzType="smile"></i></ng-template>-->
+</nz-steps>
+<div class="steps-content">
+  <app-create-story-form *ngIf="createTable"></app-create-story-form>
+  <app-checklist-story-form *ngIf="checklist"></app-checklist-story-form>
+</div>
+<div class="steps-action">
+  <button
+    class="btn btn-default mt-3 mr-2"
+    nz-button nzType="default" (click)="pre()" *ngIf="current > 0">
+    <span>Previous</span>
+  </button>
+  <button
+    class="btn btn-default mt-3 mr-2"
+    nz-button nzType="default" (click)="next()" *ngIf="current < 2">
+    <span>Next</span>
+  </button>
+  <button
+    class="btn btn-default mt-3 mr-2"
+    nz-button nzType="primary" (click)="done()" *ngIf="current === 2">
+    <span>Done</span>
+  </button>
+</div>

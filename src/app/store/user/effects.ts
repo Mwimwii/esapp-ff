@@ -9,14 +9,14 @@ import { NzNotificationService } from 'ng-zorro-antd/notification'
 
 import * as Reducers from 'src/app/store/reducers'
 import * as UserActions from './actions'
-import { jwtAuthService } from 'src/app/services/jwt'
+import { basicAuthService } from 'src/app/services/basic-auth'
 import { firebaseAuthService } from 'src/app/services/firebase'
 
 @Injectable()
 export class UserEffects implements OnInitEffects {
   constructor(
     private actions: Actions,
-    private jwtAuthService: jwtAuthService,
+    private basicAuthService: basicAuthService,
     private firebaseAuthService: firebaseAuthService,
     private router: Router,
     private route: ActivatedRoute,
@@ -36,10 +36,11 @@ export class UserEffects implements OnInitEffects {
       of(action).pipe(withLatestFrom(this.rxStore.pipe(select(Reducers.getSettings)))),
     ),
     switchMap(([payload, settings]) => {
-      // jwt login
-      if (settings.authProvider === 'jwt') {
-        return this.jwtAuthService.login(payload.email, payload.password).pipe(
+      // basic-auth login
+      if (settings.authProvider === 'basic-auth') {
+        return this.basicAuthService.login(payload.email, payload.password).pipe(
           map(response => {
+            // if the response is authorized
             if (response && response.accessToken) {
               store.set('accessToken', response.accessToken)
               this.notification.success('Logged In', 'You have successfully logged in!')
@@ -58,7 +59,7 @@ export class UserEffects implements OnInitEffects {
       // firebase login
       return from(this.firebaseAuthService.login(payload.email, payload.password)).pipe(
         map(() => {
-          this.notification.success('Logged In', 'You have successfully logged in!')
+          this.notification.success('Logged In', 'You have successfully logged in')
           return new UserActions.LoadCurrentAccount()
         }),
         catchError((error: any) => {
@@ -69,49 +70,6 @@ export class UserEffects implements OnInitEffects {
     }),
   )
 
-  @Effect()
-  register: Observable<any> = this.actions.pipe(
-    ofType(UserActions.REGISTER),
-    map((action: UserActions.Register) => action.payload),
-    concatMap(action =>
-      of(action).pipe(withLatestFrom(this.rxStore.pipe(select(Reducers.getSettings)))),
-    ),
-    switchMap(([payload, settings]) => {
-      // jwt register
-      if (settings.authProvider === 'jwt') {
-        return this.jwtAuthService.register(payload.email, payload.password, payload.name).pipe(
-          map(response => {
-            if (response && response.id) {
-              if (response.accessToken) {
-                store.set('accessToken', response.accessToken)
-              }
-              this.router.navigate(['/'])
-              return new UserActions.RegisterSuccessful(response)
-            }
-            this.notification.warning('Registration Failed', response)
-            return new UserActions.RegisterUnsuccessful()
-          }),
-          catchError(error => {
-            console.log('REGISTER ERROR: ', error)
-            return from([{ type: UserActions.LOGIN_UNSUCCESSFUL }])
-          }),
-        )
-      }
-
-      // firebase register
-      return from(
-        this.firebaseAuthService.register(payload.email, payload.password, payload.name),
-      ).pipe(
-        map(() => {
-          return new UserActions.EmptyAction()
-        }),
-        catchError(error => {
-          this.notification.warning(error.code, error.message)
-          return from([{ type: UserActions.EMPTY_ACTION }])
-        }),
-      )
-    }),
-  )
 
   @Effect()
   loadCurrentAccount: Observable<any> = this.actions.pipe(
@@ -121,11 +79,11 @@ export class UserEffects implements OnInitEffects {
       of(action).pipe(withLatestFrom(this.rxStore.pipe(select(Reducers.getSettings)))),
     ),
     switchMap(([action, settings]) => {
-      // jwt load current account
-      if (settings.authProvider === 'jwt') {
-        return this.jwtAuthService.currentAccount().pipe(
+      // basic-auth load current account
+      if (settings.authProvider === 'basic-auth') {
+        return this.basicAuthService.currentAccount().pipe(
           map(response => {
-            if (response && (response.email || response.user)) {
+            if (response && (response.email || response.username)) {
               if (this.route.snapshot.queryParams.returnUrl) {
                 this.router.navigate([this.route.snapshot.queryParams.returnUrl]) // // redirect to returnUrl
               } else if (this.router.url.includes('/auth')) {
@@ -155,9 +113,9 @@ export class UserEffects implements OnInitEffects {
       of(action).pipe(withLatestFrom(this.rxStore.pipe(select(Reducers.getSettings)))),
     ),
     switchMap(([, settings]) => {
-      // jwt logout
-      if (settings.authProvider === 'jwt') {
-        return this.jwtAuthService.logout().pipe(
+      // basic-auth logout
+      if (settings.authProvider === 'basic-auth') {
+        return this.basicAuthService.logout().pipe(
           map(() => {
             store.remove('accessToken')
             this.router.navigate(['/auth/login'])
