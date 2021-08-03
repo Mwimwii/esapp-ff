@@ -39,9 +39,25 @@
         <div class="card-body">
           <vb-controls-button-2
             [data]="{'title':'New Story of Change','icon':'fe fe-plus-circle','type':'primary'}"
+            (click)='nzSelectedIndex = 1'
           ></vb-controls-button-2>
         </div>
-        <div class="card-body"><app-my-story-tables-3></app-my-story-tables-3></div>
+        <div class="card-body">
+
+          <div class="table-responsive text-wrap">
+            <nz-tabset class="tabs" [nzSelectedIndex]="nzSelectedIndex">
+                <nz-tab nzTitle="My Stories" [nzForceRender]="true" (nzClick)='nzSelectedIndex=0'>
+                    <app-my-story-tables-3 [route]='"soc/story-of-change-by-user-id"'></app-my-story-tables-3>
+                </nz-tab>
+              <nz-tab nzTitle="Create Stories">
+                <app-soc-create-story-form></app-soc-create-story-form>
+              </nz-tab>
+
+            </nz-tabset>
+          </div>
+
+
+        </div>
       </div>
     </div>
   </div>

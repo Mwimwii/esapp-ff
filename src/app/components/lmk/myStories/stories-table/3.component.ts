@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
+import { EsappRequestHandlerService } from '../../../../esapp-request-handler.service'
 declare var require: any
 const data: any = require('./data.json')
 
@@ -8,12 +9,17 @@ const data: any = require('./data.json')
   styleUrls: ['./3.component.scss'],
 })
 export class AppMyStoryTableComponent implements OnInit {
-  tableData = data
+  // tableData = data
+  @Input() route: string;
+  tableData : any[];
   createTable = true
   current: number = 0
   checklist: boolean = false
-  constructor() {}
-  ngOnInit() {}
+  constructor(private http: EsappRequestHandlerService) {}
+  ngOnInit() {
+    this.http.getDataAuthenticated(this.route)
+      .subscribe(data => this.tableData = data)
+  }
   pre(): void {
     this.current -= 1
     this.changeContent()

@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core'
   templateUrl: './mystories.component.html',
 })
 export class LkmMystoriesComponent implements OnInit {
+  nzSelectedIndex = 0;
   constructor() {}
   ngOnInit() {}
 }

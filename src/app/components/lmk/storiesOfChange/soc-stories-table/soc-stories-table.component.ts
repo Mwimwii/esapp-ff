@@ -1,19 +1,24 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
 declare var require: any
 const data: any = require('./data.json')
-
+import { EsappRequestHandlerService } from '../../../../esapp-request-handler.service'
 @Component({
-  selector: 'app-stories-of-change-data-tables-3',
-  templateUrl: './3.component.html',
-  styleUrls: ['./3.component.scss'],
+  selector: 'app-stories-of-change-table',
+  templateUrl: './soc-stories-table.component.html',
+  styleUrls: ['./soc-stories-table.component.scss'],
 })
-export class AppStoriesOfChangeDataTableComponent implements OnInit {
-  tableData = data
+export class AppStoriesOfChangeTableComponent implements OnInit {
+  @Input() route : string;
+  tableData = data;
+  // tableData : any[];
   createTable = true
   current: number = 0
   checklist: boolean = false
-  constructor() {}
-  ngOnInit() {}
+  constructor(private http: EsappRequestHandlerService) {}
+  ngOnInit() {
+    // this.http.getDataAuthenticated(this.route)
+    //   .subscribe(data => this.tableData = data)
+  }
   pre(): void {
     this.current -= 1
     this.changeContent()

@@ -3,12 +3,12 @@
     <thead>
       <tr>
         <th class="bg-transparent text-uppercase">#</th>
-        <th class="bg-transparent text-uppercase ">Section</th>
-        <th class="bg-transparent text-uppercase ">Question Number</th>
+        <th class="bg-transparent">Section</th>
+        <th class="bg-transparent ">Question Number</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let data of basicTable.data; let i=index">
+      <tr *ngFor="let data of basicTable.data;">
         <td>
           <div class="text-wrap width-30">
             <div class="text-dark mb-3">{{data.number}}</div>

@@ -1,8 +1,6 @@
-<div class="table-responsive text-wrap">
-  <nz-tabset class="tabs" [nzSelectedIndex]="0">
-    <nz-tab nzTitle="Stories" [nzForceRender]="true">
+  <nz-tab nzTitle="Stories" [nzForceRender]="true">
       <nz-table #basicTable [nzData]="tableData"
-                [nzShowPagination]="false" class="table mb-4">
+                [nzShowPagination]="true" class="table mb-4">
         <thead>
           <tr>
             <th class="bg-transparent">#</th>
@@ -44,7 +42,3 @@
         </tbody>
       </nz-table>
     </nz-tab>
-
-
-  </nz-tabset>
-</div>

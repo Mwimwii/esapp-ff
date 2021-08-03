@@ -9,7 +9,14 @@
         </div>
         <div class="card-body">
           <app-soc-instructions></app-soc-instructions></div>
-        <div class="card-body"><app-stories-of-change-data-tables-3></app-stories-of-change-data-tables-3>
+        <div class="card-body">
+          <div class="table-responsive text-wrap">
+            <nz-tabset class="tabs" [nzSelectedIndex]="0">
+              <nz-tab nzTitle="Stories" [nzForceRender]="true">
+                <app-my-story-tables-3 [route]='"/soc"'></app-my-story-tables-3>
+              </nz-tab>
+            </nz-tabset>
+          </div>
         </div>
       </div>
     </div>
