@@ -20,7 +20,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store'
 import { reducers, metaReducers } from './store/reducers'
 import { UserEffects } from './store/user/effects'
 import { firebaseConfig, firebaseAuthService } from './services/firebase'
-import { jwtAuthService } from './services/jwt'
+import { basicAuthService } from './services/basic-auth'
 import { MockHttpCallInterceptor } from './services/fakeApi'
 
 // locale resistration
@@ -85,14 +85,14 @@ registerLocaleData(localeEn, 'en')
   providers: [
     // auth services
     firebaseAuthService,
-    jwtAuthService,
+    basicAuthService,
 
     // fake http interceptors
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: MockHttpCallInterceptor,
-      multi: true,
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: MockHttpCallInterceptor,
+    //   multi: true,
+    // },
 
     // locale providers
     ...LOCALE_PROVIDERS,
