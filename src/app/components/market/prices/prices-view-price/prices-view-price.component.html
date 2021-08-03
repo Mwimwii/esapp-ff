@@ -2,15 +2,12 @@
   <table class="table table-striped">
     <tbody>
     <tr>
-      <th>Contact</th>
-      <td>{{data.contact}}</td>
+      <th>Description</th>
+      <td>{{data.description}}</td>
     </tr>
     <tr>
-      <th *ngIf='data.order == "sell"; else orderPlaced'>Date of Price Captured</th>
-      <ng-template #orderPlaced>
-        <th>Date of Order Placed</th>
-      </ng-template>
-      <td>{{data.month}}/{{data.year}}</td>
+        <th>Date Captured</th>
+      <td>{{data.date_captured}}</td>
     </tr>
     </tbody>
   </table>

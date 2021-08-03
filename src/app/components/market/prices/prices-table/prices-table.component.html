@@ -1,6 +1,6 @@
 <div class="table-responsive text-wrap">
   <nz-tabset class="tabs" [nzSelectedIndex]="0">
-    <nz-tab nzTitle="Commodities (Sell)" [nzForceRender]="true">
+    <nz-tab nzTitle="Commodities" [nzForceRender]="true">
       <nz-table #basicTable [nzData]="tableData"
                 [nzShowPagination]="false" class="table mb-4">
         <thead>
@@ -8,6 +8,7 @@
           <th class="bg-transparent"></th>
           <th class="bg-transparent">Market/Vendor</th>
           <th class="bg-transparent">Commodity Type</th>
+          <th class="bg-transparent">Price Level</th>
           <th class="bg-transparent">Unit</th>
           <th class="bg-transparent">Price(ZMW)</th>
         </tr>
@@ -20,11 +21,14 @@
             </td>
 
             <td>
-              <div>{{data.market_id}}</div>
-              <div class="text-gray-4">{{data.market_id}}</div>
+              <div>{{data.market}}</div>
+              <div class="text-gray-4">{{data.market}}</div>
             </td>
             <td>
-              {{data.commodity_type_id}}
+              {{data.commodity_type}}
+            </td>
+            <td>
+              {{data.price_level}}
             </td>
             <td>
               <div>{{data.unit_of_measure}}</div>

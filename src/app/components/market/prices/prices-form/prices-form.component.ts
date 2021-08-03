@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormGroup } from '@angular/forms'
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core'
-import {EsappRequestHandlerService} from '../../../../esapp-request-handler.service'
+import { EsappRequestHandlerService } from '../../../../esapp-request-handler.service'
 
 @Component({
   selector: 'app-prices-form',
@@ -17,7 +17,7 @@ export class PricesFormComponent implements OnInit {
   formFields = [
     // Group 1
     {
-      key: 'market',
+      key: 'market_id',
       type: 'select',
       templateOptions: {
         type: 'text',
@@ -33,7 +33,7 @@ export class PricesFormComponent implements OnInit {
       },
     },
     {
-      key: 'commodity_type',
+      key: 'commodity_type_id',
       type: 'select',
       templateOptions: {
         type: 'text',
@@ -51,7 +51,7 @@ export class PricesFormComponent implements OnInit {
 
     //Group 2
     {
-      key: 'price_level',
+      key: 'price_level_id',
       type: 'select',
       templateOptions: {
         type: 'text',
@@ -68,7 +68,7 @@ export class PricesFormComponent implements OnInit {
 
     // Group 3
     {
-      key: 'unit',
+      key: 'unit_of_measure',
       type: 'input',
       templateOptions: {
         type: 'text',
@@ -87,46 +87,94 @@ export class PricesFormComponent implements OnInit {
         required: true,
       },
     },
-  ]
-
-  fields: FormlyFieldConfig[] = [
     {
-      fieldGroupClassName: 'row',
-      fieldGroup: [
-        { className: 'col-6', ...this.formFields[0] },
-        { className: 'col-6', ...this.formFields[1] },
-      ],
-    },
-    {
-      className: 'section-label',
-      template: '<hr /><div><strong>Price and Price Level(Example Section):</strong></div>',
-    },
-    {
-      fieldGroupClassName: 'row',
-      fieldGroup: [
-        { className: 'col-6', ...this.formFields[2] },
-        { className: 'col-3', ...this.formFields[3] },
-        { className: 'col-3', ...this.formFields[4] },
-      ],
-    },
-    { template: '<hr />' },
-    {
-      type: 'checkbox',
-      key: 'otherToo',
+      key: 'district',
+      type: 'input',
       templateOptions: {
-        label: 'I agree to that this information is accurate and verifiable',
+        type: 'text',
+        label: 'District',
+        placeholder: 'Enter a District',
+        required: true,
+      },
+    },
+    {
+      key: 'year',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'Year',
+        placeholder: 'Enter a Year',
+        required: true,
+      },
+    },
+    {
+      key: 'month',
+      type: 'input',
+      templateOptions: {
+        type: 'text',
+        label: 'Month',
+        placeholder: 'Enter the Month',
+        required: true,
       },
     },
   ]
 
-  constructor(private post: EsappRequestHandlerService) {}
+  fields: FormlyFieldConfig[] =[]
 
-  ngOnInit(): void {}
+  constructor(private http: EsappRequestHandlerService) {}
+
+  ngOnInit(): void {
+    this.http.getDataAuthenticated('/commodity-price-levels')
+      .subscribe( data => this.formFields[2].templateOptions.options=data)
+    this.http.getDataAuthenticated('/markets')
+      .subscribe( data => this.formFields[0].templateOptions.options=data)
+    this.http.getDataAuthenticated('/commodity-type')
+      .subscribe( data => this.formFields[1].templateOptions.options=data)
+    // Generate the form
+    this.fields = [
+      {
+        fieldGroupClassName: 'row',
+        fieldGroup: [
+          { className: 'col-6', ...this.formFields[0] },
+          { className: 'col-6', ...this.formFields[1] },
+        ],
+      },
+      {
+        className: 'section-label',
+        template: '<hr /><div><strong>Price and Price Level(Example Section):</strong></div>',
+      },
+      {
+        fieldGroupClassName: 'row',
+        fieldGroup: [
+          { className: 'col-6', ...this.formFields[2] },
+          { className: 'col-3', ...this.formFields[3] },
+          { className: 'col-3', ...this.formFields[4] },
+        ],
+      },
+      {
+        fieldGroupClassName: 'row',
+        fieldGroup: [
+          { className: 'col-6', ...this.formFields[5] },
+          { className: 'col-3', ...this.formFields[6] },
+          { className: 'col-3', ...this.formFields[7] },
+        ],
+      },
+      { template: '<hr />' },
+      {
+        type: 'checkbox',
+        key: 'otherToo',
+        templateOptions: {
+          label: 'I agree to that this information is accurate and verifiable',
+        },
+      },
+    ]
+  }
 
   submit(model: any): any {
   this.loading = true
-    this.post.postDataUnAuthenticated('/prices', this.model).subscribe(data=> {
+    this.http.postDataAuthenticated('/prices', this.model).subscribe(data=> {
       this.loading = false
     })
+    alert(JSON.stringify(this.model))
   }
 }
