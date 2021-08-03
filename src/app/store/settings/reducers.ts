@@ -14,7 +14,7 @@ export const initialState: object = {
   ...STORED_SETTINGS({
     // Read docs for available values: https://docs.visualbuilder.cloud
     // VB:REPLACE-START:SETTINGS
-    authProvider: 'jwt',
+    authProvider: 'basic-auth',
     logo: 'ESAPP',
     version: 'air',
     theme: 'default',

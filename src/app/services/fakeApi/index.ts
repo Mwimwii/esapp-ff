@@ -30,59 +30,37 @@ export class MockHttpCallInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (request.method === 'POST') {
       // login
-      if (request.url === '/api/auth/login') {
-        const { email, password } = request.body
-        const user: any = users.find(item => item.email === email && item.password === password)
-        const error = user ? 'Something went wrong.' : 'Login failed, please try again'
+      // if (request.url === '/api/auth/login') {
+      //   const { email, password } = request.body
+      //   const user: any = users.find(item => item.email === email && item.password === password)
+      //   const error = user ? 'Something went wrong.' : 'Login failed, please try again'
+      //
+      //   if (user) {
+      //     return timer(500).pipe(switchMap(() => of(new HttpResponse({ status: 200, body: user }))))
+      //   }
+      //
+      //   return of(new HttpResponse({ status: 401, body: error }))
+      // }
 
-        if (user) {
-          return timer(500).pipe(switchMap(() => of(new HttpResponse({ status: 200, body: user }))))
-        }
-
-        return of(new HttpResponse({ status: 401, body: error }))
-      }
-
-      // register
-      if (request.url === '/api/auth/register') {
-        const { email, password, name } = request.body
-        const user = users.find(user => user.email === email)
-
-        if (!user) {
-          const user = {
-            id: users.length + 1,
-            email,
-            password,
-            name,
-            avatar: '',
-            role: 'admin',
-            accessToken: fakeJwtToken,
-          }
-          users.push(user)
-
-          return of(new HttpResponse({ status: 200, body: user }))
-        }
-
-        return of(new HttpResponse({ status: 401, body: 'This email is already in use.' }))
-      }
     }
 
     if (request.method === 'GET') {
       // load account
-      if (request.url === '/api/auth/account') {
-        const AccessToken = request.headers.get('AccessToken')
-        const user: any = users.find(user => user.accessToken === AccessToken)
-
-        if (user) {
-          return timer(500).pipe(switchMap(() => of(new HttpResponse({ status: 200, body: user }))))
-        }
-
-        return of(new HttpResponse({ status: 401 }))
-      }
+      // if (request.url === '/api/auth/account') {
+      //   const AccessToken = request.headers.get('AccessToken')
+      //   const user: any = users.find(user => user.accessToken === AccessToken)
+      //
+      //   if (user) {
+      //     return timer(500).pipe(switchMap(() => of(new HttpResponse({ status: 200, body: user }))))
+      //   }
+      //
+      //   return of(new HttpResponse({ status: 401 }))
+      // }
 
       // logout
-      if (request.url === '/api/auth/logout') {
-        return of(new HttpResponse({ status: 200 }))
-      }
+      // if (request.url === '/api/auth/logout') {
+      //   return of(new HttpResponse({ status: 200 }))
+      // }
     }
 
     return next.handle(request)

@@ -43,7 +43,7 @@ export class firebaseAuthService {
       this.authProvider = state.authProvider
     })
     this.firebaseAuth.authState.subscribe(user => {
-      if (this.authProvider === 'jwt') {
+      if (this.authProvider === 'basic-auth') {
         return
       }
       if (user) {

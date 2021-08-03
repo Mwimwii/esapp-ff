@@ -2,7 +2,7 @@
   "vb": "1.0.0",
   "timestamp": 1626076345294,
   "settings": {
-    "authProvider": "jwt",
+    "authProvider": "basic-auth",
     "logo": "ESAPP",
     "version": "air",
     "theme": "default",

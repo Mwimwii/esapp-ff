@@ -6,21 +6,19 @@ export const initialState: object = {
   role: '',
   email: '',
   avatar: '',
-  authorized: true,
+  authorized: false,
   loading: false,
 }
 
 export function reducer(state = initialState, action: UserActions.Actions): object {
   switch (action.type) {
     case UserActions.LOGIN:
-    case UserActions.REGISTER:
     case UserActions.LOAD_CURRENT_ACCOUNT:
       return {
         ...state,
         loading: true,
       }
     case UserActions.LOGIN_SUCCESSFUL:
-    case UserActions.REGISTER_SUCCESSFUL:
     case UserActions.LOAD_CURRENT_ACCOUNT_SUCCESSFUL:
       return {
         ...state,
@@ -29,7 +27,6 @@ export function reducer(state = initialState, action: UserActions.Actions): obje
         authorized: true,
       }
     case UserActions.LOGIN_UNSUCCESSFUL:
-    case UserActions.REGISTER_UNSUCCESSFUL:
     case UserActions.LOAD_CURRENT_ACCOUNT_UNSUCCESSFUL:
       return {
         ...state,

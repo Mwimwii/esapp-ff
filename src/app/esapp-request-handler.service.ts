@@ -46,6 +46,17 @@ export class EsappRequestHandlerService {
   return data
 }
 
+  getPDF(slug: string): Observable<Blob>
+  {
+    const url = this.environment.apiUrl + slug
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
+      "Authorization": 'Basic ' + this.auth, responseType : 'blob'});
+
+    return this.http.get<Blob>(url, { headers : headers,responseType :
+        'blob' as 'json'});
+  }
+
 //create a post request that takes one parameter
 postDataAuthenticated(slug: string, data: object): Observable<any> {
   const url = this.environment.apiUrl + slug
