@@ -43,6 +43,9 @@ import { DashboardHeadComponent } from './dashboard/dashboard-head/dashboard-hea
 import { DashboardHeadItemComponent } from './dashboard/dashboard-head-item/dashboard-head-item.component'
 import { SocCreateStoryFormComponent } from './lmk/myStories/soc-create-story-form/soc-create-story-form.component'
 import { CbTopicsTableComponent } from './cbb/topics/cbb-topics-table/cbb-topics-table.component'
+import { AppFarmerTableDetailComponent } from './farmer-registration/farmer-table/farmer-table-detail/farmer-table-detail.component'
+import { AppFarmerTableComponent } from './farmer-registration/farmer-table/farmer-table.component'
+import { AppFarmerRegistrationFormComponent } from './farmer-registration/farmer-registration-form/farmer-registration-form.component'
 
 const COMPONENTS = [
   FooterComponent,
@@ -77,7 +80,18 @@ const COMPONENTS = [
   DashboardHeadComponent,
   DashboardHeadItemComponent,
   SocCreateStoryFormComponent,
-  CbTopicsTableComponent
+  CbTopicsTableComponent,
+
+  /** Farmers Specific
+      Todo
+        - Let the forms inherit one component
+        - Let the form load the fields when the program launches
+  **/
+  AppFarmerTableComponent,
+  AppFarmerTableDetailComponent,
+  AppFarmerRegistrationFormComponent
+
+
 ]
 
 @NgModule({

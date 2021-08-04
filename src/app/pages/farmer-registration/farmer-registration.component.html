@@ -4,7 +4,7 @@
       <div class="card card-top card-top-primary">
         <div class="card-header">
           <vb-headers-heading-2
-            [data]="{'title':'Stories of Change','description':'Welcome to stories of change section.'}"
+            [data]="{'title':'Farmer Registration','description':'Welcome to farmer registration section.'}"
           ></vb-headers-heading-2>
         </div>
         <div class="card-body">
@@ -12,8 +12,11 @@
         <div class="card-body">
           <div class="table-responsive text-wrap">
             <nz-tabset class="tabs" [nzSelectedIndex]="0">
-              <nz-tab nzTitle="Stories" [nzForceRender]="true">
-                <app-farmer-table [route]='"/soc"'></app-farmer-table>
+              <nz-tab nzTitle="Farmers" [nzForceRender]="true">
+                <app-farmer-table [route]='"/farmers"'></app-farmer-table>
+              </nz-tab>
+              <nz-tab nzTitle="Register" [nzForceRender]="true">
+                <app-farmer-registration-form></app-farmer-registration-form>
               </nz-tab>
             </nz-tabset>
           </div>

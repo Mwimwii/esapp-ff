@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-cumulative',
-  templateUrl: './cumulative.component.html',
+  templateUrl: './farmer-registration.component.html',
 })
-export class CumulativeComponent implements OnInit {
+export class FarmerRegistrationComponent implements OnInit {
   constructor() {}
   ngOnInit() {}
 }

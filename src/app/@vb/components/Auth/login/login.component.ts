@@ -13,13 +13,13 @@ import * as SettingsActions from 'src/app/store/settings/actions'
 export class LoginComponent {
   form: FormGroup
   logo: String
-  authProvider: string = 'firebase'
+  authProvider: string = 'basic-auth'
   loading: boolean = false
 
   constructor(private fb: FormBuilder, private store: Store<any>) {
     this.form = fb.group({
-      email: ['demo@visualbuilder.cloud', [Validators.required, Validators.minLength(4)]],
-      password: ['VisualBuilder', [Validators.required]],
+      email: ['admin@emis.com', [Validators.required, Validators.minLength(4)]],
+      password: ['Q!weRTy@134', [Validators.required]],
     })
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
       this.logo = state.logo
@@ -52,12 +52,5 @@ export class LoginComponent {
     this.store.dispatch(new UserActions.Login(payload))
   }
 
-  setProvider(authProvider) {
-    this.store.dispatch(
-      new SettingsActions.SetStateAction({
-        authProvider,
-      }),
-    )
-  }
 }
 

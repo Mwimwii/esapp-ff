@@ -35,7 +35,7 @@ import { CbbSchedulesComponent } from './pages/cbb/schedules/schedules.component
 import { MarketComponent } from './pages/market/market.component'
 import { PricesComponent } from './pages/prices/prices.component'
 import { ReportsComponent } from './pages/reports/reports.component'
-import { CumulativeComponent } from './pages/cumulative/cumulative.component'
+import { FarmerRegistrationComponent } from './pages/farmer-registration/farmer-registration.component'
 import { UserComponent } from './pages/user/user.component'
 import { UserProfileComponent } from './pages/user/profile/profile.component'
 import { MyComponentsModule } from './components/my-components.module'
@@ -81,46 +81,6 @@ const routes: Routes = [
         component: LkmSocComponent,
       },
       {
-        path: 'mgf',
-        data: { title: 'Matching Grant Facility' },
-        component: MgfComponent,
-      },
-      {
-        path: 'mgf/org',
-        data: { title: 'Organizations' },
-        component: MgfOrgComponent,
-      },
-      {
-        path: 'mgf/evaluations',
-        data: { title: 'Evaluations' },
-        component: MgfEvaluationsComponent,
-      },
-      {
-        path: 'mgf/proposals',
-        data: { title: 'Proposals' },
-        component: MgfProposalsComponent,
-      },
-      {
-        path: 'mgf/applications',
-        data: { title: 'Applications' },
-        component: MgfApplicationsComponent,
-      },
-      {
-        path: 'mgf/applicants',
-        data: { title: 'Applicants' },
-        component: MgfApplicantsComponent,
-      },
-      {
-        path: 'mgf/approvals',
-        data: { title: 'Approvals' },
-        component: MgfApprovalsComponent,
-      },
-      {
-        path: 'mgf/concept-notes',
-        data: { title: 'Concept Notes' },
-        component: MgfConceptNotesComponent,
-      },
-      {
         path: 'me',
         data: { title: 'Monitoring and Evaluation' },
         component: MeComponent,
@@ -161,9 +121,9 @@ const routes: Routes = [
         component: ReportsComponent,
       },
       {
-        path: 'cumulative',
-        data: { title: 'Training attendance cumulative' },
-        component: CumulativeComponent,
+        path: 'farmer-registration',
+        data: { title: 'Training attendance farmer-registration' },
+        component: FarmerRegistrationComponent,
       },
       {
         path: 'user',
@@ -233,7 +193,7 @@ const routes: Routes = [
     MarketComponent,
     PricesComponent,
     ReportsComponent,
-    CumulativeComponent,
+    FarmerRegistrationComponent,
     UserComponent,
     UserProfileComponent,
 

@@ -47,7 +47,7 @@
           <div class="table-responsive text-wrap">
             <nz-tabset class="tabs" [nzSelectedIndex]="nzSelectedIndex">
                 <nz-tab nzTitle="My Stories" [nzForceRender]="true" (nzClick)='nzSelectedIndex=0'>
-                    <app-my-story-tables-3 [route]='"soc/story-of-change-by-user-id"'></app-my-story-tables-3>
+                    <app-farmer-table [route]='"soc/story-of-change-by-user-id"'></app-farmer-table>
                 </nz-tab>
               <nz-tab nzTitle="Create Stories">
                 <app-soc-create-story-form></app-soc-create-story-form>

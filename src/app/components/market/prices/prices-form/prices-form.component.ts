@@ -24,12 +24,7 @@ export class PricesFormComponent implements OnInit {
         label: 'Market',
         placeholder: 'Select Market',
         required: true,
-        options: [
-          { value: 1, label: 'Chilenge' },
-          { value: 2, label: 'Foxdale' },
-          { value: 3, label: 'Ngombe' },
-          { value: 4, label: 'Obama' },
-        ],
+        options: [],
       },
     },
     {

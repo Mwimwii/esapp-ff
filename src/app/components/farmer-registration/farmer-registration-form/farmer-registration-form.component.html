@@ -1,0 +1,30 @@
+<div class="container">
+  <br>
+  <b>Instructions</b>
+  <ol>
+   <li>
+     Click the blue " Update section" link alongside a section to update a particular section.
+
+   </li>
+    <li>
+      Completed sections can be edited by navigating to the forms in the same manner.
+    </li>
+    <li>
+      Completed sections will be marked with COMPLETED under the status column.
+    </li>
+    <li> Once all the sections have been completed a green "Submit for review" button will appear at the bottom of the table. Click it to submit this story for review.
+    </li>
+   <li>
+     To attach media(Completed interview guide,audio, pictures, videos) to this Story, click the  icon below, then below the story details on the view page, click media and attach each type of media from there
+   </li>
+  </ol>
+  <hr>
+  <form [formGroup]="form" (ngSubmit)="submit(model)" nz-form [nzLayout]="'vertical'">
+    <formly-form [form]="form" [fields]="fields" [model]="model">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-danger ml-2">Reset</button>
+    </formly-form>
+  </form>
+</div>
+
+

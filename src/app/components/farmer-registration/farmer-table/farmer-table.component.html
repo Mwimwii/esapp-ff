@@ -1,0 +1,47 @@
+  <nz-table #basicTable [nzData]="tableData"
+                [nzShowPagination]="true" class="table mb-4">
+        <thead>
+          <tr>
+            <th class="bg-transparent">#</th>
+            <th class="bg-transparent">Name</th>
+            <th class="bg-transparent">Sex</th>
+            <th class="bg-transparent">NRC</th>
+            <th class="bg-transparent">Edit</th>
+            <th *ngIf='false' class="bg-transparent">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let data of basicTable.data">
+          <tr >
+            <td [nzExpand]="expandSet.has(data.id)"
+                (nzExpandChange)="onExpandChange(data.id, $event)">
+            <td>
+            <div>{{data.title}}{{data.first_name}} {{data.other_names}}</div>
+            <div class="text-gray-4">{{data.last_name}}</div>
+            </td>
+            <td>
+              <div>{{data.sex}}</div>
+            </td>
+            <td>
+              <a href="javascript: void(0);" class="text-blue">
+                {{data.nrc}}
+              </a>
+            </td>
+            <td >
+              <button type="button" class="btn">
+                <i class="fe fe-edit"></i>
+              </button>
+            </td>
+            <td *ngIf='!data.status'>
+              <button type="button" class="btn">
+                <i class="fe fe-arrow-up-circle"></i>
+              </button>
+            </td>
+          </tr>
+          <tr [nzExpand]="expandSet.has(data.id)">
+            <app-farmer-table-detail [data]='data'></app-farmer-table-detail>
+          </tr>
+        </ng-container>
+
+        </tbody>
+      </nz-table>
