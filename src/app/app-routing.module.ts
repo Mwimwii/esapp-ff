@@ -18,23 +18,13 @@ import { LkmComponent } from './pages/lkm/lkm.component'
 import { LkmInterviewsComponent } from './pages/lkm/interviews/interviews.component'
 import { LkmMystoriesComponent } from './pages/lkm/mystories/mystories.component'
 import { LkmSocComponent } from './pages/lkm/soc/soc.component'
-import { MgfComponent } from './pages/mgf/mgf.component'
-import { MgfOrgComponent } from './pages/mgf/org/org.component'
-import { MgfEvaluationsComponent } from './pages/mgf/evaluations/evaluations.component'
-import { MgfProposalsComponent } from './pages/mgf/proposals/proposals.component'
-import { MgfApplicationsComponent } from './pages/mgf/applications/applications.component'
-import { MgfApplicantsComponent } from './pages/mgf/applicants/applicants.component'
-import { MgfApprovalsComponent } from './pages/mgf/approvals/approvals.component'
-import { MgfConceptNotesComponent } from './pages/mgf/concept-notes/concept-notes.component'
 import { MeComponent } from './pages/me/me.component'
 import { MeSchedulesComponent } from './pages/me/schedules/schedules.component'
 import { CbbComponent } from './pages/cbb/cbb.component'
 import { CbbTopicsComponent } from './pages/cbb/topics/topics.component'
 import { CbbAttendanceComponent } from './pages/cbb/attendance/attendance.component'
-import { CbbSchedulesComponent } from './pages/cbb/schedules/schedules.component'
 import { MarketComponent } from './pages/market/market.component'
 import { PricesComponent } from './pages/prices/prices.component'
-import { ReportsComponent } from './pages/reports/reports.component'
 import { FarmerRegistrationComponent } from './pages/farmer-registration/farmer-registration.component'
 import { UserComponent } from './pages/user/user.component'
 import { UserProfileComponent } from './pages/user/profile/profile.component'
@@ -116,11 +106,6 @@ const routes: Routes = [
         component: PricesComponent,
       },
       {
-        path: 'reports',
-        data: { title: 'Reports' },
-        component: ReportsComponent,
-      },
-      {
         path: 'farmer-registration',
         data: { title: 'Training attendance farmer-registration' },
         component: FarmerRegistrationComponent,
@@ -176,23 +161,13 @@ const routes: Routes = [
     LkmInterviewsComponent,
     LkmMystoriesComponent,
     LkmSocComponent,
-    MgfComponent,
-    MgfOrgComponent,
-    MgfEvaluationsComponent,
-    MgfProposalsComponent,
-    MgfApplicationsComponent,
-    MgfApplicantsComponent,
-    MgfApprovalsComponent,
-    MgfConceptNotesComponent,
     MeComponent,
     MeSchedulesComponent,
     CbbComponent,
     CbbTopicsComponent,
     CbbAttendanceComponent,
-    CbbSchedulesComponent,
     MarketComponent,
     PricesComponent,
-    ReportsComponent,
     FarmerRegistrationComponent,
     UserComponent,
     UserProfileComponent,

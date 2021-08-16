@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormGroup } from '@angular/forms'
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core'
 import { EsappRequestHandlerService } from '../../../../esapp-request-handler.service'
+import { NzNotificationService } from 'ng-zorro-antd/notification'
 
 @Component({
   selector: 'app-prices-form',
@@ -81,42 +82,12 @@ export class PricesFormComponent implements OnInit {
         placeholder: 'ZMW',
         required: true,
       },
-    },
-    {
-      key: 'district',
-      type: 'input',
-      templateOptions: {
-        type: 'text',
-        label: 'District',
-        placeholder: 'Enter a District',
-        required: true,
-      },
-    },
-    {
-      key: 'year',
-      type: 'input',
-      templateOptions: {
-        type: 'text',
-        label: 'Year',
-        placeholder: 'Enter a Year',
-        required: true,
-      },
-    },
-    {
-      key: 'month',
-      type: 'input',
-      templateOptions: {
-        type: 'text',
-        label: 'Month',
-        placeholder: 'Enter the Month',
-        required: true,
-      },
-    },
+    }
   ]
 
   fields: FormlyFieldConfig[] =[]
 
-  constructor(private http: EsappRequestHandlerService) {}
+  constructor(private http: EsappRequestHandlerService,  private notification: NzNotificationService) {}
 
   ngOnInit(): void {
     this.http.getDataAuthenticated('/commodity-price-levels')
@@ -167,9 +138,13 @@ export class PricesFormComponent implements OnInit {
 
   submit(model: any): any {
   this.loading = true
+  this.model.year = "2021"
+  this.model.month = "12"
+  this.model.district = "1"
     this.http.postDataAuthenticated('/prices', this.model).subscribe(data=> {
       this.loading = false
     })
-    alert(JSON.stringify(this.model))
+  this.notification.success('Commodity Added', 'Commodity Price added')
+
   }
 }

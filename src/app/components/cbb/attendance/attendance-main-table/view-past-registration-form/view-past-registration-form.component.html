@@ -6,24 +6,21 @@
 <div class="table-responsive mb-1">
   <nz-row>
     <nz-col [nzSpan]="20">
-      <h3>Attendance Report</h3>
-      <nz-table #basicTable [nzData]="dataSet">
+      <div [className]='"section-label"'><strong>Attendance</strong></div><br />
+      <!-- <div> {{data.output_level_indicator}}</div> -->
+      <nz-table #basicTable [nzData]="tableData">
         <thead>
         <tr>
           <th>Name</th>
-          <th>NRC</th>
-          <th>Address</th>
-          <th>Action</th>
+          <th>Sex</th>
+          <th>Training Date</th>
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let data of basicTable.data">
-          <td>{{data.name}}</td>
-          <td>{{data.age}}</td>
-          <td>{{data.address}}</td>
-          <td>
-            <a>Remove</a>
-          </td>
+        <tr *ngFor="let farmer of basicTable.data">
+          <td>{{farmer.full_names}}</td>
+          <td>{{farmer.sex}}</td>
+          <td>{{farmer.training_date}}</td>
         </tr>
         </tbody>
       </nz-table>

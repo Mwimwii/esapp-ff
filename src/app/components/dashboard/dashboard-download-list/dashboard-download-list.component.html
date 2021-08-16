@@ -1,38 +1,11 @@
-<div>
-  <div class="text-uppercase font-size-12 mb-2 text-gray-6">Documents (3)</div>
-  <ul class="list-unstyled">
-    <li class="item">
-      <a href="javascript: void(0);" class="itemLink">
-        <div class="itemPic mr-3">
-          <i class="itemIcon fe fe-file"></i>
-        </div>
-        <div>
-          <div class="text-blue">Interview Guide Template.pdf</div>
-          <div class="text-muted">568kb</div>
-        </div>
-      </a>
-    </li>
-    <li class="item">
-      <a href="javascript: void(0);" class="itemLink">
-        <div class="itemPic mr-3">
-          <i class="itemIcon fe fe-file"></i>
-        </div>
-        <div>
-          <div class="text-blue">Category A Farmer Registration Form.pdf</div>
-          <div class="text-muted">1.2mb</div>
-        </div>
-      </a>
-    </li>
-    <li class="item">
-      <a href="javascript: void(0);" class="itemLink">
-        <div class="itemPic mr-3">
-          <i class="itemIcon fe fe-file"></i>
-        </div>
-        <div>
-          <div class="text-blue">Farming as a Business(FaaBS) Attendance Sheet.pdf</div>
-          <div class="text-muted">200kb</div>
-        </div>
-      </a>
-    </li>
-  </ul>
+<div class='row justify-content-center'>
+  <div class='col-lg-4 col-md-4'>
+    <vb-widgets-lists-21 [data]='{"title": "Register Farmers", "icon": "fe-users", "url":"/farmer-registration"}'></vb-widgets-lists-21>
+  </div>
+  <div class='col-lg-4 col-md-4'>
+    <vb-widgets-lists-21 [data]='{"title": "Mark Attendance", "icon": "fe-user-check", "url":"/cbb/attendance"}'></vb-widgets-lists-21>
+  </div>
+  <div class='col-lg-4 col-md-4'>
+    <vb-widgets-lists-21 [data]='{"title": "Market Prices", "icon": "fe-bar-chart-2", "url":"/prices"}'></vb-widgets-lists-21>
+  </div>
 </div>

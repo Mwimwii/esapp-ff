@@ -43,29 +43,29 @@ export const getMenuData: any[] = [
     //   },
     // ],
   },
-  {
-    title: 'Stories of Change',
-    key: 'pxo5b',
-    url: '/lkm/mystories',
-    icon: 'fe fe-book-open',
-    // children: [
-      // {
-      //   title: 'Interview Guide',
-      //   key: 'h7aad',
-      //   url: '/lkm/interviews',
-      // },
-      // {
-      //   title: 'My Stories',
-      //   key: 'rniyi9',
-      //   url: '/lkm/mystories',
-      // },
-      // {
-      //   title: 'Stories of Change',
-      //   key: 'tx7k6w',
-      //   url: '/lkm/soc',
-      // },
-    // ],
-  },
+  // {
+  //   title: 'Stories of Change',
+  //   key: 'pxo5b',
+  //   url: '/lkm/mystories',
+  //   icon: 'fe fe-book-open',
+  //   // children: [
+  //     // {
+  //     //   title: 'Interview Guide',
+  //     //   key: 'h7aad',
+  //     //   url: '/lkm/interviews',
+  //     // },
+  //     // {
+  //     //   title: 'My Stories',
+  //     //   key: 'rniyi9',
+  //     //   url: '/lkm/mystories',
+  //     // },
+  //     // {
+  //     //   title: 'Stories of Change',
+  //     //   key: 'tx7k6w',
+  //     //   url: '/lkm/soc',
+  //     // },
+  //   // ],
+  // },
   {
     title: 'User Administration',
     key: '2hfvfk',

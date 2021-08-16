@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { EsappRequestHandlerService } from '../../../esapp-request-handler.service'
+import { Subscription } from 'rxjs';
+import { any } from 'codelyzer/util/function'
+
 declare var require: any
 
 @Component({
@@ -7,18 +10,29 @@ declare var require: any
   templateUrl: './farmer-table.component.html',
   styleUrls: ['./farmer-table.component.scss'],
 })
+// This component lists all the farmers in the table
 export class AppFarmerTableComponent implements OnInit {
-  // tableData = data
   @Input() route: string;
   tableData : any[];
   createTable = true
   current: number = 0
   checklist: boolean = false
+  subscription;
+
   constructor(private http: EsappRequestHandlerService) {}
+
+
+
   ngOnInit() {
-    this.http.getDataAuthenticated(this.route)
+    this.subscription = this.http.getDataAuthenticated(this.route)
       .subscribe(data => this.tableData = data)
   }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
+  }
+
+
   pre(): void {
     this.current -= 1
     this.changeContent()

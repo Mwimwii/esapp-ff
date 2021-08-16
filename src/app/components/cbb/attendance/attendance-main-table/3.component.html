@@ -2,18 +2,14 @@
   <nz-tabset class="tabs" [nzSelectedIndex]="0">
     <nz-tab nzTitle="Past Trainings" [nzForceRender]="true">
       <nz-table #basicTable [nzData]="tableData"
-                [nzShowPagination]="false" class="table mb-4">
+                nzShowPagination class="table mb-4">
         <thead>
 <!--        Year	Month	Camp	Days Office	Days Field	Days Total	Days non-esapp activities-->
           <tr>
-            <th class="bg-transparent">More</th>
-            <th class="bg-transparent">Year</th>
-            <th class="bg-transparent">Month</th>
-            <th class="bg-transparent">Camp</th>
-            <th class="bg-transparent">Days Office</th>
-            <th class="bg-transparent">Days Field</th>
-            <th class="bg-transparent">Days Total</th>
-            <th class="bg-transparent">Non-esapp Activities</th>
+            <th class="bg-transparent"></th>
+            <th class="bg-transparent">Topic</th>
+            <th class="bg-transparent">Category</th>
+            <th class="bg-transparent">Subcomponent</th>
           </tr>
         </thead>
         <tbody>
@@ -23,97 +19,24 @@
                 (nzExpandChange)="onExpandChange(data.id, $event)">
             </td>
             <td>
-              <div class="vb__utils__avatar">
-                <img [src]="data.avatar" alt="User" />
-              </div>
+              {{ data.topic }}
             </td>
             <td>
-              <div>{{data.userName.name}}</div>
-              <div class="text-gray-4">{{data.userName.position}}</div>
+              {{ data.category }}
             </td>
             <td>
-            </td>
-            <td>
-              <a href="javascript: void(0);" class="text-blue">
-                {{data.location}}
-              </a>
-            </td>
-            <td>
-              <a href="javascript: void(0);" class="text-blue">
-                {{data.location}}
-              </a>
-            </td>
-            <td>
-              <a href="javascript: void(0);" class="text-blue">
-                {{data.location}}
-              </a>
+              {{ data.subcomponent }}
             </td>
           </tr>
           <tr [nzExpand]="expandSet.has(data.id)">
-            <app-view-past-registration-form></app-view-past-registration-form>
+            <app-view-past-registration-form [data]='data'></app-view-past-registration-form>
           </tr>
         </ng-container>
-
         </tbody>
       </nz-table>
     </nz-tab>
-    <nz-tab nzTitle="Upcoming Trainings">
-      <nz-table #basicTable [nzData]="tableData"
-                [nzShowPagination]="false" class="table mb-4">
-        <thead>
-        <!--        Year	Month	Camp	Days Office	Days Field	Days Total	Days non-esapp activities-->
-        <tr>
-          <th class="bg-transparent">More</th>
-          <th class="bg-transparent">Year</th>
-          <th class="bg-transparent">Month</th>
-          <th class="bg-transparent">Camp</th>
-          <th class="bg-transparent">Days Office</th>
-          <th class="bg-transparent">Days Field</th>
-          <th class="bg-transparent">Days Total</th>
-          <th class="bg-transparent">Non-esapp Activities</th>
-        </tr>
-        </thead>
-        <tbody>
-        <ng-container *ngFor="let data of basicTable.data">
-          <tr >
-            <td [nzExpand]="expandSet.has(data.id)"
-                (nzExpandChange)="onExpandChange(data.id, $event)">
-            </td>
-            <td>
-              <div class="vb__utils__avatar">
-                <img [src]="data.avatar" alt="User" />
-              </div>
-            </td>
-            <td>
-              <div>{{data.userName.name}}</div>
-              <div class="text-gray-4">{{data.userName.position}}</div>
-            </td>
-            <td>
-            </td>
-            <td>
-              <a href="javascript: void(0);" class="text-blue">
-                {{data.location}}
-              </a>
-            </td>
-            <td>
-              <a href="javascript: void(0);" class="text-blue">
-                {{data.location}}
-              </a>
-            </td>
-            <td>
-              <a href="javascript: void(0);" class="text-blue">
-                {{data.location}}
-              </a>
-            </td>
-          </tr>
-          <tr [nzExpand]="expandSet.has(data.id)">
-            <app-register-attendants-form></app-register-attendants-form>
-          </tr>
-        </ng-container>
-
-        </tbody>
-      </nz-table>
-
+    <nz-tab nzTitle="Mark Attendance">
+      <app-register-attendants-form></app-register-attendants-form>
     </nz-tab>
   </nz-tabset>
 </div>

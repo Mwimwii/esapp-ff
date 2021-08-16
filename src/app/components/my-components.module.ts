@@ -28,7 +28,7 @@ import { CbTopicsTabsComponent } from './cbb/topics/cbb-topics-tabs/cbb-topics-t
 import { CbTopicsFormComponent } from './cbb/topics/cbb-topics-form/cbb-topics-form.component'
 import { AppAttendanceMainTableComponent } from './cbb/attendance/attendance-main-table/3.component'
 import { RegisterAttendantsFormComponent } from './cbb/attendance/register-attendance-form/view-story-form.component'
-import { ViewPastRegistrationFormComponent } from './cbb/attendance/view-past-registration-form/view-past-registration-form.component'
+import { ViewPastRegistrationFormComponent } from './cbb/attendance/attendance-main-table/view-past-registration-form/view-past-registration-form.component'
 import { PricesTableComponent } from './market/prices/prices-table/prices-table.component'
 import { ViewPriceComponent } from './market/prices/prices-view-price/prices-view-price.component'
 import { PricesFormComponent } from './market/prices/prices-form/prices-form.component'

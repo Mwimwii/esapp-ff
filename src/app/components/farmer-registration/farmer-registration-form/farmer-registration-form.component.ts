@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core'
 import { FormGroup } from '@angular/forms'
 import { FormlyFieldConfig } from '@ngx-formly/core'
 import { EsappRequestHandlerService } from '../../../esapp-request-handler.service'
+import { NzNotificationService } from 'ng-zorro-antd/notification'
 
 @Component({
   selector: 'app-farmer-registration-form',
@@ -9,13 +10,12 @@ import { EsappRequestHandlerService } from '../../../esapp-request-handler.servi
   styleUrls: ['./farmer-registration-form.component.scss'],
 })
 export class AppFarmerRegistrationFormComponent implements OnInit {
-  constructor(private http: EsappRequestHandlerService) {}
+  constructor(private http: EsappRequestHandlerService,
+    private notification: NzNotificationService) {}
 
   ngOnInit(): void {}
   form = new FormGroup({})
-
   model = {}
-
   genericField = (kval, klabel, kplaceholder, required = this.required) => {
     return {
       key: kval,
@@ -196,8 +196,8 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
     let now = new Date()
     this.model['registration_date'] = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate()
     this.model['age'] = this.calcAge(this.model['dob'])
+    this.notification.success('Farmer Registered', 'Farmer successfully registered!')
 
-    alert(JSON.stringify(this.model))
     if(this.form.valid){
       this.http.postDataAuthenticated('/farmers', this.model)
         .subscribe(data => console.log, error => console.error)

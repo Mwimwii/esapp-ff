@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'app-dashboard-download-list',
+  selector: 'app-dashboard-actions',
   templateUrl: './dashboard-download-list.component.html',
   styleUrls: ['./dashboard-download-list.component.scss'],
 })

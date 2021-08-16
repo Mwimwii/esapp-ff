@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, Input } from '@angular/core'
+import { EsappRequestHandlerService } from '../../../../../esapp-request-handler.service'
 
 @Component({
   selector: 'app-view-past-registration-form',
@@ -6,31 +7,16 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['./view-past-registration-form.component.scss'],
 })
 export class ViewPastRegistrationFormComponent implements OnInit {
+  @Input() data
   loading = false
-  constructor() {}
+  tableData = []
 
-  ngOnInit(): void {}
-  data = []
-  dataSet = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-    },
-  ]
+  constructor(private http: EsappRequestHandlerService) {}
+
+  ngOnInit(): void {
+    this.http.getDataAuthenticated('/attendance')
+      .subscribe(data => this.tableData = data)
+  }
   change(): void {
     this.loading = true
     if (this.data.length > 0) {

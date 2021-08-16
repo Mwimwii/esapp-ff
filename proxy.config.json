@@ -1,6 +1,6 @@
 {
   "/api/*": {
-    "target": "http://127.0.0.1/esapp/api/web",
+    "target": "http://41.222.18.4:8088/ESAPP-MIS/api/web/v1",
     "secure": false,
     "pathRewrite": {"^/api" : ""}
   }

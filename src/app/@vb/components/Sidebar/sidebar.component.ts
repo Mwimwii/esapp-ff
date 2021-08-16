@@ -13,7 +13,7 @@ export class SidebarComponent {
   settings: any = {}
   theme: any
 
-  defaultColor = '#4b7cf3'
+  defaultColor = '#28A745'
   window: any = window as any
 
   constructor(private store: Store<any>) {

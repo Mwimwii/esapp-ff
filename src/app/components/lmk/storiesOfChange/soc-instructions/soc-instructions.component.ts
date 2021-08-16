@@ -8,8 +8,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core'
   styleUrls: ['./soc-instructions.component.scss'],
 })
 export class StoriesOfChangeInstructionsComponent implements OnInit {
-  instructions: string[] = ["You can review stories marked with status  Pending IKMO review and accept the story if its OK or Send it back for changes.",
-                      "Click the icon  to view/review the story details"]
+  instructions: string[] = [""]
   constructor() {}
   ngOnInit(): void {}
 }
