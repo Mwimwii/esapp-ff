@@ -1,28 +1,22 @@
 import { Component, OnInit } from '@angular/core'
 import { EsappRequestHandlerService } from '../../../../esapp-request-handler.service'
-declare var require: any
+import { DataService } from '../../../../services/data-service'
+import { Observable } from 'rxjs'
 
 @Component({
   selector: 'app-attendance-main-tables-3',
-  templateUrl: './3.component.html',
-  styleUrls: ['./3.component.scss'],
+  templateUrl: './faabs-attendance-table.component.html',
+  styleUrls: ['./faabs-attendance-table.component.scss'],
 })
 export class AppAttendanceMainTableComponent implements OnInit {
-  constructor(private http: EsappRequestHandlerService) {}
+  constructor(private http: DataService) {}
   ngOnInit() {
-    this.http.getDataAuthenticated('/topics')
-      .subscribe(data => {
+    this.http.getFaabsTopics()
+      .subscribe((data:[]) => {
         this.tableData = data
-        // this.tableData = data.map(item => {
-        //                           return {
-        //                             topic: item.topic,
-        //                             date: item.training_date}
-        //                         })
       })
   }
-
-
-  tableData: any[]
+  tableData: []
   createTable = true
   current: number = 0
   expandSet = new Set<number>()

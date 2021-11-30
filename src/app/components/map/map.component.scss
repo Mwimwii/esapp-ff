@@ -1,0 +1,18 @@
+.map-container {
+  position: relative;
+  height: 500px;
+  width: 100%;
+}
+
+.map-frame {
+  //border: 2px solid #DDFFE1;
+  //border-radius: 10px;
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+  border-radius: 10px;
+  filter: drop-shadow(0.4rem 0.1rem 0.7rem #DDD);
+}
+

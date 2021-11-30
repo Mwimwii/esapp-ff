@@ -1,0 +1,33 @@
+<div class="table-responsive text-wrap">
+  <nz-tabset class="tabs" [nzSelectedIndex]="0">
+    <nz-tab nzTitle="Past Trainings" [nzForceRender]="true">
+      <nz-table #basicTable [nzData]="tableData"
+                nzShowPagination class="table mb-4">
+        <thead>
+          <tr>
+            <th class="bg-transparent"></th>
+            <th class="bg-transparent">Topic</th>
+            <th class="bg-transparent">Category</th>
+            <th class="bg-transparent">Subcomponent</th>
+          </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let data of basicTable.data">
+          <tr>
+            <td [nzExpand]="expandSet.has(data.id)"
+                (nzExpandChange)="onExpandChange(data.id, $event)">
+            </td>
+            <td>{{ data.topic }}</td>
+            <td>{{ data.category }}</td>
+            <td>{{ data.subcomponent }}</td>
+          </tr>
+          <tr [nzExpand]="expandSet.has(data.id)">
+            <app-view-past-registration-form [data]='data'></app-view-past-registration-form>
+          </tr>
+        </ng-container>
+        </tbody>
+      </nz-table>
+    </nz-tab>
+
+  </nz-tabset>
+</div>

@@ -21,17 +21,22 @@ import { reducers, metaReducers } from './store/reducers'
 import { UserEffects } from './store/user/effects'
 import { firebaseConfig, firebaseAuthService } from './services/firebase'
 import { basicAuthService } from './services/basic-auth'
-import { MockHttpCallInterceptor } from './services/fakeApi'
+// PermissionState is required for the geolocation service to
+// work on Android devices.
+import { PermissionState } from '@capacitor/core'
 
-// locale resistration
+// locale registration
 import { registerLocaleData } from '@angular/common'
 import { default as localeEn } from '@angular/common/locales/en'
 import { NZ_I18N, en_US as localeZorro } from 'ng-zorro-antd/i18n'
 import { QuillModule } from 'ngx-quill'
 import { FormlyModule } from '@ngx-formly/core'
-import { FormlyFieldFile } from './components/formly/file-component'
-import { FieldNgSelect } from './components/formly/quill/ng-select'
-import { FieldQuillType } from './components/formly/quill/quil-type'
+import { FormlyFieldFile } from './components/common/FormlyUploadField/file-component'
+import { FieldNgSelect } from './components/common/Quill/ng-select'
+import { FieldQuillType } from './components/common/Quill/quil-type'
+import { DataService } from './services/data-service'
+// import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
+
 const LOCALE_PROVIDERS = [
   { provide: LOCALE_ID, useValue: 'en' },
   { provide: NZ_I18N, useValue: localeZorro },
@@ -81,11 +86,13 @@ registerLocaleData(localeEn, 'en')
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    // NgZorroAntdMobileModule
   ],
   providers: [
     // auth services
     firebaseAuthService,
     basicAuthService,
+    DataService,
 
     // fake http interceptors
     // {

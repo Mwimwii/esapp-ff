@@ -1,4 +1,4 @@
-  <nz-table #basicTable [nzData]="tableData"
+  <nz-table #basicTable [nzData]="farmers | async"
                 [nzShowPagination]="true" class="table mb-4">
         <thead>
           <tr>

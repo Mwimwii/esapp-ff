@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms'
 import { FormlyFieldConfig } from '@ngx-formly/core'
 import { EsappRequestHandlerService } from '../../../esapp-request-handler.service'
 import { NzNotificationService } from 'ng-zorro-antd/notification'
+import { Geolocation } from '@capacitor/geolocation'
 
 @Component({
   selector: 'app-farmer-registration-form',
@@ -10,10 +11,25 @@ import { NzNotificationService } from 'ng-zorro-antd/notification'
   styleUrls: ['./farmer-registration-form.component.scss'],
 })
 export class AppFarmerRegistrationFormComponent implements OnInit {
-  constructor(private http: EsappRequestHandlerService,
-    private notification: NzNotificationService) {}
+  latitude: number;
+  longintude: number;
 
-  ngOnInit(): void {}
+  constructor(
+              private http: EsappRequestHandlerService,
+              private notification: NzNotificationService) {}
+
+  setCurrentPosition = async () => {
+   Geolocation.getCurrentPosition()
+     .then(({coords}) => {
+       this.longintude = coords.longitude;
+       this.latitude = coords.latitude;
+     });
+  };
+
+    ngOnInit(): void {
+        this.setCurrentPosition()
+  }
+
   form = new FormGroup({})
   model = {}
   genericField = (kval, klabel, kplaceholder, required = this.required) => {
@@ -38,7 +54,6 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
         template: `${sep_tag}<strong>${klabel}:</strong></div><br />`,
     }
   }
-
   required: boolean = true
 
   fields: FormlyFieldConfig[] = [
@@ -110,7 +125,6 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
             type: 'text',
             label: 'Marital Status',
             placeholder: 'Select Marital Status',
-            required: this.required,
             options: [
               { value: 'Single', label: 'Single' },
               { value: 'Married', label: 'Married' },
@@ -130,8 +144,6 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
             type: 'text',
             label: 'Relationship to Household Head',
             placeholder: 'Select Relationship to Household Head',
-            required: this.required,
-
             options: [
               { value: 'Head of Household', label: 'Head of Household' },
               { value: 'Spouse', label: 'Spouse' },
@@ -149,7 +161,6 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
           type: 'text',
           label: 'Household Head Type',
           placeholder: 'Select Household Head Type',
-          required: this.required,
           options: [
             { value: 'Male Head', label: 'Male Head' },
             { value: 'Female Head', label: 'Female Head' },
@@ -163,13 +174,10 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
             type: 'number',
             label: 'Household Size',
             placeholder: 'Enter Household Size',
-            required: this.required,
           },
         },
       ],
     },
-
-    // Helpers required for entering villages
     this.genericSectionLabel('Location and Village'),
     {
       fieldGroupClassName: 'row',
@@ -180,26 +188,31 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
         { className: 'col-3', ...this.genericField('zone', 'Zone', 'Enter a Zone') },
       ],
     },
-
     this.genericField('commodity', 'Commodity', 'Enter a Commodity'),
-
     this.genericField('contact_number', 'Contact Number', '0977738827'),
-
   ]
 
   submit(model: any): void {
-    // add obejct to the model
+    this.model['latitude'] = this.latitude;
+    this.model['longitude'] = this.longintude;
+
+    // get the user id
+    // set the user id to the created_by
     this.model['created_by'] = 1
     this.model['updated_by'] = 1
-    this.model['faabs_group_id'] = 1
+
+    // get an empty faabs group
+    this.model['faabs_group_id'] = 6
     this.model['status'] = 1
+
     let now = new Date()
     this.model['registration_date'] = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate()
     this.model['age'] = this.calcAge(this.model['dob'])
+
     this.notification.success('Farmer Registered', 'Farmer successfully registered!')
 
     if(this.form.valid){
-      this.http.postDataAuthenticated('/farmers', this.model)
+      this.http.postDataAuthenticated('/category-a-farmers', this.model)
         .subscribe(data => console.log, error => console.error)
     }
   }

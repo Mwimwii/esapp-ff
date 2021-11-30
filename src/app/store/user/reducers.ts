@@ -1,12 +1,15 @@
 import * as UserActions from './actions'
 
 export const initialState: object = {
-  id: '',
-  name: '',
-  role: '',
-  email: '',
+  id: '19',
+  // user will have a camp id
+  // if the user has no camp id, then we cannot login
+  camp_id: '10',
+  name: 'Admin Essapp',
+  role: 'camp_officer',
+  email: 'admin@esapp.gov.zm',
   avatar: '',
-  authorized: false,
+  authorized: true,
   loading: false,
 }
 
@@ -36,6 +39,7 @@ export function reducer(state = initialState, action: UserActions.Actions): obje
     case UserActions.FLUSH_USER:
       return {
         id: '',
+        camp_id: '',
         name: '',
         role: '',
         email: '',

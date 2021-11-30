@@ -1,8 +1,0 @@
-@import '../../../../../mixins';
-
-.table {
-  white-space: nowrap !important;
-  ::ng-deep .ant-table-body {
-    overflow-x: auto !important;
-  }
-}

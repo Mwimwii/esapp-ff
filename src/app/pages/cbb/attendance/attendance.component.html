@@ -3,16 +3,59 @@
     <div class="col-lg-12">
       <div class="card card-top card-top-primary">
         <div class="card-header">
-          <vb-headers-heading-2
-            [data]="{'title':'FaaBS Training Attendance','description':'Welcome to the FTA section.'}"
-          ></vb-headers-heading-2>
-        </div>
-      </div>
-      <div class="card">
-        <div class="card-body">
-          <app-attendance-main-tables-3></app-attendance-main-tables-3>
+          <div>
+<!--            <NoticeBar [option]="{ content: '我是小黄条，小黄条的小，小黄条的黄，小黄条的条，请多多关照！！！', font: '14px' }">-->
+<!--            </NoticeBar>-->
+              <nz-tabset nzType="card">
+                <nz-tab *ngFor="let faab of faabs | async" [nzTitle]="faab.name">
+<!--                    <nz-descriptions-item nzTitle="Latitude">{{faab.longitude}}</nz-descriptions-item>-->
+<!--                    <nz-descriptions-item nzTitle="Latitude"> {{faab.latitude}}</nz-descriptions-item>-->
+                  <app-faabs-tab [faabs_id]='faab.id'></app-faabs-tab>
+                  <div class='row ml-4'>
+                    <div style="margin-bottom: 8px;" class='mx-1'><button nz-button (click)='showTopicsModal(faab.id)'>Show Topics</button></div>
+                    <div style="margin-bottom: 8px;" class='mx-1'><button nz-button (click)='showAttendanceModal(faab.id)'>Attendance</button></div>
+                    <div style="margin-bottom: 8px;" class='mx-1'><button nz-button (click)='showPastAttendanceModal(faab.id)'>Show Attendance</button></div>
+                  </div>
+                </nz-tab>
+              </nz-tabset>
+          </div>
+          </div>
+<!--          <vb-headers-heading-2-->
+<!--            [data]="{'title':'FaaBS Training Attendance','description':'Welcome to the FTA section.'}"-->
+<!--          ></vb-headers-heading-2>-->
+          <!--          Display them in tabs-->
         </div>
       </div>
     </div>
+                  <div name='topics-modal'>
+                      <nz-modal [(nzVisible)]="isTopicsVisible" nzTitle="Topics Enrolled" (nzOnCancel)="handleCancel()" (nzOnOk)="handleTopicsOk()">
+                        <ng-container *nzModalContent>
+                            <ul *ngFor="let enrollment of faabsTopicsEnrollmentsFiltered">
+                              <li>
+                                  <p>{{faabsTopics[enrollment.topic_id].topic}}</p>
+                              </li>
+                            </ul>
+                        </ng-container>
+                      </nz-modal>
+                  </div>
+
+                <div name='attendance-modal'>
+                  <nz-modal [(nzVisible)]="isAttendanceVisible" nzTitle="Attendance Sheet" (nzOnCancel)="handleCancel()" (nzOnOk)="handleAttendanceOk()">
+                    <ng-container *nzModalContent>
+                      <app-register-attendants-form [faabsGroupsId]='faabsIDSelected'></app-register-attendants-form>
+                    </ng-container>
+                  </nz-modal>
+                </div>
+
+                <div name='past-attendance-modal'>
+                  <nz-modal [(nzVisible)]="isPastAttendanceVisible" nzTitle="Past Attendance" (nzOnCancel)="handleCancel()" (nzOnOk)="handlePastAttendanceOk()">
+                    <ng-container *nzModalContent>
+                      <ul *ngFor='let faabsAttendance of faabsAttendanceRegisterFiltered'>
+                        <li>{{faabsAttendance.id}}</li>
+                      </ul>
+<!--                      <app-register-attendants-form [faabsGroupsId]='faabsIDSelected'></app-register-attendants-form>-->
+                    </ng-container>
+                  </nz-modal>
+                </div>
+
   </div>
-</div>

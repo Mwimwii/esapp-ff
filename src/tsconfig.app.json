@@ -9,7 +9,7 @@
   "files": [
     "main.ts",
     "polyfills.ts",
-    "app/components/Footer/config.ts"
+    "app/components/common/Footer/config.ts"
   ],
   "exclude": [
     "test.ts",

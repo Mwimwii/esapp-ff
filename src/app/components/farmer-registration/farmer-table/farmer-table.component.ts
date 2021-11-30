@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { EsappRequestHandlerService } from '../../../esapp-request-handler.service'
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { any } from 'codelyzer/util/function'
+import { DataService} from '../../../services/data-service'
 
 declare var require: any
 
@@ -18,20 +19,13 @@ export class AppFarmerTableComponent implements OnInit {
   current: number = 0
   checklist: boolean = false
   subscription;
+  farmers: Observable<any>;
 
-  constructor(private http: EsappRequestHandlerService) {}
-
-
+  constructor(private http: DataService) {}
 
   ngOnInit() {
-    this.subscription = this.http.getDataAuthenticated(this.route)
-      .subscribe(data => this.tableData = data)
+    this.farmers = this.http.getCategoryAFarmers()
   }
-
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  }
-
 
   pre(): void {
     this.current -= 1
