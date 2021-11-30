@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { CommonModule } from '@angular/common'
 import { SharedModule } from 'src/app/shared.module'
+
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar'
 import { ChartistModule } from 'ng-chartist'
 import { ChartModule } from 'angular2-chartjs'
