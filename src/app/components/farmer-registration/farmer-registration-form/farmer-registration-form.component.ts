@@ -162,8 +162,8 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
           label: 'Household Head Type',
           placeholder: 'Select Household Head Type',
           options: [
-            { value: 'Male Head', label: 'Male Head' },
-            { value: 'Female Head', label: 'Female Head' },
+            { value: 'Male headed', label: 'Male Headed' },
+            { value: 'Female headed', label: 'Female Headed' },
           ],
         },},
         {
@@ -193,8 +193,8 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
   ]
 
   submit(model: any): void {
-    this.model['latitude'] = this.latitude;
-    this.model['longitude'] = this.longintude;
+    this.model['latitude'] = this.latitude.toString()
+    this.model['longitude'] = this.longintude.toString()
 
     // get the user id
     // set the user id to the created_by
