@@ -82,7 +82,7 @@ export class CbbAttendanceComponent implements OnInit {
   async getFaabsTopics(faabsID){
     this.http.getFaabsTopicsEnrollments()
       .subscribe( (data: any) => {
-        this.faabsTopicsEnrollmentsFiltered = data.filter( topic => topic?.faabs_id==faabsID)
+        this.faabsTopicsEnrollmentsFiltered = data.filter( topic => topic?.faabs_id === faabsID)
       } )
   }
   showTopicsModal (faabsID){
@@ -93,21 +93,18 @@ export class CbbAttendanceComponent implements OnInit {
     this.isAttendanceVisible = true;
     this.faabsIDSelected = faabsID;
   }
-  showPastAttendanceModal (faabsID){
-    this.isPastAttendanceVisible = true;
-    this.faabsIDSelected = faabsID;
-    this.faabsAttendanceRegisterFiltered = this.faabsAttendanceRegister.filter((data: FaabsAttendance) => this.faabsIDSelected == data.faabs_group_id)
-    // console.log(typeof(faabsID))
-    // console.log(faabsID)
-    // console.log(typeof(this.faabsAttendanceRegister[0].faabs_group_id))
-    // console.log(this.faabsAttendanceRegister[0].faabs_group_id)
+  showPastAttendanceModal (faabsID) {
+    this.isPastAttendanceVisible = true
+    this.faabsIDSelected = faabsID
+    this.faabsAttendanceRegisterFiltered = this.faabsAttendanceRegister
+                                            .filter((data: FaabsAttendance) =>
+                                              this.faabsIDSelected === data.faabs_group_id)
+
     console.log(this.faabsAttendanceRegister.map(data => {
       return ({ id: data.faabs_group_id })
     }))
-    // console.log(this.faabsAttendanceRegisterFiltered)
-    // this.faabsAttendanceRegisterFiltered = this.faabsAttendanceRegister[faabsID]
   }
-  handleCancel(){
+  handleCancel() {
     this.isTopicsVisible = false;
     this.isAttendanceVisible = false;
     this.isPastAttendanceVisible = false;
