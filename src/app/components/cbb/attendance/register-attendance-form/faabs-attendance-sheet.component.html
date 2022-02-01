@@ -12,6 +12,7 @@
                 (nzCheckedChange)="checkAll($event)"></th>
             <th>Name</th>
             <th>NRC</th>
+            <th>Graduation Status</th>
           </tr>
           </thead>
           <tbody>
@@ -20,6 +21,7 @@
                 (nzCheckedChange)="refreshStatus()"></td>
             <td>{{data.Title}}{{data.first_name}} {{data.last_name}}</td>
             <td>{{data.nrc}}</td>
+            <td>0/2</td>
           </tr>
           </tbody>
         </nz-table>
