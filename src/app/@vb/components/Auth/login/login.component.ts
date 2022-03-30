@@ -51,6 +51,4 @@ export class LoginComponent {
     }
     this.store.dispatch(new UserActions.Login(payload))
   }
-
 }
-

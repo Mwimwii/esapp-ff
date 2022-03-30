@@ -44,7 +44,7 @@ export class FormlyFieldFile extends FieldType implements OnInit {
     super()
   }
   ngOnInit(): void {
-    //get product
+        // get product
   }
   openFileInput() {
     this.el.nativeElement.click()

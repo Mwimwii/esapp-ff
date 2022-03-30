@@ -41,7 +41,6 @@ export class MockHttpCallInterceptor implements HttpInterceptor {
       //
       //   return of(new HttpResponse({ status: 401, body: error }))
       // }
-
     }
 
     if (request.method === 'GET') {
@@ -56,7 +55,6 @@ export class MockHttpCallInterceptor implements HttpInterceptor {
       //
       //   return of(new HttpResponse({ status: 401 }))
       // }
-
       // logout
       // if (request.url === '/api/auth/logout') {
       //   return of(new HttpResponse({ status: 200 }))

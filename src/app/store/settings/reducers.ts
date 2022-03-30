@@ -2,7 +2,7 @@ import store from 'store'
 import * as actions from './actions'
 
 const STORED_SETTINGS = (storedSettings: object) => {
-  const settings = {}
+  const settings = {};
   Object.keys(storedSettings).forEach(key => {
     const item = store.get(`app.settings.${key}`)
     settings[key] = typeof item !== 'undefined' ? item : storedSettings[key]

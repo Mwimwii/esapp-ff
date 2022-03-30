@@ -70,7 +70,6 @@ export class UserEffects implements OnInitEffects {
     }),
   )
 
-
   @Effect()
   loadCurrentAccount: Observable<any> = this.actions.pipe(
     ofType(UserActions.LOAD_CURRENT_ACCOUNT),

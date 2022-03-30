@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-declare var require: any
+declare let require: any
 import { EsappRequestHandlerService } from '../../../../esapp-request-handler.service'
 
 @Component({
@@ -16,12 +16,15 @@ export class PricesTableComponent implements OnInit {
   constructor(private pricesService: EsappRequestHandlerService) {}
   getPrices(): void {
     this.loading = true
-    this.pricesService.getDataAuthenticated('/price')
-      .subscribe(data => {
+    this.pricesService.getDataAuthenticated('/price').subscribe(
+      data => {
         this.tableData = data
         this.loading = false
-      }, error => {this.loading=false})
-
+      },
+      error => {
+        this.loading = false
+      },
+    )
   }
   ngOnInit() {
     this.getPrices()
@@ -43,21 +46,21 @@ export class PricesTableComponent implements OnInit {
     this.checklist = false
     switch (this.current) {
       case 0: {
-        this.createTable = true
-        break
+                this.createTable = true
+                break;
       }
       case 1: {
-        this.checklist = true
-        // this.index = 'Second-content';
-        break
+                this.checklist = true
+                // this.index = 'Second-content';
+                break;
       }
       case 2: {
         // this.index = 'third-content';
-        break
-      }
+            break;
+            }
       default: {
         // this.index = 'error';
-      }
+            }
     }
   }
   expandSet = new Set<number>()

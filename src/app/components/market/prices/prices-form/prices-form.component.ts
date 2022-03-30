@@ -45,7 +45,7 @@ export class PricesFormComponent implements OnInit {
       },
     },
 
-    //Group 2
+    // Group 2
     {
       key: 'price_level_id',
       type: 'select',
@@ -82,20 +82,26 @@ export class PricesFormComponent implements OnInit {
         placeholder: 'ZMW',
         required: true,
       },
-    }
+    },
   ]
 
-  fields: FormlyFieldConfig[] =[]
+  fields: FormlyFieldConfig[] = []
 
-  constructor(private http: EsappRequestHandlerService,  private notification: NzNotificationService) {}
+  constructor(
+    private http: EsappRequestHandlerService,
+    private notification: NzNotificationService,
+  ) {}
 
   ngOnInit(): void {
-    this.http.getDataAuthenticated('/commodity-price-levels')
-      .subscribe( data => this.formFields[2].templateOptions.options=data)
-    this.http.getDataAuthenticated('/markets')
-      .subscribe( data => this.formFields[0].templateOptions.options=data)
-    this.http.getDataAuthenticated('/commodity-type')
-      .subscribe( data => this.formFields[1].templateOptions.options=data)
+    this.http
+      .getDataAuthenticated('/commodity-price-levels')
+      .subscribe(data => (this.formFields[2].templateOptions.options = data))
+    this.http
+      .getDataAuthenticated('/markets')
+      .subscribe(data => (this.formFields[0].templateOptions.options = data))
+    this.http
+      .getDataAuthenticated('/commodity-type')
+      .subscribe(data => (this.formFields[1].templateOptions.options = data))
     // Generate the form
     this.fields = [
       {
@@ -137,14 +143,13 @@ export class PricesFormComponent implements OnInit {
   }
 
   submit(model: any): any {
-  this.loading = true
-  this.model.year = "2021"
-  this.model.month = "12"
-  this.model.district = "1"
-    this.http.postDataAuthenticated('/prices', this.model).subscribe(data=> {
+    this.loading = true
+    this.model.year = '2021'
+    this.model.month = '12'
+    this.model.district = '1'
+    this.http.postDataAuthenticated('/prices', this.model).subscribe(data => {
       this.loading = false
     })
-  this.notification.success('Commodity Added', 'Commodity Price added')
-
+    this.notification.success('Commodity Added', 'Commodity Price added')
   }
 }

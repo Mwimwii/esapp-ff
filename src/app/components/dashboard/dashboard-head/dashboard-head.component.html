@@ -6,7 +6,7 @@
       </span>
       <div class="desc">
         <span class="title">Camp</span>
-        <p>Camp 1</p>
+        <p>{{ user.campID }}</p>
       </div>
       <div class="line bg-success"></div>
     </div>
@@ -17,8 +17,8 @@
         <i class="fe fe-user"></i>
       </span>
       <div class="desc">
-        <span class="title">Officer</span>
-        <p>admin@esapp.co.zm</p>
+        <span class="title">{{ user.name }}</span>
+        <p>{{ user.email }}</p>
       </div>
       <div class="line bg-primary"></div>
     </div>
@@ -30,7 +30,7 @@
       </span>
       <div class="desc">
         <span class="title">Farmers</span>
-        <p>51</p>
+        <p>{{farmerCount}}</p>
       </div>
       <div class="line bg-primary"></div>
     </div>

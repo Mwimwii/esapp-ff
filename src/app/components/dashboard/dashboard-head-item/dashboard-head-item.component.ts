@@ -6,10 +6,10 @@ import { EsappRequestHandlerService } from '../../../esapp-request-handler.servi
   styleUrls: ['./dashboard-head-item.component.scss'],
 })
 export class DashboardHeadItemComponent implements OnInit {
-  @Input() icon : string = 'fe-icon';
-  @Input() title: string = 'Title';
-  @Input() value: string;
-  @Input() slug: string;
+  @Input() icon: string = 'fe-icon'
+  @Input() title: string = 'Title'
+  @Input() value: string
+  @Input() slug: string
 
   constructor(private http: EsappRequestHandlerService) {}
   ngOnInit() {

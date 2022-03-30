@@ -6,16 +6,15 @@ import { EnumsService } from './services/enums/enums.service'
 
 @Injectable({
   providedIn: 'root',
-
 })
-
 export class EsappRequestHandlerService {
-  private environment = environment;
-  private auth: string;
+  private environment = environment
+  private auth: string
   constructor(private http: HttpClient, private standards: EnumsService) {
-    this.auth = btoa(this.standards.standards.testUserName + ':' + this.standards.standards.testUserPassword)
+    this.auth = btoa(
+      this.standards.standards.testUserName + ':' + this.standards.standards.testUserPassword,
+    )
   }
-
 
   // Get the json data and return
   getDataUnauthenticated(slug: string): Observable<any[]> {
@@ -39,36 +38,36 @@ export class EsappRequestHandlerService {
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + this.auth
-      })
-    };
+        'Content-Type': 'application/json',
+        Authorization: 'Basic ' + this.auth,
+      }),
+    }
     const data = this.http.get<any[]>(url, httpOptions)
-  return data
-}
+    return data
+  }
 
-  getPDF(slug: string): Observable<Blob>
-  {
+  getPDF(slug: string): Observable<Blob> {
     const url = this.environment.apiUrl + slug
 
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json',
-      "Authorization": 'Basic ' + this.auth, responseType : 'blob'});
-
-    return this.http.get<Blob>(url, { headers : headers,responseType :
-        'blob' as 'json'});
-  }
-
-//create a post request that takes one parameter
-postDataAuthenticated(slug: string, data: object): Observable<any> {
-  const url = this.environment.apiUrl + slug
-  const body = JSON.stringify(data)
-  const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'Basic ' + this.auth
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Basic ' + this.auth,
+      responseType: 'blob',
     })
-  };
-  return this.http.post(url, body, httpOptions)
+
+    return this.http.get<Blob>(url, { headers: headers, responseType: 'blob' as 'json' })
   }
 
+  //create a post request that takes one parameter
+  postDataAuthenticated(slug: string, data: object): Observable<any> {
+    const url = this.environment.apiUrl + slug
+    const body = JSON.stringify(data)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: 'Basic ' + this.auth,
+      }),
+    }
+    return this.http.post(url, body, httpOptions)
+  }
 }
