@@ -25,7 +25,7 @@
               "@ant-design/icons-angular",
               "@ant-design/icons-angular/icons"
             ],
-            "aot": false,
+            "aot": true,
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -37,7 +37,9 @@
                 "glob": "**/*",
                 "input": "src/assets/",
                 "ignore": [
-                  "**/styles/**/*"
+                  "**/styles/**/*",
+                  "**/*.scss",
+                  "**/*.less"
                 ],
                 "output": "/assets/"
               }
@@ -151,8 +153,12 @@
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
-            ]
+            {
+                "glob": "**/*",
+                "input": "src/assets/",
+                "ignore": ["**/*.scss"],
+                "output": "/assets/"
+            }]
           }
         },
         "lint": {
