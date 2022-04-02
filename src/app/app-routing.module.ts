@@ -65,7 +65,7 @@ const routes: Routes = [
         children: [
             {
                 path: '',
-                loadChildren: () => import('src/app/pages/auth/auth.module').then(m => m.AuthModule),
+                loadChildren: () => import('src/app/pages/auth/auth.module').then(module => module.AuthModule),
             },
         ],
     },

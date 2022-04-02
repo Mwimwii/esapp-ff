@@ -3,14 +3,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+// import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { NgProgressModule } from '@ngx-progressbar/core';
 import { NgProgressRouterModule } from '@ngx-progressbar/router';
 import { NgProgressHttpModule } from '@ngx-progressbar/http';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFirestoreModule, SETTINGS } from '@angular/fire/firestore';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,12 +17,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { reducers, metaReducers } from './store/reducers';
 import { UserEffects } from './store/user/effects';
-import { firebaseConfig, firebaseAuthService } from './services/firebase';
 import { basicAuthService } from './services/basic-auth';
-// PermissionState is required for the geolocation service to
-// work on Android devices.
-import { PermissionState } from '@capacitor/core';
-
 // locale registration
 import { registerLocaleData } from '@angular/common';
 import { default as localeEn } from '@angular/common/locales/en';
@@ -83,16 +76,9 @@ registerLocaleData(localeEn, 'en');
         NgProgressRouterModule,
         NgProgressHttpModule,
 
-        // init firebase
-        AngularFireModule.initializeApp(firebaseConfig),
-        AngularFireAuthModule,
-        AngularFirestoreModule,
-
-    // NgZorroAntdMobileModule
     ],
     providers: [
     // auth services
-        firebaseAuthService,
         basicAuthService,
         DataService,
 
@@ -105,9 +91,6 @@ registerLocaleData(localeEn, 'en');
 
         // locale providers
         ...LOCALE_PROVIDERS,
-
-        // firestore settings
-        { provide: SETTINGS, useValue: {} },
     ],
     bootstrap: [AppComponent],
 })
