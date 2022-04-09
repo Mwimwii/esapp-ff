@@ -4,67 +4,8 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from 'src/app/shared.module';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
-import { ChartistModule } from 'ng-chartist';
-import { ChartModule } from 'angular2-chartjs';
-import { UsMapModule } from 'angular-us-map';
-import { QuillModule } from 'ngx-quill';
-import { SortablejsModule } from 'ngx-sortablejs';
 import { NestableModule } from 'ngx-nestable';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-import { AntdUIKitExamplesModule } from './Hidden/KitAntd/examples/antd-expamples.module';
-import { BootstrapUIKitExamplesModule } from './Hidden/KitBootstrap/examples/bootstrap-expamples.module';
-
-import { VbAppPartialsCalendarComponent } from './AppPartials/Calendar/calendar.component';
-import { VbAppPartialsDoHeadComponent } from './AppPartials/DoHead/do-head.component';
-import { VbAppPartialsDoImageComponent } from './AppPartials/DoImage/do-image.component';
-import { VbAppPartialsDoPlanComponent } from './AppPartials/DoPlan/do-plan.component';
-import { VbAppPartialsDoServerComponent } from './AppPartials/DoServer/do-server.component';
-import { VbAppPartialsEcommerceProductComponent } from './AppPartials/EcommerceProduct/ecommerce-product.component';
-import { VbAppPartialsGalleryComponent } from './AppPartials/Gallery/gallery.component';
-import { VbAppPartialsGithubDescrComponent } from './AppPartials/GithubDescr/github-descr.component';
-import { VbAppPartialsGithubDiscussComponent } from './AppPartials/GithubDiscuss/github-discuss.component';
-import { VbAppPartialsGithubHeadComponent } from './AppPartials/GithubHead/github-head.component';
-import { VbAppPartialsGithubHeadIssueComponent } from './AppPartials/GithubHeadIssue/github-head-issue.component';
-import { VbAppPartialsGithubWriteComponent } from './AppPartials/GithubWrite/github-write.component';
-import { VbAppPartialsJiraAgileBoardComponent } from './AppPartials/JiraAgileBoard/jira-agile-board.component';
-import { VbAppPartialsWpPostComponent } from './AppPartials/WpPost/wp-post.component';
-import { VbAppPartialsWpPostShortComponent } from './AppPartials/WpPostShort/wp-post-short.component';
-import { VbAppPartialsWpWriteComponent } from './AppPartials/WpWrite/wp-write.component';
-
-import { VbChartsC31Component } from './ChartsC3/1/1.component';
-import { VbChartsC32Component } from './ChartsC3/2/2.component';
-import { VbChartsC33Component } from './ChartsC3/3/3.component';
-import { VbChartsC34Component } from './ChartsC3/4/4.component';
-import { VbChartsC35Component } from './ChartsC3/5/5.component';
-import { VbChartsC36Component } from './ChartsC3/6/6.component';
-import { VbChartsC37Component } from './ChartsC3/7/7.component';
-import { VbChartsC38Component } from './ChartsC3/8/8.component';
-import { VbChartsC39Component } from './ChartsC3/9/9.component';
-import { VbChartsC310Component } from './ChartsC3/10/10.component';
-import { VbChartsC311Component } from './ChartsC3/11/11.component';
-import { VbChartsC312Component } from './ChartsC3/12/12.component';
-
-import { VbChartsChartistjs1Component } from './ChartsChartistjs/1/1.component';
-import { VbChartsChartistjs2Component } from './ChartsChartistjs/2/2.component';
-import { VbChartsChartistjs3Component } from './ChartsChartistjs/3/3.component';
-import { VbChartsChartistjs4Component } from './ChartsChartistjs/4/4.component';
-import { VbChartsChartistjs5Component } from './ChartsChartistjs/5/5.component';
-import { VbChartsChartistjs6Component } from './ChartsChartistjs/6/6.component';
-import { VbChartsChartistjs7Component } from './ChartsChartistjs/7/7.component';
-import { VbChartsChartistjs8Component } from './ChartsChartistjs/8/8.component';
-import { VbChartsChartistjs9Component } from './ChartsChartistjs/9/9.component';
-import { VbChartsChartistjs10Component } from './ChartsChartistjs/10/10.component';
-import { VbChartsChartistjs11Component } from './ChartsChartistjs/11/11.component';
-import { VbChartsChartistjs12Component } from './ChartsChartistjs/12/12.component';
-
-import { VbChartsChartjs1Component } from './ChartsChartjs/1/1.component';
-import { VbChartsChartjs2Component } from './ChartsChartjs/2/2.component';
-import { VbChartsChartjs3Component } from './ChartsChartjs/3/3.component';
-import { VbChartsChartjs4Component } from './ChartsChartjs/4/4.component';
-import { VbChartsChartjs5Component } from './ChartsChartjs/5/5.component';
-import { VbChartsChartjs6Component } from './ChartsChartjs/6/6.component';
 
 import { VbControlsButtonComponent } from './Controls/Button/button.component';
 import { VbControlsButton2Component } from './Controls/Button2/button-2.component';
@@ -82,13 +23,6 @@ import { VbEmails1Component } from './Emails/1/1.component';
 import { VbEmails2Component } from './Emails/2/2.component';
 import { VbEmails3Component } from './Emails/3/3.component';
 import { VbEmails4Component } from './Emails/4/4.component';
-
-import { VbForms1Component } from './Forms/1/1.component';
-import { VbForms2Component } from './Forms/2/2.component';
-import { VbForms3Component } from './Forms/3/3.component';
-import { VbForms4Component } from './Forms/4/4.component';
-import { VbForms5Component } from './Forms/5/5.component';
-import { VbForms6Component } from './Forms/6/6.component';
 
 import { VbHeadersCardFooterComponent } from './Headers/CardFooter/card-footer.component';
 import { VbHeadersCardFooter2Component } from './Headers/CardFooter2/card-footer-2.component';
@@ -115,7 +49,6 @@ import { VbHiddenIconsFontawesomeComponent } from './Hidden/IconsFontawesome/ico
 import { VbHiddenIconsIcomoonFreeComponent } from './Hidden/IconsIcomoonFree/icons-icomoon-free.component';
 import { VbHiddenIconsLineariconsFreeComponent } from './Hidden/IconsLineariconsFree/icons-linearicons-free.component';
 import { VbHiddenKitAntdComponent } from './Hidden/KitAntd/kit-antd.component';
-import { VbHiddenKitBootstrapComponent } from './Hidden/KitBootstrap/kit-bootstrap.component';
 import { VbHiddenTypographyComponent } from './Hidden/Typography/typography.component';
 import { VbHiddenUtilitiesComponent } from './Hidden/Utilities/utilities.component';
 
@@ -231,28 +164,6 @@ import { VbList26Component } from './WidgetsLists/26/26.component';
 import { VbList27Component } from './WidgetsLists/27/27.component';
 import { VbList28Component } from './WidgetsLists/28/28.component';
 
-import { VbChart1Component } from './WidgetsCharts/1/1.component';
-import { VbChart2Component } from './WidgetsCharts/2/2.component';
-import { VbChart3Component } from './WidgetsCharts/3/3.component';
-import { VbChart4Component } from './WidgetsCharts/4/4.component';
-import { VbChart4v1Component } from './WidgetsCharts/4v1/4v1.component';
-import { VbChart4v2Component } from './WidgetsCharts/4v2/4v2.component';
-import { VbChart4v3Component } from './WidgetsCharts/4v3/4v3.component';
-import { VbChart5Component } from './WidgetsCharts/5/5.component';
-import { VbChart6Component } from './WidgetsCharts/6/6.component';
-import { VbChart7Component } from './WidgetsCharts/7/7.component';
-import { VbChart8Component } from './WidgetsCharts/8/8.component';
-import { VbChart9Component } from './WidgetsCharts/9/9.component';
-import { VbChart10Component } from './WidgetsCharts/10/10.component';
-import { VbChart11Component } from './WidgetsCharts/11/11.component';
-import { VbChart11v1Component } from './WidgetsCharts/11v1/11v1.component';
-import { VbChart11v2Component } from './WidgetsCharts/11v2/11v2.component';
-import { VbChart12Component } from './WidgetsCharts/12/12.component';
-import { VbChart12v1Component } from './WidgetsCharts/12v1/12v1.component';
-import { VbChart13Component } from './WidgetsCharts/13/13.component';
-import { VbChart13v1Component } from './WidgetsCharts/13v1/13v1.component';
-import { VbChart13v2Component } from './WidgetsCharts/13v2/13v2.component';
-
 import { VbTable1Component } from './WidgetsTables/1/1.component';
 import { VbTable2Component } from './WidgetsTables/2/2.component';
 import { VbTable3Component } from './WidgetsTables/3/3.component';
@@ -263,55 +174,6 @@ import { VbTable7Component } from './WidgetsTables/7/7.component';
 import { VbTable8Component } from './WidgetsTables/8/8.component';
 
 const COMPONENTS = [
-    VbAppPartialsCalendarComponent,
-    VbAppPartialsDoHeadComponent,
-    VbAppPartialsDoImageComponent,
-    VbAppPartialsDoPlanComponent,
-    VbAppPartialsDoServerComponent,
-    VbAppPartialsEcommerceProductComponent,
-    VbAppPartialsGalleryComponent,
-    VbAppPartialsGithubDescrComponent,
-    VbAppPartialsGithubDiscussComponent,
-    VbAppPartialsGithubHeadComponent,
-    VbAppPartialsGithubHeadIssueComponent,
-    VbAppPartialsGithubWriteComponent,
-    VbAppPartialsJiraAgileBoardComponent,
-    VbAppPartialsWpPostComponent,
-    VbAppPartialsWpPostShortComponent,
-    VbAppPartialsWpWriteComponent,
-
-    VbChartsC31Component,
-    VbChartsC32Component,
-    VbChartsC33Component,
-    VbChartsC34Component,
-    VbChartsC35Component,
-    VbChartsC36Component,
-    VbChartsC37Component,
-    VbChartsC38Component,
-    VbChartsC39Component,
-    VbChartsC310Component,
-    VbChartsC311Component,
-    VbChartsC312Component,
-
-    VbChartsChartistjs1Component,
-    VbChartsChartistjs2Component,
-    VbChartsChartistjs3Component,
-    VbChartsChartistjs4Component,
-    VbChartsChartistjs5Component,
-    VbChartsChartistjs6Component,
-    VbChartsChartistjs7Component,
-    VbChartsChartistjs8Component,
-    VbChartsChartistjs9Component,
-    VbChartsChartistjs10Component,
-    VbChartsChartistjs11Component,
-    VbChartsChartistjs12Component,
-
-    VbChartsChartjs1Component,
-    VbChartsChartjs2Component,
-    VbChartsChartjs3Component,
-    VbChartsChartjs4Component,
-    VbChartsChartjs5Component,
-    VbChartsChartjs6Component,
 
     VbControlsButtonComponent,
     VbControlsButton2Component,
@@ -329,14 +191,6 @@ const COMPONENTS = [
     VbEmails2Component,
     VbEmails3Component,
     VbEmails4Component,
-
-    VbForms1Component,
-    VbForms2Component,
-    VbForms3Component,
-    VbForms4Component,
-    VbForms5Component,
-    VbForms6Component,
-
     VbHeadersCardFooterComponent,
     VbHeadersCardFooter2Component,
     VbHeadersCardHeaderComponent,
@@ -362,7 +216,6 @@ const COMPONENTS = [
     VbHiddenIconsIcomoonFreeComponent,
     VbHiddenIconsLineariconsFreeComponent,
     VbHiddenKitAntdComponent,
-    VbHiddenKitBootstrapComponent,
     VbHiddenTypographyComponent,
     VbHiddenUtilitiesComponent,
 
@@ -478,27 +331,6 @@ const COMPONENTS = [
     VbList27Component,
     VbList28Component,
 
-    VbChart1Component,
-    VbChart2Component,
-    VbChart3Component,
-    VbChart4Component,
-    VbChart4v1Component,
-    VbChart4v2Component,
-    VbChart4v3Component,
-    VbChart5Component,
-    VbChart6Component,
-    VbChart7Component,
-    VbChart8Component,
-    VbChart9Component,
-    VbChart10Component,
-    VbChart11Component,
-    VbChart11v1Component,
-    VbChart11v2Component,
-    VbChart12Component,
-    VbChart12v1Component,
-    VbChart13Component,
-    VbChart13v1Component,
-    VbChart13v2Component,
 
     VbTable1Component,
     VbTable2Component,
@@ -516,17 +348,9 @@ const COMPONENTS = [
         FormsModule,
         ReactiveFormsModule,
         PerfectScrollbarModule,
-        ChartistModule,
-        ChartModule,
         CommonModule,
-        UsMapModule,
-        QuillModule.forRoot(),
-        SortablejsModule,
         NestableModule,
         NgApexchartsModule,
-        NgbModule,
-        AntdUIKitExamplesModule, // antd examples (src/app/@vb/widgets/Hidden/KitAntd/examples)
-        BootstrapUIKitExamplesModule, // boostrap examples (src/app/@vb/widgets/Hidden/KitBootstrap/examples)
     ],
     declarations: [...COMPONENTS],
     exports: [...COMPONENTS],

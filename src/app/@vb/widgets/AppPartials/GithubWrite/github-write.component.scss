@@ -1,8 +1,0 @@
-@import 'src/mixins.scss';
-
-.editor {
-  ::ng-deep .ql-toolbar,
-  ::ng-deep .ql-container {
-    border: none !important;
-  }
-}

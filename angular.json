@@ -19,7 +19,6 @@
           "options": {
             "allowedCommonJsDependencies": [
               "lodash",
-              "@firebase/database",
               "angular2-chartjs",
               "@ant-design/colors",
               "@ant-design/icons-angular",
@@ -50,19 +49,10 @@
               "./node_modules/ng-zorro-antd/style/entry.less",
               "src/app/@vb/css/vendors/antd/themes/default.less",
               "src/app/@vb/css/vendors/antd/themes/dark.less",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/chartist/dist/chartist.css",
-              "./node_modules/c3/c3.min.css",
-              "./node_modules/quill/dist/quill.core.css",
-              "./node_modules/quill/dist/quill.snow.css",
               "src/app/@vb/css/vendors/antd/style.scss",
-              "src/app/@vb/css/vendors/bootstrap/style.scss",
               "src/app/@vb/css/vendors/nprogress/style.scss",
-              "src/app/@vb/css/vendors/chartist/style.scss",
-              "src/app/@vb/css/vendors/chartist-tooltip-plugin/style.scss",
               "src/app/@vb/css/vendors/perfect-scrollbar/style.scss",
               "src/app/@vb/css/vendors/nestable/style.scss",
-              "src/app/@vb/css/vendors/quill/style.scss",
               "src/app/@vb/css/core.scss",
               "src/app/@vb/css/measurements.scss",
               "src/app/@vb/css/colors.scss",
@@ -72,7 +62,6 @@
               "src/app/@vb/css/extra/air.scss"
             ],
             "scripts": [
-              "./node_modules/c3/c3.min.js"
             ]
           },
           "configurations": {
