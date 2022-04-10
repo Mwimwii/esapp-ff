@@ -6,8 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 // import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
-import { NgProgressModule  } from 'ngx-progressbar';
-
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressRouterModule } from '@ngx-progressbar/router';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +22,11 @@ import { basicAuthService } from './services/basic-auth';
 import { registerLocaleData } from '@angular/common';
 import { default as localeEn } from '@angular/common/locales/en';
 import { NZ_I18N, en_US as localeZorro } from 'ng-zorro-antd/i18n';
+import { QuillModule } from 'ngx-quill';
 import { FormlyModule } from '@ngx-formly/core';
+import { FormlyFieldFile } from './components/common/FormlyUploadField/file-component';
+import { FieldNgSelect } from './components/common/Quill/ng-select';
+import { FieldQuillType } from './components/common/Quill/quil-type';
 import { DataService } from './services/data-service';
 
 
@@ -40,8 +45,19 @@ registerLocaleData(localeEn, 'en');
         BrowserAnimationsModule,
         FormsModule,
         AppRoutingModule,
+        QuillModule.forRoot(),
         FormlyModule.forRoot({
             extras: { lazyRender: true },
+            types: [
+                { name: 'file', component: FormlyFieldFile, wrappers: ['form-field'] },
+
+                { name: 'ng-select', component: FieldNgSelect, wrappers: ['form-field'] },
+                {
+                    name: 'custom-text-area',
+                    component: FieldQuillType,
+                    wrappers: ['form-field'],
+                },
+            ],
         }),
         // translate
         TranslateModule.forRoot(),
@@ -57,6 +73,8 @@ registerLocaleData(localeEn, 'en');
             spinner: false,
             color: '#0190fe',
         }),
+        NgProgressRouterModule,
+        NgProgressHttpModule,
 
     ],
     providers: [

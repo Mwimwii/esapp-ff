@@ -6,8 +6,13 @@ import { WidgetsComponentsModule } from 'src/app/@vb/widgets/widgets-components.
 import { FooterComponent } from './common/Footer/footer.component';
 import { FormlyNgZorroAntdModule } from '@ngx-formly/ng-zorro-antd';
 import { FormlyModule } from '@ngx-formly/core';
+import { FieldNgSelect } from './common/Quill/ng-select';
+import { FieldQuillType } from './common/Quill/quil-type';
 import { FormlySelectModule } from '@ngx-formly/core/select';
 import { HttpClientModule } from '@angular/common/http';
+import { QuillModule } from 'ngx-quill';
+import { FileValueAccessor } from './common/FormlyUploadField/file-accessor';
+import { FormlyFieldFile } from './common/FormlyUploadField/file-component';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 import { PricesTableComponent } from './market/prices/prices-table/prices-table.component';
@@ -32,15 +37,13 @@ import { MapComponent } from './map/map.component';
 import { FaabsTabComponent } from './faabs/faabs-tab/faabs-tab.component';
 import { FaabsAttendanceModalComponent } from './faabs/faabs-attendance-modal/faabs-attendance-modal.component';
 
-import { UserProfileFormComponent } from './user/user-profile-form/user-profile-form.component'
-import { UserProfileCardComponent } from './user/user-profile-card/user-profile-card.component'
-
-import { HeaderTabbedComponent } from './common/headers/card-header-tabbed.component';
-
 const COMPONENTS = [
     // Common
     FooterComponent,
-    HeaderTabbedComponent,
+    FieldNgSelect,
+    FieldQuillType,
+    FormlyFieldFile,
+    FileValueAccessor,
 
     // Market Management
     PricesTableComponent,
@@ -64,15 +67,13 @@ const COMPONENTS = [
     AppFarmerRegistrationFormComponent,
     FaabsTabComponent,
     FaabsAttendanceModalComponent,
-
-    UserProfileFormComponent,
-    UserProfileCardComponent,
 ];
 
 @NgModule({
     imports: [
         SharedModule,
         FormsModule,
+        QuillModule,
         HttpClientModule,
         ReactiveFormsModule,
         PerfectScrollbarModule,
