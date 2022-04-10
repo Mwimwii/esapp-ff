@@ -39,6 +39,7 @@
                 "input": "src/assets/",
                 "ignore": [
                   "**/styles/**/*",
+                  "**/*.scss",
                   "**/*.less"
                 ],
                 "output": "/assets/"
@@ -145,6 +146,7 @@
             {
                 "glob": "**/*",
                 "input": "src/assets/",
+                "ignore": ["**/*.scss"],
                 "output": "/assets/"
             }]
           }

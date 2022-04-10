@@ -1,15 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, LOCALE_ID } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 // import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { NgProgressModule  } from 'ngx-progressbar';
-import { registerLocaleData } from '@angular/common';
-import { default as localeEn } from '@angular/common/locales/en';
-import { NZ_I18N, en_US as localeZorro } from 'ng-zorro-antd/i18n';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,11 +19,7 @@ import { basicAuthService } from './services/basic-auth';
 import { FormlyModule } from '@ngx-formly/core';
 import { DataService } from './services/data-service';
 
-const LOCALE_PROVIDERS = [
-    { provide: LOCALE_ID, useValue: 'en' },
-    { provide: NZ_I18N, useValue: localeZorro },
-];
-registerLocaleData(localeEn, 'en');
+
 
 @NgModule({
     declarations: [AppComponent],
@@ -39,8 +32,7 @@ registerLocaleData(localeEn, 'en');
         FormlyModule.forRoot({
             extras: { lazyRender: true },
         }),
-  // translate
-  TranslateModule.forRoot(),
+
 
         // ngrx
         StoreModule.forRoot(reducers, { metaReducers }),
@@ -66,8 +58,7 @@ registerLocaleData(localeEn, 'en');
         //   useClass: MockHttpCallInterceptor,
         //   multi: true,
         // },
-   // locale providers
-   ...LOCALE_PROVIDERS,
+
     ],
     bootstrap: [AppComponent],
 })

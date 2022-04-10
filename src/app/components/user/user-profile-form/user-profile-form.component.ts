@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+// import nz forms
+import { NzFormModule } from 'ng-zorro-antd/form'
 
 @Component({
   selector: 'user-profile-form',
