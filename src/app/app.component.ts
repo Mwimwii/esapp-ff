@@ -41,11 +41,18 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private store: Store<any>,
+    translate: TranslateService,
   ) {
+    Object.keys(locales).forEach(locale => {
+      translate.setTranslation(locale, locales[locale])
+    })
+    translate.setDefaultLang('en-US')
 
     // localization && theme listener
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
-
+      if (this._locale !== state.locale) {
+        translate.use(state.locale)
+      }
       if (this._theme !== state.theme) {
         this.setTheme(state.theme)
       }
