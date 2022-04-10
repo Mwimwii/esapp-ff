@@ -27,18 +27,6 @@
                 <nz-option nzLabel="Zoom" nzValue="zoom-fadein"></nz-option>
               </nz-select>
             </div>
-            <div class="pt-2 mb-2">
-              <h6>
-                <strong>Internationalization</strong>
-              </h6>
-              <nz-select style="width: 100%;" [(ngModel)]="settings.locale"
-                (ngModelChange)="settingChange($event, 'locale')">
-                <nz-option nzLabel="English (en-US)" nzValue="en-US"></nz-option>
-                <nz-option nzLabel="French (fr-FR)" nzValue="fr-FR"></nz-option>
-                <nz-option nzLabel="Русский (ru-RU)" nzValue="ru-RU"></nz-option>
-                <nz-option nzLabel="简体中文 (zh-CN)" nzValue="zh-CN"></nz-option>
-              </nz-select>
-            </div>
           </nz-collapse-panel>
           <nz-collapse-panel nzHeader="Layout Settings">
             <div class="pt-3 mb-2">

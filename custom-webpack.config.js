@@ -1,7 +1,12 @@
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const webpack = require('webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
-const smp = new SpeedMeasurePlugin();
-
-const webpackConfig = smp.wrap({
-    plugins: [new MyPlugin(), new MyOtherPlugin()],
-});
+module.exports = {
+  plugins: [
+    new BundleAnalyzerPlugin(),
+    new webpack.DefinePlugin({
+      'STABLE_FEATURE': JSON.stringify(true),
+      'EXPERIMENTAL_FEATURE': JSON.stringify(false)
+    })
+  ]
+};

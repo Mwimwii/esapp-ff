@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core'
 import { Router, NavigationStart } from '@angular/router'
 import { filter } from 'rxjs/operators'
 import { transition, trigger, style, animate } from '@angular/animations'
-import * as _ from 'lodash'
+import { find } from 'lodash'
 import { select, Store } from '@ngrx/store'
 import { MenuService } from 'src/app/services/menu'
 import * as SettingsActions from 'src/app/store/settings/actions'
@@ -118,7 +118,7 @@ export class MenuFlyoutTopComponent implements OnInit {
         }
         return flattenedItems
       }, [])
-    const activeItem = _.find(flattenItems(menuData, 'children'), ['url', pathname]) || {}
+    const activeItem = find(flattenItems(menuData, 'children'), ['url', pathname]) || {}
     const activeSubmenu = menuData.reduce((key, parent) => {
       if (Array.isArray(parent.children)) {
         parent.children.map(child => {

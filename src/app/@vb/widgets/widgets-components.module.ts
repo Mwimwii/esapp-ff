@@ -5,24 +5,6 @@ import { SharedModule } from 'src/app/shared.module';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { NestableModule } from 'ngx-nestable';
-import { NgApexchartsModule } from 'ng-apexcharts';
-
-import { VbControlsButtonComponent } from './Controls/Button/button.component';
-import { VbControlsButton2Component } from './Controls/Button2/button-2.component';
-import { VbControlsButton3Component } from './Controls/Button3/button-3.component';
-import { VbControlsPaginationComponent } from './Controls/Pagination/pagination.component';
-import { VbControlsPagination2Component } from './Controls/Pagination2/pagination-2.component';
-
-import { VbCryptoCryptoChartComponent } from './Crypto/CryptoChart/crypto-chart.component';
-import { VbCryptoCryptoHistoryComponent } from './Crypto/CryptoHistory/crypto-history.component';
-import { VbCryptoCryptoListComponent } from './Crypto/CryptoList/crypto-list.component';
-import { VbCryptoCryptoLoadTableComponent } from './Crypto/CryptoLoadTable/crypto-load-table.component';
-import { VbCryptoCryptoOrdersComponent } from './Crypto/CryptoOrders/crypto-orders.component';
-
-import { VbEmails1Component } from './Emails/1/1.component';
-import { VbEmails2Component } from './Emails/2/2.component';
-import { VbEmails3Component } from './Emails/3/3.component';
-import { VbEmails4Component } from './Emails/4/4.component';
 
 import { VbHeadersCardFooterComponent } from './Headers/CardFooter/card-footer.component';
 import { VbHeadersCardFooter2Component } from './Headers/CardFooter2/card-footer-2.component';
@@ -52,35 +34,6 @@ import { VbHiddenKitAntdComponent } from './Hidden/KitAntd/kit-antd.component';
 import { VbHiddenTypographyComponent } from './Hidden/Typography/typography.component';
 import { VbHiddenUtilitiesComponent } from './Hidden/Utilities/utilities.component';
 
-import { VbPlaceholders1Component } from './Placeholders/1/1.component';
-import { VbPlaceholders2Component } from './Placeholders/2/2.component';
-import { VbPlaceholders3Component } from './Placeholders/3/3.component';
-
-import { VbTablesAntd1Component } from './TablesAntd/1/1.component';
-import { VbTablesAntd2Component } from './TablesAntd/2/2.component';
-import { VbTablesAntd3Component } from './TablesAntd/3/3.component';
-import { VbTablesAntd4Component } from './TablesAntd/4/4.component';
-import { VbTablesAntd5Component } from './TablesAntd/5/5.component';
-import { VbTablesAntd6Component } from './TablesAntd/6/6.component';
-import { VbTablesAntd7Component } from './TablesAntd/7/7.component';
-import { VbTablesAntd8Component } from './TablesAntd/8/8.component';
-import { VbTablesAntd9Component } from './TablesAntd/9/9.component';
-
-import { VbTablesBootstrap1Component } from './TablesBootstrap/1/1.component';
-import { VbTablesBootstrap2Component } from './TablesBootstrap/2/2.component';
-import { VbTablesBootstrap3Component } from './TablesBootstrap/3/3.component';
-import { VbTablesBootstrap4Component } from './TablesBootstrap/4/4.component';
-import { VbTablesBootstrap5Component } from './TablesBootstrap/5/5.component';
-import { VbTablesBootstrap6Component } from './TablesBootstrap/6/6.component';
-import { VbTablesBootstrap7Component } from './TablesBootstrap/7/7.component';
-import { VbTablesBootstrap8Component } from './TablesBootstrap/8/8.component';
-import { VbTablesBootstrap9Component } from './TablesBootstrap/9/9.component';
-
-import { VbTypography1Component } from './Typography/1/1.component';
-import { VbTypography2Component } from './Typography/2/2.component';
-import { VbTypography3Component } from './Typography/3/3.component';
-import { VbTypography4Component } from './Typography/4/4.component';
-import { VbTypography5Component } from './Typography/5/5.component';
 
 import { VbGeneral1Component } from './WidgetsGeneral/1/1.component';
 import { VbGeneral1v1Component } from './WidgetsGeneral/1v1/1v1.component';
@@ -104,93 +57,8 @@ import { VbGeneral10v1Component } from './WidgetsGeneral/10v1/10v1.component';
 import { VbGeneral11Component } from './WidgetsGeneral/11/11.component';
 import { VbGeneral11v1Component } from './WidgetsGeneral/11v1/11v1.component';
 import { VbGeneral12Component } from './WidgetsGeneral/12/12.component';
-import { VbGeneral12v1Component } from './WidgetsGeneral/12v1/12v1.component';
-import { VbGeneral12v2Component } from './WidgetsGeneral/12v2/12v2.component';
-import { VbGeneral12v3Component } from './WidgetsGeneral/12v3/12v3.component';
-import { VbGeneral13Component } from './WidgetsGeneral/13/13.component';
-import { VbGeneral13v1Component } from './WidgetsGeneral/13v1/13v1.component';
-import { VbGeneral14Component } from './WidgetsGeneral/14/14.component';
-import { VbGeneral15Component } from './WidgetsGeneral/15/15.component';
-import { VbGeneral16Component } from './WidgetsGeneral/16/16.component';
-import { VbGeneral17Component } from './WidgetsGeneral/17/17.component';
-import { VbGeneral17v1Component } from './WidgetsGeneral/17v1/17v1.component';
-import { VbGeneral17v2Component } from './WidgetsGeneral/17v2/17v2.component';
-import { VbGeneral18Component } from './WidgetsGeneral/18/18.component';
-import { VbGeneral18v1Component } from './WidgetsGeneral/18v1/18v1.component';
-import { VbGeneral19Component } from './WidgetsGeneral/19/19.component';
-import { VbGeneral20Component } from './WidgetsGeneral/20/20.component';
-import { VbGeneral20v1Component } from './WidgetsGeneral/20v1/20v1.component';
-import { VbGeneral21Component } from './WidgetsGeneral/21/21.component';
-import { VbGeneral21v1Component } from './WidgetsGeneral/21v1/21v1.component';
-import { VbGeneral21v2Component } from './WidgetsGeneral/21v2/21v2.component';
-import { VbGeneral21v3Component } from './WidgetsGeneral/21v3/21v3.component';
-import { VbGeneral22Component } from './WidgetsGeneral/22/22.component';
-import { VbGeneral23Component } from './WidgetsGeneral/23/23.component';
-import { VbGeneral23v1Component } from './WidgetsGeneral/23v1/23v1.component';
-import { VbGeneral24Component } from './WidgetsGeneral/24/24.component';
-import { VbGeneral24v1Component } from './WidgetsGeneral/24v1/24v1.component';
-import { VbGeneral25Component } from './WidgetsGeneral/25/25.component';
-import { VbGeneral25v1Component } from './WidgetsGeneral/25v1/25v1.component';
-import { VbGeneral26Component } from './WidgetsGeneral/26/26.component';
-
-import { VbList1Component } from './WidgetsLists/1/1.component';
-import { VbList2Component } from './WidgetsLists/2/2.component';
-import { VbList3Component } from './WidgetsLists/3/3.component';
-import { VbList4Component } from './WidgetsLists/4/4.component';
-import { VbList5Component } from './WidgetsLists/5/5.component';
-import { VbList6Component } from './WidgetsLists/6/6.component';
-import { VbList7Component } from './WidgetsLists/7/7.component';
-import { VbList8Component } from './WidgetsLists/8/8.component';
-import { VbList9Component } from './WidgetsLists/9/9.component';
-import { VbList10Component } from './WidgetsLists/10/10.component';
-import { VbList11Component } from './WidgetsLists/11/11.component';
-import { VbList12Component } from './WidgetsLists/12/12.component';
-import { VbList13Component } from './WidgetsLists/13/13.component';
-import { VbList14Component } from './WidgetsLists/14/14.component';
-import { VbList15Component } from './WidgetsLists/15/15.component';
-import { VbList16Component } from './WidgetsLists/16/16.component';
-import { VbList17Component } from './WidgetsLists/17/17.component';
-import { VbList18Component } from './WidgetsLists/18/18.component';
-import { VbList19Component } from './WidgetsLists/19/19.component';
-import { VbList20Component } from './WidgetsLists/20/20.component';
-import { VbList21Component } from './WidgetsLists/21/21.component';
-import { VbList21v1Component } from './WidgetsLists/21v1/21v1.component';
-import { VbList21v2Component } from './WidgetsLists/21v2/21v2.component';
-import { VbList22Component } from './WidgetsLists/22/22.component';
-import { VbList23Component } from './WidgetsLists/23/23.component';
-import { VbList24Component } from './WidgetsLists/24/24.component';
-import { VbList25Component } from './WidgetsLists/25/25.component';
-import { VbList26Component } from './WidgetsLists/26/26.component';
-import { VbList27Component } from './WidgetsLists/27/27.component';
-import { VbList28Component } from './WidgetsLists/28/28.component';
-
-import { VbTable1Component } from './WidgetsTables/1/1.component';
-import { VbTable2Component } from './WidgetsTables/2/2.component';
-import { VbTable3Component } from './WidgetsTables/3/3.component';
-import { VbTable4Component } from './WidgetsTables/4/4.component';
-import { VbTable5Component } from './WidgetsTables/5/5.component';
-import { VbTable6Component } from './WidgetsTables/6/6.component';
-import { VbTable7Component } from './WidgetsTables/7/7.component';
-import { VbTable8Component } from './WidgetsTables/8/8.component';
-
 const COMPONENTS = [
 
-    VbControlsButtonComponent,
-    VbControlsButton2Component,
-    VbControlsButton3Component,
-    VbControlsPaginationComponent,
-    VbControlsPagination2Component,
-
-    VbCryptoCryptoChartComponent,
-    VbCryptoCryptoHistoryComponent,
-    VbCryptoCryptoListComponent,
-    VbCryptoCryptoLoadTableComponent,
-    VbCryptoCryptoOrdersComponent,
-
-    VbEmails1Component,
-    VbEmails2Component,
-    VbEmails3Component,
-    VbEmails4Component,
     VbHeadersCardFooterComponent,
     VbHeadersCardFooter2Component,
     VbHeadersCardHeaderComponent,
@@ -219,36 +87,6 @@ const COMPONENTS = [
     VbHiddenTypographyComponent,
     VbHiddenUtilitiesComponent,
 
-    VbPlaceholders1Component,
-    VbPlaceholders2Component,
-    VbPlaceholders3Component,
-
-    VbTablesAntd1Component,
-    VbTablesAntd2Component,
-    VbTablesAntd3Component,
-    VbTablesAntd4Component,
-    VbTablesAntd5Component,
-    VbTablesAntd6Component,
-    VbTablesAntd7Component,
-    VbTablesAntd8Component,
-    VbTablesAntd9Component,
-
-    VbTablesBootstrap1Component,
-    VbTablesBootstrap2Component,
-    VbTablesBootstrap3Component,
-    VbTablesBootstrap4Component,
-    VbTablesBootstrap5Component,
-    VbTablesBootstrap6Component,
-    VbTablesBootstrap7Component,
-    VbTablesBootstrap8Component,
-    VbTablesBootstrap9Component,
-
-    VbTypography1Component,
-    VbTypography2Component,
-    VbTypography3Component,
-    VbTypography4Component,
-    VbTypography5Component,
-
     VbGeneral1Component,
     VbGeneral1v1Component,
     VbGeneral2Component,
@@ -271,75 +109,6 @@ const COMPONENTS = [
     VbGeneral11Component,
     VbGeneral11v1Component,
     VbGeneral12Component,
-    VbGeneral12v1Component,
-    VbGeneral12v2Component,
-    VbGeneral12v3Component,
-    VbGeneral13Component,
-    VbGeneral13v1Component,
-    VbGeneral14Component,
-    VbGeneral15Component,
-    VbGeneral16Component,
-    VbGeneral17Component,
-    VbGeneral17v1Component,
-    VbGeneral17v2Component,
-    VbGeneral18Component,
-    VbGeneral18v1Component,
-    VbGeneral19Component,
-    VbGeneral20Component,
-    VbGeneral20v1Component,
-    VbGeneral21Component,
-    VbGeneral21v1Component,
-    VbGeneral21v2Component,
-    VbGeneral21v3Component,
-    VbGeneral22Component,
-    VbGeneral23Component,
-    VbGeneral23v1Component,
-    VbGeneral24Component,
-    VbGeneral24v1Component,
-    VbGeneral25Component,
-    VbGeneral25v1Component,
-    VbGeneral26Component,
-
-    VbList1Component,
-    VbList2Component,
-    VbList3Component,
-    VbList4Component,
-    VbList5Component,
-    VbList6Component,
-    VbList7Component,
-    VbList8Component,
-    VbList9Component,
-    VbList10Component,
-    VbList11Component,
-    VbList12Component,
-    VbList13Component,
-    VbList14Component,
-    VbList15Component,
-    VbList16Component,
-    VbList17Component,
-    VbList18Component,
-    VbList19Component,
-    VbList20Component,
-    VbList21Component,
-    VbList21v1Component,
-    VbList21v2Component,
-    VbList22Component,
-    VbList23Component,
-    VbList24Component,
-    VbList25Component,
-    VbList26Component,
-    VbList27Component,
-    VbList28Component,
-
-
-    VbTable1Component,
-    VbTable2Component,
-    VbTable3Component,
-    VbTable4Component,
-    VbTable5Component,
-    VbTable6Component,
-    VbTable7Component,
-    VbTable8Component,
 ];
 
 @NgModule({
@@ -350,7 +119,6 @@ const COMPONENTS = [
         PerfectScrollbarModule,
         CommonModule,
         NestableModule,
-        NgApexchartsModule,
     ],
     declarations: [...COMPONENTS],
     exports: [...COMPONENTS],

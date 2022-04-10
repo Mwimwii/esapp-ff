@@ -5,16 +5,16 @@
   <nz-dropdown-menu #menu="nzDropdownMenu">
     <ul nz-menu>
       <li nz-menu-item>
-        <strong>{{ 'topBar.profileMenu.hello' | translate }}, {{name || 'Anonymous'}}</strong>
+        <strong>{{ 'topBar.profileMenu.hello'   }}, {{name || 'Anonymous'}}</strong>
         <div>
           <strong class="mr-1">
-            {{ 'topBar.profileMenu.billingPlan' | translate }}:
+            {{ 'topBar.profileMenu.billingPlan'   }}:
           </strong>
           Professional
         </div>
         <div>
           <strong>
-            {{ 'topBar.profileMenu.role' | translate }}:
+            {{ 'topBar.profileMenu.role'   }}:
           </strong>
           {{role || '—'}}
         </div>
@@ -22,10 +22,10 @@
       <li nz-menu-divider></li>
       <li nz-menu-item>
         <div>
-          <strong>{{ 'topBar.profileMenu.email' | translate }}: </strong>
+          <strong>{{ 'topBar.profileMenu.email'   }}: </strong>
           {{email || '—'}}
           <br />
-          <strong>{{ 'topBar.profileMenu.phone' | translate }}: </strong>
+          <strong>{{ 'topBar.profileMenu.phone'   }}: </strong>
           {{phone || '—'}}
         </div>
       </li>
@@ -33,7 +33,7 @@
       <li nz-menu-item>
         <a href="javascript: void(0);">
           <i class="fe fe-user mr-2"></i>
-          {{ 'topBar.profileMenu.editProfile' | translate }}:
+          {{ 'topBar.profileMenu.editProfile'   }}:
         </a>
       </li>
       <li nz-menu-divider></li>
@@ -41,7 +41,7 @@
 
         <a href="javascript: void(0);" (click)="logout()">
           <i class="fe fe-log-out mr-2"></i>
-          {{ 'topBar.profileMenu.logout' | translate }}:
+          {{ 'topBar.profileMenu.logout'   }}:
         </a>
       </li>
     </ul>

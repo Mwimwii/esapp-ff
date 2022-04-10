@@ -6,7 +6,6 @@ import { WidgetsComponentsModule } from 'src/app/@vb/widgets/widgets-components.
 
 import { TopbarComponent } from './Topbar/topbar.component';
 import { TopbarActionsComponent } from './Topbar/Actions/actions.component';
-import { TopbarLanguageSwitcherComponent } from './Topbar/LanguageSwitcher/language-switcher.component';
 import { TopbarIssuesHistoryComponent } from './Topbar/IssuesHistory/issues-history.component';
 import { TopbarSearchComponent } from './Topbar/Search/search.component';
 import { TopbarUserMenuComponent } from './Topbar/UserMenu/user-menu.component';
@@ -18,7 +17,6 @@ import { MenuFlyoutTopComponent } from './MenuFlyout/MenuTop/menu-top.component'
 import { MenuSimplyComponent } from './MenuSimply/menu-simply.component';
 import { MenuSimplyActionsComponent } from './MenuSimply/Actions/actions.component';
 import { MenuSimplyCartComponent } from './MenuSimply/Cart/cart.component';
-import { MenuSimplyLanguageSwitcherComponent } from './MenuSimply/LanguageSwitcher/language-switcher.component';
 import { MenuSimplyPagesComponent } from './MenuSimply/MenuPages/menu-pages.component';
 import { MenuSimplyStatusComponent } from './MenuSimply/Status/status.component';
 import { MenuSimplyUserMenuComponent } from './MenuSimply/UserMenu/user-menu.component';
@@ -40,7 +38,6 @@ const COMPONENTS = [
     TopbarUserMenuComponent,
     TopbarProjectManagementComponent,
     TopbarActionsComponent,
-    TopbarLanguageSwitcherComponent,
     MenuClassicLeftComponent,
     MenuClassicTopComponent,
     MenuFlyoutLeftComponent,
@@ -48,7 +45,6 @@ const COMPONENTS = [
     MenuSimplyComponent,
     MenuSimplyActionsComponent,
     MenuSimplyCartComponent,
-    MenuSimplyLanguageSwitcherComponent,
     MenuSimplyPagesComponent,
     MenuSimplyStatusComponent,
     MenuSimplyUserMenuComponent,

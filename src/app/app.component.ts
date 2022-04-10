@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core'
-import { TranslateService } from '@ngx-translate/core'
 import qs from 'qs'
 import { Router, NavigationEnd, ActivatedRoute, NavigationStart } from '@angular/router'
 import { Title } from '@angular/platform-browser'
@@ -10,15 +9,8 @@ import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
 
 import english from './locales/en-US'
-import french from './locales/fr-FR'
-import russian from './locales/ru-RU'
-import chinese from './locales/zh-CN'
-
 const locales = {
   'en-US': english,
-  'fr-FR': french,
-  'ru-RU': russian,
-  'zh-CN': chinese,
 }
 
 @Component({
@@ -41,18 +33,11 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private store: Store<any>,
-    translate: TranslateService,
   ) {
-    Object.keys(locales).forEach(locale => {
-      translate.setTranslation(locale, locales[locale])
-    })
-    translate.setDefaultLang('en-US')
 
     // localization && theme listener
     this.store.pipe(select(Reducers.getSettings)).subscribe(state => {
-      if (this._locale !== state.locale) {
-        translate.use(state.locale)
-      }
+
       if (this._theme !== state.theme) {
         this.setTheme(state.theme)
       }

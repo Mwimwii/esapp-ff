@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core'
 import { Router, NavigationStart } from '@angular/router'
 import { filter } from 'rxjs/operators'
-import * as _ from 'lodash'
+import { each, get, some, map } from 'lodash'
 import { select, Store } from '@ngrx/store'
 import { MenuService } from 'src/app/services/menu'
 import * as SettingsActions from 'src/app/store/settings/actions'
@@ -63,7 +63,7 @@ export class MenuClassicLeftComponent implements OnInit {
     const pathWithSelection = this.getPath({ url: url }, menuData, (entry: any) => entry, 'url')
     if (pathWithSelection) {
       pathWithSelection.pop().selected = true
-      _.each(pathWithSelection, (parent: any) => (parent.open = true))
+      each(pathWithSelection, (parent: any) => (parent.open = true))
     }
     this.menuDataActivated = menuData.slice()
   }
@@ -76,11 +76,11 @@ export class MenuClassicLeftComponent implements OnInit {
     path = [],
   ) {
     let found = false
-    const getElementChildren = (value: any) => _.get(value, childrenProperty)
-    const getElementKey = (value: any) => _.get(value, keyProperty)
+    const getElementChildren = (value: any) =>  get(value, childrenProperty)
+    const getElementKey = (value: any) => get(value, keyProperty)
     const key = getElementKey(element)
     return (
-      _.some(source, (e: any) => {
+      some(source, (e: any) => {
         if (getElementKey(e) === key) {
           path.push(e)
           return true
@@ -95,7 +95,7 @@ export class MenuClassicLeftComponent implements OnInit {
           ))
         }
       }) &&
-      (found || _.map(path, property))
+      (found || map(path, property))
     )
   }
   toggleSettings() {

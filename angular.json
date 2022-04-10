@@ -20,13 +20,15 @@
             "allowedCommonJsDependencies": [
               "lodash",
               "angular2-chartjs",
-              "@ant-design/colors",
-              "@ant-design/icons-angular",
-              "@ant-design/icons-angular/icons"
+              "@ant-design/colors"
             ],
             "aot": true,
+            "optimization": true,
+            "buildOptimizer": true,
+            "sourceMap": false,
             "outputPath": "dist",
             "index": "src/index.html",
+            "outputHashing": "all",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -47,8 +49,6 @@
                 "src/styles.css",
               "./node_modules/leaflet/dist/leaflet.css",
               "./node_modules/ng-zorro-antd/style/entry.less",
-              "src/app/@vb/css/vendors/antd/themes/default.less",
-              "src/app/@vb/css/vendors/antd/themes/dark.less",
               "src/app/@vb/css/vendors/antd/style.scss",
               "src/app/@vb/css/vendors/nprogress/style.scss",
               "src/app/@vb/css/vendors/perfect-scrollbar/style.scss",
@@ -60,8 +60,6 @@
               "src/app/@vb/css/layout.scss",
               "src/app/@vb/css/extra/clean.scss",
               "src/app/@vb/css/extra/air.scss"
-            ],
-            "scripts": [
             ]
           },
           "configurations": {
@@ -72,6 +70,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "aot": true,
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -107,6 +106,8 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "defaultConfiguration": "hmr",
+
           "options": {
             "browserTarget": "visualbuilder:build"
           },
