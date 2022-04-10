@@ -1,9 +1,5 @@
 import { NgModule } from '@angular/core'
 
-// import { IconDefinition } from '@ant-design/icons-angular'
-// import * as AllIcons from '@ant-design/icons-angular/icons'
-
-// import { NzIconModule } from 'ng-zorro-antd/icon'
 import { NzButtonModule } from 'ng-zorro-antd/button'
 import { NzGridModule } from 'ng-zorro-antd/grid'
 import { NzLayoutModule } from 'ng-zorro-antd/layout'
