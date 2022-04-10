@@ -19,7 +19,6 @@
           "options": {
             "allowedCommonJsDependencies": [
               "lodash",
-              "angular2-chartjs",
               "@ant-design/colors"
             ],
             "aot": true,
@@ -38,27 +37,25 @@
                 "glob": "**/*",
                 "input": "src/assets/",
                 "ignore": [
-                  "**/styles/**/*",
-                  "**/*.less"
+                  "**/styles/**/*"
                 ],
                 "output": "/assets/"
               }
             ],
             "styles": [
-                "src/styles.css",
-              "./node_modules/leaflet/dist/leaflet.css",
-              "./node_modules/ng-zorro-antd/style/entry.less",
-              "src/app/@vb/css/vendors/antd/style.scss",
-              "src/app/@vb/css/vendors/nprogress/style.scss",
-              "src/app/@vb/css/vendors/perfect-scrollbar/style.scss",
-              "src/app/@vb/css/vendors/nestable/style.scss",
-              "src/app/@vb/css/core.scss",
-              "src/app/@vb/css/measurements.scss",
-              "src/app/@vb/css/colors.scss",
-              "src/app/@vb/css/utils.scss",
-              "src/app/@vb/css/layout.scss",
-              "src/app/@vb/css/extra/clean.scss",
-              "src/app/@vb/css/extra/air.scss"
+                "src/app/@vb/css/vendors/antd/style.scss",
+                "./node_modules/ng-zorro-antd/style/entry.less",
+                "src/app/@vb/css/vendors/nprogress/style.scss",
+                "src/app/@vb/css/vendors/perfect-scrollbar/style.scss",
+                "src/app/@vb/css/vendors/nestable/style.scss",
+                "src/app/@vb/css/core.scss",
+                "src/app/@vb/css/measurements.scss",
+                "src/app/@vb/css/colors.scss",
+                "src/app/@vb/css/utils.scss",
+                "src/app/@vb/css/layout.scss",
+                "src/app/@vb/css/extra/clean.scss",
+                "src/app/@vb/css/extra/air.scss",
+              "./node_modules/leaflet/dist/leaflet.css"
             ]
           },
           "configurations": {

@@ -10,10 +10,6 @@
   'vb__layout__borderless': settings.isBorderless
 }">
     <!-- classic left menu -->
-    <nz-sider *ngIf="settings.layoutMenu === 'classic' && settings.menuLayoutType === 'left' && !settings.isMobileView"
-      [nzWidth]="settings.isMenuCollapsed ? 80 : settings.leftMenuWidth" style="transition: none !important">
-      <!-- <vb-menu-classic-left></vb-menu-classic-left> -->
-    </nz-sider>
     <div *ngIf="settings.layoutMenu === 'classic' && settings.isMobileView">
       <nz-drawer [nzClosable]="false" [nzWrapClassName]="'mobileMenu'" [nzVisible]="settings.isMobileMenuOpen" nzPlacement="left"
         (nzOnClose)="toggleMobileMenu()">
@@ -22,7 +18,6 @@
    <vb-menu-flyout-top></vb-menu-flyout-top>
     <nz-layout>
       <vb-breadcrumbs *ngIf="settings.layoutBreadcrumbs === 'v1'"></vb-breadcrumbs>
-<!--      <vb-breadcrumbs-2 *ngIf="settings.layoutBreadcrumbs === 'v2'"></vb-breadcrumbs-2>-->
       <nz-content class="vb__layout__content">
         <div [@slideFadeinUp]="routeAnimation(outlet, 'slideFadeinUp')"
           [@slideFadeinRight]="routeAnimation(outlet, 'slideFadeinRight')"

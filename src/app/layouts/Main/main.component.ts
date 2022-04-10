@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import * as SettingsActions from 'src/app/store/settings/actions';
 import * as Reducers from 'src/app/store/reducers';
 import { slideFadeinUp, slideFadeinRight, zoomFadein, fadein } from '../router-animations';
