@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   authenticated: false,
-  hmr: true,
+  hmr: false,
   apiUrl: 'api',
   // apiUrl: "http://esapp-test.herokuapp.com",
 }

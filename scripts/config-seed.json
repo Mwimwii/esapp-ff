@@ -1,0 +1,748 @@
+{
+  "vb": "1.0.0",
+  "timestamp": 1626076345294,
+  "settings": {
+    "authProvider": "basic-auth",
+    "logo": "ESAPP",
+    "version": "air",
+    "theme": "default",
+    "locale": "en-US",
+    "isSidebarOpen": false,
+    "isSupportChatOpen": false,
+    "isMobileView": false,
+    "isMobileMenuOpen": false,
+    "isMenuCollapsed": false,
+    "isPreselectedOpen": false,
+    "preselectedVariant": "waves",
+    "menuLayoutType": "left",
+    "routerAnimation": "zoom-fadein",
+    "menuColor": "white",
+    "authPagesColor": "gray",
+    "isAuthTopbar": true,
+    "primaryColor": "#28a745",
+    "leftMenuWidth": 256,
+    "isMenuUnfixed": false,
+    "isMenuShadow": true,
+    "isTopbarFixed": false,
+    "isTopbarSeparated": true,
+    "isGrayTopbar": false,
+    "isContentMaxWidth": true,
+    "isAppMaxWidth": false,
+    "isGrayBackground": false,
+    "isCardShadow": true,
+    "isSquaredBorders": false,
+    "isBorderless": false,
+    "layoutMenu": "classic",
+    "layoutTopbar": "none",
+    "layoutBreadcrumbs": "v1",
+    "layoutFooter": "v1",
+    "flyoutMenuType": "flyout",
+    "flyoutMenuColor": "blue"
+  },
+  "config": [
+    {
+      "key": "__dashboard",
+      "title": "Dashboards",
+      "url": "/dashboard",
+      "icon": "fe fe-home",
+      "expanded": true
+    },
+    {
+      "title": "L&K Management",
+      "url": "/lkm",
+      "icon": "fe fe-book-open",
+      "key": "pxo5b",
+      "expanded": true,
+      "children": [
+        {
+          "title": "Interview Guide",
+          "url": "/lkm/interviews",
+          "key": "h7aad",
+          "expanded": true
+        },
+        {
+          "title": "My Stories",
+          "url": "/lkm/mystories",
+          "key": "rniyi9",
+          "expanded": true
+        },
+        {
+          "title": "Stories of Change",
+          "url": "/lkm/soc",
+          "key": "tx7k6w",
+          "expanded": true
+        }
+      ]
+    },
+    {
+      "title": "Matching Grant Facility",
+      "url": "/mgf",
+      "icon": "fe fe-briefcase",
+      "key": "osk3u",
+      "expanded": true,
+      "children": [
+        {
+          "title": "Organizations",
+          "url": "/mgf/org",
+          "key": "exxjo5",
+          "expanded": true
+        },
+        {
+          "title": "Evaluations",
+          "url": "/mgf/evaluations",
+          "key": "pyo5qw"
+        },
+        {
+          "title": "Proposals",
+          "url": "/mgf/proposals",
+          "key": "ou0wkk"
+        },
+        {
+          "title": "Applications",
+          "url": "/mgf/applications",
+          "key": "4hmw"
+        },
+        {
+          "title": "Applicants",
+          "url": "/mgf/applicants",
+          "key": "7019oh",
+          "expanded": true
+        },
+        {
+          "title": "Approvals",
+          "url": "/mgf/approvals",
+          "key": "7s4gfn",
+          "expanded": true
+        },
+        {
+          "title": "Concept Notes",
+          "url": "/mgf/concept-notes",
+          "key": "hl3ks8"
+        }
+      ]
+    },
+    {
+      "title": "Monitoring and Evaluation",
+      "url": "/me",
+      "icon": "fe fe-activity",
+      "key": "o9b8f",
+      "expanded": true,
+      "children": [
+        {
+          "title": "Camp Monthly Schedules",
+          "url": "/me/schedules",
+          "key": "appnar"
+        }
+      ]
+    },
+    {
+      "title": "Capacity Building",
+      "url": "/cbb",
+      "icon": "fe fe-package",
+      "key": "65z1s9",
+      "expanded": true,
+      "children": [
+        {
+          "title": "FaaBS Training topic s",
+          "url": "/cbb/topics",
+          "key": "n2afl"
+        },
+        {
+          "title": "FaaBS Training Attendance",
+          "url": "/cbb/attendance",
+          "key": "ih5ba"
+        },
+        {
+          "title": "Camp Monthly Schedules",
+          "url": "/cbb/schedules",
+          "key": "refa2h"
+        }
+      ]
+    },
+    {
+      "title": "Market Data",
+      "url": "/market",
+      "icon": "fe fe-bar-chart-2",
+      "key": "80pi8",
+      "expanded": true,
+      "children": [
+        {
+          "title": "Commodity Prices",
+          "url": "/prices",
+          "key": "ss6dve"
+        }
+      ]
+    },
+    {
+      "title": "Reports",
+      "url": "/reports",
+      "icon": "fe fe-file-text",
+      "key": "cwm04g",
+      "expanded": true,
+      "children": [
+        {
+          "title": "Training attendance cumulative",
+          "url": "/cumulative",
+          "key": "rfl2mw"
+        }
+      ]
+    },
+    {
+      "title": "User Administration",
+      "url": "/user",
+      "icon": "fe fe-users",
+      "key": "2hfvfk",
+      "expanded": true,
+      "children": [
+        {
+          "title": "My Profile",
+          "url": "/user/profile",
+          "key": "oalt1lm"
+        }
+      ]
+    }
+  ],
+  "content": {
+    "h7aad": [
+      {
+        "key": "gqd71",
+        "columns": [
+          {
+            "key": "klimgf",
+            "className": "col-lg-6 col-md-12",
+            "cards": []
+          },
+          {
+            "key": "pbj1dm",
+            "className": "col-lg-6 col-md-12",
+            "cards": []
+          }
+        ]
+      },
+      {
+        "key": "720abe",
+        "columns": [
+          {
+            "key": "24gyhv",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "z9bf47",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "d2xobc",
+                    "name": "Headers-Heading2",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header",
+                    "data": {
+                      "title": "Interview Guide",
+                      "description": "Welcome to the interview guide section."
+                    }
+                  },
+                  {
+                    "key": "pa7it",
+                    "name": "Typography-3"
+                  },
+                  {
+                    "key": "7hmdcc",
+                    "name": "Controls-Button2",
+                    "editable": true,
+                    "dataType": "object",
+                    "data": {
+                      "title": "Download Template",
+                      "icon": "fe fe-download",
+                      "type": "primary"
+                    }
+                  },
+                  {
+                    "key": "ikfkw",
+                    "name": "WidgetsTables-2"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "rniyi9": [
+      {
+        "key": "liwese",
+        "columns": [
+          {
+            "key": "e9senj",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "e2115i",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "8fb4sc",
+                    "name": "Headers-Heading2",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header",
+                    "data": {
+                      "title": "My Stories of Change",
+                      "description": "Welcome to my stories section."
+                    }
+                  },
+                  {
+                    "key": "kdk0g9",
+                    "name": "Typography-3"
+                  },
+                  {
+                    "key": "yoi50m",
+                    "name": "Controls-Button2",
+                    "editable": true,
+                    "dataType": "object",
+                    "data": {
+                      "title": "New Story of Change",
+                      "icon": "fe fe-plus-circle",
+                      "type": "primary"
+                    }
+                  },
+                  {
+                    "key": "m2lam",
+                    "name": "WidgetsTables-3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "497u1",
+        "columns": [
+          {
+            "key": "tpxvbf",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "6f2dz",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "d0qz9",
+                    "name": "WidgetsGeneral-11v1",
+                    "wrapper": false
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tx7k6w": [
+      {
+        "key": "gha3ql",
+        "columns": [
+          {
+            "key": "qw1gqk",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "wtu5qn",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "3d4ekl",
+                    "name": "Headers-Heading2",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header",
+                    "data": {
+                      "title": "Stories of Change",
+                      "description": "Welcome to stories of change section."
+                    }
+                  },
+                  {
+                    "key": "sn1ni",
+                    "name": "Typography-3"
+                  },
+                  {
+                    "key": "0tqkv",
+                    "name": "WidgetsTables-3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ozn14l": [
+      {
+        "key": "hpj7d",
+        "columns": [
+          {
+            "key": "sq7qyk",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "cck9w",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "exxjo5": [
+      {
+        "key": "rgi56i",
+        "columns": [
+          {
+            "key": "36lex",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "f0rg4f",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "un1zr",
+                    "name": "Headers-Heading",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header",
+                    "data": {
+                      "title": "MGF Organizations"
+                    }
+                  },
+                  {
+                    "key": "ipymqs",
+                    "name": "TablesAntd-6"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "appnar": [
+      {
+        "key": "hp65i",
+        "columns": [
+          {
+            "key": "udvvto",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "ym7g4",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "rcixnu",
+                    "name": "Headers-Heading2",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header",
+                    "data": {
+                      "title": "Instructions",
+                      "description": "Welcome to the camp monthly schedules."
+                    }
+                  }
+                ]
+              },
+              {
+                "key": "13dqxn",
+                "extraClass": "card",
+                "widgets": [
+                  {
+                    "key": "ufpd2u",
+                    "name": "AppPartials-Calendar"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ss6dve": [
+      {
+        "key": "i9z57",
+        "columns": [
+          {
+            "key": "8td9u",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "ikar3a",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "ic5wkn",
+                    "name": "Headers-Heading2",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header",
+                    "data": {
+                      "title": "Commodity Prices",
+                      "description": "Welcome to the commodity prices section."
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "97k6jd",
+        "columns": [
+          {
+            "key": "25yn3t",
+            "className": "col-lg-4 col-md-12",
+            "cards": [
+              {
+                "key": "z8cfpl",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "iu6b1b",
+                    "name": "Crypto-CryptoList"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "j0fi7e",
+            "className": "col-lg-8 col-md-12",
+            "cards": [
+              {
+                "key": "h7rxdf",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "ysm3ma",
+                    "name": "Crypto-CryptoChart"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "__dashboard": [
+      {
+        "key": "lyze6j",
+        "columns": [
+          {
+            "key": "wsynbr",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "rlbypg",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "184ghf",
+                    "name": "WidgetsGeneral-22"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "wv4a5",
+        "columns": [
+          {
+            "key": "lbpedu",
+            "className": "col-lg-6 col-md-12",
+            "cards": [
+              {
+                "key": "nl1seu",
+                "extraClass": "card",
+                "widgets": [
+                  {
+                    "key": "cei4oe",
+                    "name": "WidgetsLists-1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "xgt7s",
+            "className": "col-lg-6 col-md-12",
+            "cards": [
+              {
+                "key": "2akz19",
+                "extraClass": "card",
+                "widgets": [
+                  {
+                    "key": "8idhk",
+                    "name": "WidgetsLists-1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "6vquv",
+        "columns": [
+          {
+            "key": "l92fkl",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "6mzj8x",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "0qc9be",
+                    "name": "WidgetsTables-7"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "oalt1lm": [
+      {
+        "key": "b2muxk",
+        "columns": [
+          {
+            "key": "zqz73",
+            "className": "col-lg-4 col-md-12",
+            "cards": [
+              {
+                "key": "bslbyb",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "zgt4zt",
+                    "name": "WidgetsGeneral-23"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "u65g6",
+            "className": "col-lg-8 col-md-12",
+            "cards": [
+              {
+                "key": "gnscvs",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "t0kpjr",
+                    "name": "Headers-CardHeaderTabbed2",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header py-0",
+                    "data": {
+                      "title": "Defaults"
+                    }
+                  },
+                  {
+                    "key": "m44a2nf",
+                    "name": "Forms-1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "n2afl": [
+      {
+        "key": "ilyx1",
+        "columns": [
+          {
+            "key": "do47xk",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "xqnkl",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "jpi0xh",
+                    "name": "Headers-Heading2",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header",
+                    "data": {
+                      "title": "FaaBS Training Topics ",
+                      "description": "Welcome to the FaaBS Training Topics section."
+                    }
+                  }
+                ]
+              },
+              {
+                "key": "1s5xbt",
+                "extraClass": "card",
+                "widgets": [
+                  {
+                    "key": "rayz2k",
+                    "name": "WidgetsTables-3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "ih5ba": [
+      {
+        "key": "orsqh",
+        "columns": [
+          {
+            "key": "dwgjna",
+            "className": "col-lg-12",
+            "cards": [
+              {
+                "key": "n16aom",
+                "extraClass": "card card-top card-top-primary",
+                "widgets": [
+                  {
+                    "key": "5d51tq",
+                    "name": "Headers-Heading2",
+                    "editable": true,
+                    "dataType": "object",
+                    "wrapper": "card-header",
+                    "data": {
+                      "title": "FaaBS Training Attendance",
+                      "description": "Welcome to the FTA section."
+                    }
+                  }
+                ]
+              },
+              {
+                "key": "w7ikf2",
+                "extraClass": "card",
+                "widgets": [
+                  {
+                    "key": "9eys9o",
+                    "name": "WidgetsTables-3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -19,6 +19,8 @@ import { FaabsAttendanceSheetComponent } from './faabs/attendance/register-atten
 import { ViewPastRegistrationFormComponent } from './faabs/attendance/attendance-main-table/view-past-registration-form/view-past-registration-form.component';
 
 
+import { DashboardDownloadListComponent } from './dashboard/dashboard-download-list/dashboard-download-list.component';
+import { DashboardTasksTableComponent } from './dashboard/dashboard-tasks-table/dashboard-tasks-table.component';
 import { DashboardHeadComponent } from './dashboard/dashboard-head/dashboard-head.component';
 import { DashboardHeadItemComponent } from './dashboard/dashboard-head-item/dashboard-head-item.component';
 import { CbTopicsTableComponent } from './faabs/topics/cbb-topics-table/cbb-topics-table.component';
@@ -48,6 +50,8 @@ const COMPONENTS = [
     AppAttendanceMainTableComponent,
     FaabsAttendanceSheetComponent,
 
+    DashboardDownloadListComponent,
+    DashboardTasksTableComponent,
     DashboardHeadComponent,
     DashboardHeadItemComponent,
 

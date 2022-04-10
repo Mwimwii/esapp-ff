@@ -14,7 +14,7 @@
         <div class="card-body p-1">
           <div class="p-2">
             <input nz-input [(ngModel)]="searchText" (ngModelChange)="filterPagesList()" allowClear
-              placeholder="{{ 'topBar.findPages'   }}" />
+              placeholder="{{ 'topBar.findPages' | translate }}" />
           </div>
           <div class="height-200">
             <perfect-scrollbar>
