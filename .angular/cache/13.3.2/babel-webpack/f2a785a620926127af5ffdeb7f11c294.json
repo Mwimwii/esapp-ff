@@ -1,1 +1,0 @@
-{"ast":null,"code":"export const environment = {\n  production: false,\n  authenticated: true,\n  hmr: true\n};","map":null,"metadata":{},"sourceType":"module"}
