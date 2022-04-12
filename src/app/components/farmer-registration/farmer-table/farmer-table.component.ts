@@ -19,12 +19,14 @@ export class AppFarmerTableComponent implements OnInit {
   current: number = 0
   checklist: boolean = false
   subscription;
-  farmers: Observable<any>;
+  farmers: any;
 
   constructor(private http: DataService) {}
 
   ngOnInit() {
-    this.farmers = this.http.getCategoryAFarmers()
+    this.http.getCategoryAFarmers().subscribe((resp: {[key: string]: []}) => {
+      this.farmers = resp.farmers
+    })
   }
 
   pre(): void {

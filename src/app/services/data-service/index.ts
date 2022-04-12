@@ -28,13 +28,8 @@ export class DataService {
 
   // we will get a list of farmers and their location
   getCategoryAFarmers(){
-      return this.get('category-a-farmers')
+      return this.get('farmers')
   }
-  // getFaabsByUserId(user){
-  //   return this.get('faabs-groups').pipe(
-  //     filter( state => state.camp_id == user.camp)
-  //   )
-  // }
 
   // getFaabsGroups(){
   //     return this.store.pipe(select(Reducers.getUser))
@@ -43,7 +38,7 @@ export class DataService {
   //       )
   // }
   getFaabsGroups(){
-      return this.get('faabs-groups')
+      return this.get('faabs')
   }
 
   getFaabsTopics(){
@@ -67,7 +62,7 @@ export class DataService {
       return this.http.get(`/api/${url}`, this.httpOptions)
     } else { return of("offline")}
   }
-
+ffix
   postFaabsAttendance(item){
     console.log(`Posting Item `)
     console.log(item)

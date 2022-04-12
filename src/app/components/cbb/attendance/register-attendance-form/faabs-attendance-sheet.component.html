@@ -19,7 +19,7 @@
           <tr *ngFor="let data of basicTable.data">
             <td nzShowCheckbox [(nzChecked)]="mapOfCheckedId[data.id]" [nzDisabled]="data.disabled"
                 (nzCheckedChange)="refreshStatus()"></td>
-            <td>{{data.Title}}{{data.first_name}} {{data.last_name}}</td>
+            <td>{{data.Title}}{{data.firstName}} {{data.last_name}}</td>
             <td>{{data.nrc}}</td>
             <td>0/2</td>
           </tr>

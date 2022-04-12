@@ -78,9 +78,9 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
           },
           className: 'col-1'
         },
-        { className: 'col-3', ...this.genericField('first_name', 'First Name', 'Jonathan') },
-        { className: 'col-3', ...this.genericField('other_names', 'Other Name', 'P', false) },
-        { className: 'col-3', ...this.genericField('last_name', 'Last Name', 'Mwamba') },
+        { className: 'col-3', ...this.genericField('firstName', 'First Name', 'Jonathan') },
+        { className: 'col-3', ...this.genericField('otherNames', 'Other Name', 'P', false) },
+        { className: 'col-3', ...this.genericField('lastName', 'Last Name', 'Mwamba') },
       ],
     },
     this.genericSectionLabel('Farmer Identification', true),
@@ -119,7 +119,7 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
       fieldGroupClassName: 'row',
       fieldGroup: [
         {
-          key: 'marital_status',
+          key: 'maritalStatus',
           type: 'select',
           templateOptions: {
             type: 'text',
@@ -137,7 +137,7 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
           className: 'col-3',
         },
         {
-          key: 'relationship_to_household_head',
+          key: 'relationshipToHouseholdHead',
           type: 'select',
           className:'col-3',
           templateOptions: {
@@ -155,7 +155,7 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
           },
         },
         { className:'col-3',
-          key: 'household_head_type',
+          key: 'householdHeadType',
         type: 'select',
         templateOptions: {
           type: 'text',
@@ -168,7 +168,7 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
         },},
         {
           className: 'col-3',
-          key: 'household_size',
+          key: 'householdSize',
           type: 'input',
           templateOptions: {
             type: 'number',
@@ -189,31 +189,20 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
       ],
     },
     this.genericField('commodity', 'Commodity', 'Enter a Commodity'),
-    this.genericField('contact_number', 'Contact Number', '0977738827'),
+    this.genericField('contactNumber', 'Contact Number', '0977738827'),
   ]
 
   submit(model: any): void {
     this.model['latitude'] = this.latitude.toString()
     this.model['longitude'] = this.longintude.toString()
-
-    // get the user id
-    // set the user id to the created_by
-    this.model['created_by'] = 1
-    this.model['updated_by'] = 1
-
-    // get an empty faabs group
-    this.model['faabs_group_id'] = 6
-    this.model['status'] = 1
-
     let now = new Date()
     this.model['registration_date'] = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate()
-    this.model['age'] = this.calcAge(this.model['dob'])
 
-    this.notification.success('Farmer Registered', 'Farmer successfully registered!')
 
     if(this.form.valid){
-      this.http.postDataAuthenticated('/category-a-farmers', this.model)
-        .subscribe(data => console.log, error => console.error)
+      this.http.postDataAuthenticated('/farmers/submit', this.model)
+      .subscribe(data => this.notification.success('Farmer Registered', 'Farmer successfully registered!'),
+                 error => this.notification.error('Error', error))
     }
   }
 

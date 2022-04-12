@@ -43,7 +43,7 @@ interface FaabsAttendance {
   templateUrl: './attendance.component.html',
 })
 export class CbbAttendanceComponent implements OnInit {
-  faabs : Observable<any>;
+  faabs : any;
   faabsTopics : {};
   faabsTopicsEnrollments : Observable<any>;
   faabsTopicsEnrollmentsFiltered: any;
@@ -62,7 +62,9 @@ export class CbbAttendanceComponent implements OnInit {
   //Get the faabs groups
   // Get the faabs topics and set their id as the key of the object
   ngOnInit() {
-      this.faabs = this.http.getFaabsGroups();
+      this.http.getFaabsGroups().subscribe((res: {[key:string]: any}) => {this.faabs = res.faabs});
+
+
       this.http.getFaabsTopics()
                 .subscribe((data:[]) => {
             this.faabsTopics = this.arrayToObj(data, 'id')
@@ -93,6 +95,8 @@ export class CbbAttendanceComponent implements OnInit {
     this.isAttendanceVisible = true;
     this.faabsIDSelected = faabsID;
   }
+
+
   showPastAttendanceModal (faabsID) {
     this.isPastAttendanceVisible = true
     this.faabsIDSelected = faabsID

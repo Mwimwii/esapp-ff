@@ -1,4 +1,4 @@
-  <nz-table #basicTable [nzData]="farmers | async"
+  <nz-table #basicTable [nzData]="farmers"
                 [nzShowPagination]="true" class="table mb-4">
         <thead>
           <tr>
@@ -7,17 +7,18 @@
             <th class="bg-transparent">Sex</th>
             <th class="bg-transparent">NRC</th>
             <th class="bg-transparent">Edit</th>
+            <th class="bg-transparent">Sync</th>
             <th *ngIf='false' class="bg-transparent">Action</th>
           </tr>
         </thead>
         <tbody>
-        <ng-container *ngFor="let data of basicTable.data">
-          <tr >
+          <ng-container *ngFor="let data of basicTable.data">
+            <tr >
             <td [nzExpand]="expandSet.has(data.id)"
                 (nzExpandChange)="onExpandChange(data.id, $event)">
             <td>
-            <div>{{data.title}}{{data.first_name}} {{data.other_names}}</div>
-            <div class="text-gray-4">{{data.last_name}}</div>
+            <div>{{data.title}}{{data.firstName}} {{data.otherNames}}</div>
+            <div class="text-gray-4">{{data.lastName}}</div>
             </td>
             <td>
               <div>{{data.sex}}</div>
@@ -33,7 +34,7 @@
               </button>
             </td>
             <td *ngIf='!data.status'>
-              <button type="button" class="btn">
+              <button type="button" class="btn disabled" disabled>
                 <i class="fe fe-arrow-up-circle"></i>
               </button>
             </td>

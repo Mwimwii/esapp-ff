@@ -109,7 +109,7 @@ export class FaabsAttendanceSheetComponent implements OnInit {
           training_type: "Participants under non-Direct/Other Training [Stream 2]",
 
           farmer_id: item.id,
-          full_names: item.first_name + " " + item.other_names + item.last_name,
+          full_names: item.firstName + " " + item.other_names + item.last_name,
           youth_non_youth: "Non Youth",
           marital_status: item["marital_status"],
           sex: item["sex"],

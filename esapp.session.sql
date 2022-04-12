@@ -1,0 +1,4 @@
+insert into provinces values(12, timestamp '2015-01-10 00:51:14', 'Camp LSKC', 'Camp between lusaka and chongwe', 12.121,12.244, 'a6675343-8682-4b66-9c7f-3b349ced6617', 22);
+insert into provinces values(43, timestamp '2015-01-10 00:51:14', 'Camp LSKS', 'Great south', 12.121,12.244, 'a6675343-8382-4b66-9c7f-3b349ced6617', 22);
+insert into provinces values(53, timestamp '2015-01-10 00:51:14', 'Camp TZ', 'Camp on the way to TZ', 12.121,12.244, 'a6675343-8682-4b66-9c7f-3b349ced6f17', 21);
+insert into provinces values(13, timestamp '2015-01-10 00:51:14', 'Camp TZ', 'Camp on the way to TZ', 12.121,12.244, 'a6675343-8682-4b66-9c7f-3b349ced6f17', 21);

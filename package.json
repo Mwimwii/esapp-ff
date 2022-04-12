@@ -8,7 +8,7 @@
     "start": "ng serve --open",
     "hmr": "ng serve --configuration=hmr --open",
     "proxy": "ng serve --proxy-config proxy.config.json --configuration=hmr --open --host 0.0.0.0",
-    "build": "ng build --prod --build-optimizer",
+    "build": "ng build --prod",
     "test": "ng test",
     "e2e": "ng e2e",
     "lint-staged": "lint-staged",

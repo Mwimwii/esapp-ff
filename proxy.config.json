@@ -1,7 +1,0 @@
-{
-  "/api/*": {
-    "target": "http://localhost/esapp/api/web",
-    "secure": false,
-    "pathRewrite": {"^/api" : ""}
-  }
-}

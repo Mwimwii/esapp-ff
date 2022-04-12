@@ -4,12 +4,8 @@
       <div class="card card-top card-top-primary">
         <div class="card-header">
           <div>
-<!--            <NoticeBar [option]="{ content: '我是小黄条，小黄条的小，小黄条的黄，小黄条的条，请多多关照！！！', font: '14px' }">-->
-<!--            </NoticeBar>-->
               <nz-tabset nzType="card">
-                <nz-tab *ngFor="let faab of faabs | async" [nzTitle]="faab.name">
-<!--                    <nz-descriptions-item nzTitle="Latitude">{{faab.longitude}}</nz-descriptions-item>-->
-<!--                    <nz-descriptions-item nzTitle="Latitude"> {{faab.latitude}}</nz-descriptions-item>-->
+                <nz-tab *ngFor="let faab of faabs" [nzTitle]="faab.name">
                   <app-faabs-tab [faabs_id]='faab.id'></app-faabs-tab>
                   <div class='row ml-4'>
                     <div style="margin-bottom: 8px;" class='mx-1'><button nz-button (click)='showTopicsModal(faab.id)'>Show Topics</button></div>
@@ -20,9 +16,9 @@
               </nz-tabset>
           </div>
           </div>
-<!--          <vb-headers-heading-2-->
-<!--            [data]="{'title':'FaaBS Training Attendance','description':'Welcome to the FTA section.'}"-->
-<!--          ></vb-headers-heading-2>-->
+         <vb-headers-heading-2
+           [data]="{'title':'FaaBS Training Attendance','description':'Welcome to the FTA section.'}"
+         ></vb-headers-heading-2>
           <!--          Display them in tabs-->
         </div>
       </div>
