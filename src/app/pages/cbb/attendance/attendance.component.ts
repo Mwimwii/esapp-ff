@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core'
 import { DataService } from '../../../services/data-service'
 import { Observable } from 'rxjs'
 import { Store } from '@ngrx/store'
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { genericField, } from 'src/app/utils';
-import { FormGroup } from '@angular/forms'
-import { FormlyFieldConfig } from '@ngx-formly/core'
 import { Geolocation } from '@capacitor/geolocation'
 import { NzNotificationService } from 'ng-zorro-antd/notification';
 import { EsappRequestHandlerService } from 'src/app/esapp-request-handler.service';

@@ -3,6 +3,7 @@
         <thead>
           <tr>
             <th class="bg-transparent">#</th>
+            <th class="bg-transparent"></th>
             <th class="bg-transparent">Name</th>
             <th class="bg-transparent">Sex</th>
             <th class="bg-transparent">NRC</th>
@@ -16,6 +17,10 @@
             <tr >
             <td [nzExpand]="expandSet.has(data.id)"
                 (nzExpandChange)="onExpandChange(data.id, $event)">
+            </td>
+            <td>
+              <div><nz-avatar nzText="{{data.firstName[0].toUpperCase()}} {{data.lastName[0].toUpperCase()}}" style="color:#298737; background-color:#e1fdcf;"></nz-avatar></div>
+            </td>
             <td>
             <div>{{data.title}}{{data.firstName}} {{data.otherNames}}</div>
             <div class="text-gray-4">{{data.lastName}}</div>

@@ -5,14 +5,51 @@
         <div class="card-header">
           <div>
 
-            <nz-tabset nzType="card">
+            <nz-tabset nzType="top" nzTabPosition="left" nzSize="large">
 
-              <nz-tab *ngFor="let faab of faabs" class="mx-2" [nzTitle]="faab.name">
+              <nz-tab *ngFor="let faab of faabs; let i = index;" class="mx-2" [nzTitle]="'#'+ i + ' ' + faab.name">
                 <div class='row ml-4'>
-                    <h3 class="underline font-bold">Topics</h3>
-                    <ul *ngFor="let topic of faab.topics">
-                      <li>{{ topic | json }}</li>
-                    </ul>
+                  <div class="col-6">
+
+                    <h4 class="underline font-bold mb-3 text-center">Topics</h4>
+                    <nz-table #basicTable [nzData]="faab.topics">
+                      <thead>
+                        <tr>
+                          <th>Output Level Indicator</th>
+                          <th>Category</th>
+                          <th>Sub Component</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let topic of faab.topics">
+                          <td>{{ topic.outputLevelIndicator }}</td>
+                          <td>{{ topic.category }}</td>
+                          <td>{{ topic.subComponent }}</td>
+                        </tr>
+                      </tbody>
+                    </nz-table>
+                  </div>
+                  <div class="col-6">
+
+                    <h4 class="underline font-bold mb-3 text-center">Topics</h4>
+                    <nz-table #basicTable [nzData]="faab.topics">
+                      <thead>
+                        <tr>
+                          <th>Output Level Indicator</th>
+                          <th>Category</th>
+                          <th>Sub Component</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let topic of faab.topics">
+                          <td>{{ topic.outputLevelIndicator }}</td>
+                          <td>{{ topic.category }}</td>
+                          <td>{{ topic.subComponent }}</td>
+                        </tr>
+                      </tbody>
+                    </nz-table>
+                  </div>
+
                 </div>
 
                 <div class='row ml-4'>
