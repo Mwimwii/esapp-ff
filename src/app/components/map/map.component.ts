@@ -1,6 +1,22 @@
 import { Component, OnInit,AfterViewInit } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import * as L from 'leaflet';
+import { MarkerService } from 'src/app/services/map/marker.service';
+
+const iconRetinaUrl = 'assets/marker-icon-2x.png';
+const iconUrl = 'assets/marker-icon.png';
+const shadowUrl = 'assets/marker-shadow.png';
+const iconDefault = L.icon({
+  iconRetinaUrl,
+  iconUrl,
+  shadowUrl,
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  tooltipAnchor: [16, -28],
+  shadowSize: [41, 41]
+});
+L.Marker.prototype.options.icon = iconDefault;
 
 @Component({
   selector: 'app-map',
@@ -11,19 +27,16 @@ export class MapComponent implements OnInit, AfterViewInit{
   data: any[]
   private map;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private marker: MarkerService) {
   }
 
-  ngOnInit(): void {
-    // this.getdata()
-  }
+  ngOnInit(): void {}
 
-  // Place the map inside the DOM
   ngAfterViewInit(): void {
   this.initMap();
+  this.marker.makeFarmerMarkers(this.map)
   }
 
-  // Create the new Leaflet map object
   initMap() {
     this.map = L.map('map', {
       'center': [-15.3526808,29.1675323],
@@ -36,6 +49,7 @@ export class MapComponent implements OnInit, AfterViewInit{
       minZoom: 3,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     });
+
 
   tiles.addTo(this.map);
 

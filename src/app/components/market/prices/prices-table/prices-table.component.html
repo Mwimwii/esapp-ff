@@ -9,8 +9,7 @@
           <th class="bg-transparent">Market/Vendor</th>
           <th class="bg-transparent">Commodity Type</th>
           <th class="bg-transparent">Price Level</th>
-          <th class="bg-transparent">Unit</th>
-          <th class="bg-transparent">Price(ZMW)</th>
+          <th class="bg-transparent">PPU (ZMW/100g)</th>
         </tr>
         </thead>
         <tbody>
@@ -31,10 +30,7 @@
               {{data.price_level}}
             </td>
             <td>
-              <div>{{data.unit_of_measure}}</div>
-            </td>
-            <td>
-              <div>K{{data.price}}</div>
+              <div>K {{ data.price }}</div>
             </td>
 
           </tr>
@@ -90,21 +86,7 @@
 <!--    </nz-table>-->
 <!--  </nz-tab>-->
     <nz-tab nzTitle="New Commodity Price">
-      <nz-steps nzType="navigation" [nzCurrent]="current" >
-        <nz-step nzTitle="Create / Choose" nzStatus="process" nzIcon="paper-clip">
-        </nz-step>
-      </nz-steps>
-      <div class="steps-content">
         <app-prices-form *ngIf="createTable"></app-prices-form>
-      </div>
-      <div class="steps-action">
-        <button
-          class="btn btn-default mt-3 mr-2"
-          nz-button nzType="primary" (click)="done()" *ngIf="current === 2">
-          <span>Done</span>
-        </button>
-      </div>
-
     </nz-tab>
 
   </nz-tabset>

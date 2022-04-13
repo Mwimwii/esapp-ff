@@ -9,7 +9,7 @@ export const initialState: object = {
   role: 'camp_officer',
   email: 'admin@esapp.gov.zm',
   avatar: '',
-  authorized: true,
+  authorized: false,
   loading: false,
 }
 

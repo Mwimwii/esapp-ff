@@ -15,21 +15,19 @@ export class PricesFormComponent implements OnInit {
   options: FormlyFormOptions = {}
   loading: boolean = false
 
+
   formFields = [
-    // Group 1
     {
-      key: 'market_id',
-      type: 'select',
+      key: 'market',
+      type: 'input',
       templateOptions: {
         type: 'text',
         label: 'Market',
         placeholder: 'Select Market',
-        required: true,
-        options: [],
       },
     },
     {
-      key: 'commodity_type_id',
+      key: 'commodity_type',
       type: 'select',
       templateOptions: {
         type: 'text',
@@ -37,17 +35,15 @@ export class PricesFormComponent implements OnInit {
         placeholder: 'Select Commodity Type',
         required: true,
         options: [
-          { value: 1, label: 'Grain' },
-          { value: 2, label: 'Oats' },
-          { value: 3, label: 'Livestock' },
-          { value: 4, label: 'Poultry' },
+          { value: 'Grain', label: 'Grain' },
+          { value: 'Oats', label: 'Oats' },
+          { value: 'Livestock', label: 'Livestock' },
+          { value: 'Poultry', label: 'Poultry' },
         ],
       },
     },
-
-    //Group 2
     {
-      key: 'price_level_id',
+      key: 'price_level',
       type: 'select',
       templateOptions: {
         type: 'text',
@@ -55,22 +51,26 @@ export class PricesFormComponent implements OnInit {
         placeholder: 'Select Price Level',
         required: true,
         options: [
-          { value: 1, label: 'Low' },
-          { value: 2, label: 'Mid' },
-          { value: 3, label: 'High' },
+          { value: 'low', label: 'Low' },
+          { value: 'mid', label: 'Mid' },
+          { value: 'high', label: 'High' },
         ],
       },
     },
-
-    // Group 3
     {
-      key: 'unit_of_measure',
-      type: 'input',
+      key: 'unit',
+      type: 'select',
       templateOptions: {
         type: 'text',
         label: 'Unit',
         placeholder: '100g,1kg',
-        required: true,
+        options: [
+          { value: '0.0000001', label: 'tonne' },
+          { value: '0.001', label: 'kg' },
+          { value: '.01', label: 'g' },
+          { value: '0.065', label: 'meda 250 ml' },
+          { value: '0.005', label: 'meda 5 litres' },
+        ],
       },
     },
     {
@@ -90,12 +90,6 @@ export class PricesFormComponent implements OnInit {
   constructor(private http: EsappRequestHandlerService,  private notification: NzNotificationService) {}
 
   ngOnInit(): void {
-    this.http.getDataAuthenticated('/commodity-price-levels')
-      .subscribe( data => this.formFields[2].templateOptions.options=data)
-    this.http.getDataAuthenticated('/markets')
-      .subscribe( data => this.formFields[0].templateOptions.options=data)
-    this.http.getDataAuthenticated('/commodity-type')
-      .subscribe( data => this.formFields[1].templateOptions.options=data)
     // Generate the form
     this.fields = [
       {
@@ -138,13 +132,10 @@ export class PricesFormComponent implements OnInit {
 
   submit(model: any): any {
   this.loading = true
-  this.model.year = "2021"
-  this.model.month = "12"
-  this.model.district = "1"
-    this.http.postDataAuthenticated('/prices', this.model).subscribe(data=> {
+  this.http.postDataAuthenticated('/market/submit', this.model).subscribe(data=> {
+      this.notification.success('Commodity Added', 'Commodity Price added')
       this.loading = false
-    })
-  this.notification.success('Commodity Added', 'Commodity Price added')
+    }, error => this.notification.error('Fatal', JSON.stringify(error)))
 
   }
 }

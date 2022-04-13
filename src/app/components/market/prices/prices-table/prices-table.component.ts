@@ -16,7 +16,7 @@ export class PricesTableComponent implements OnInit {
   constructor(private pricesService: EsappRequestHandlerService) {}
   getPrices(): void {
     this.loading = true
-    this.pricesService.getDataAuthenticated('/price')
+    this.pricesService.getDataAuthenticated('/market')
       .subscribe(data => {
         this.tableData = data
         this.loading = false
