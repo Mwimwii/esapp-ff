@@ -3,15 +3,25 @@
     <div class="col-lg-12">
       <div class="card card-top card-top-primary">
         <div class="card-header">
+          <vb-headers-heading-2
+            [data]="{'title':'Faabs','description':'Welcome to the faabs module.'}"
+          ></vb-headers-heading-2>
+        </div>
+        <div class="card-body">
+
           <div>
 
             <nz-tabset nzType="top" nzTabPosition="left" nzSize="large">
 
               <nz-tab *ngFor="let faab of faabs; let i = index;" class="mx-2" [nzTitle]="'#'+ i + ' ' + faab.name">
                 <div class='row ml-4'>
-                  <div class="col-6">
-
-                    <h4 class="underline font-bold mb-3 text-center">Topics</h4>
+                  <div style="margin-bottom: 8px;" class='mx-1 mb-4'>
+                    <button nz-button (click)='showAttendanceModal(faab)'><i class=" fe fe-plus-circle mr-1 align-middle"></i></button>
+                  </div>
+                </div>
+                <div class='row ml-4'>
+                  <div class="col-12 mb-4">
+                    <h6 class="underline font-bold mb-3 text-left">Topics</h6>
                     <nz-table #basicTable [nzData]="faab.topics">
                       <thead>
                         <tr>
@@ -29,44 +39,38 @@
                       </tbody>
                     </nz-table>
                   </div>
-                  <div class="col-6">
-
-                    <h4 class="underline font-bold mb-3 text-center">Topics</h4>
-                    <nz-table #basicTable [nzData]="faab.topics">
-                      <thead>
-                        <tr>
-                          <th>Output Level Indicator</th>
-                          <th>Category</th>
-                          <th>Sub Component</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let topic of faab.topics">
-                          <td>{{ topic.outputLevelIndicator }}</td>
-                          <td>{{ topic.category }}</td>
-                          <td>{{ topic.subComponent }}</td>
-                        </tr>
-                      </tbody>
-                    </nz-table>
-                  </div>
-
                 </div>
 
-                <div class='row ml-4'>
-
-                    <div style="margin-bottom: 8px;" class='mx-1'>
-                      <button nz-button (click)='showTopicsModal(faab)'>Show Topics</button>
-                    </div>
-
-                    <div style="margin-bottom: 8px;" class='mx-1'>
-                      <button nz-button (click)='showAttendanceModal(faab)'>Attendance</button>
-                    </div>
-
-                    <div style="margin-bottom: 8px;" class='mx-1'>
-                      <button nz-button (click)='showPastAttendanceModal(faab)'>Show Attendance</button>
-                    </div>
-
+                  <div class="row ml-4">
+                    <div class="col-12 mb-4">
+                    <h6 class="underline font-bold mb-3 text-left">Attendance</h6>
+                    <nz-table #basicTable [nzData]="faab.attendance">
+                      <thead>
+                        <tr>
+                          <th>Date</th>
+                          <th>Topic</th>
+                          <th>Facilitators</th>
+                          <th>Partner Organisations</th>
+                          <th>Duration</th>
+                          <th>Quarter</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let attendance of faab.attendance">
+                          <td>{{ attendance?.trainingDate }}</td>
+                          <td>{{ attendance?.topic?.subcomponent }}</td>
+                          <td>{{ attendance?.facilitators }}</td>
+                          <td>{{ attendance?.partnerOrganisations }}</td>
+                          <td>{{ attendance?.duration }} days</td>
+                          <td>{{ attendance?.quarter }}</td>
+                        </tr>
+                      </tbody>
+                    </nz-table>
                   </div>
+                </div>
+
+
+
               </nz-tab>
 
               <nz-tab class="mx-2" [nzTitle]="' + Add Faabs Group '">
@@ -102,7 +106,7 @@
     <nz-modal [(nzVisible)]="isAttendanceVisible" nzTitle="Attendance Sheet" (nzOnCancel)="handleCancel()"
       (nzOnOk)="handleAttendanceOk()">
       <ng-container *nzModalContent>
-        <!-- <app-register-attendants-form [faabsGroupsId]='faabsIDSelected'></app-register-attendants-form> -->
+        <app-register-attendants-form [faabs]='selectedFaabs'></app-register-attendants-form>
       </ng-container>
     </nz-modal>
   </div>

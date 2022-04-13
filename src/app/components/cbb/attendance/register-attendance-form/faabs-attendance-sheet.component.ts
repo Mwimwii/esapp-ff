@@ -2,7 +2,10 @@ import { Component, OnInit, Input } from '@angular/core'
 import { DataService } from '../../../../services/data-service'
 import { FormGroup } from '@angular/forms'
 import { NzNotificationService } from 'ng-zorro-antd/notification'
-import { Observable } from 'rxjs'
+import { FormlyConfig, FormlyFieldConfig } from '@ngx-formly/core'
+import { dateDiffInDays, genericField } from 'src/app/utils'
+import { FaabsAPI } from 'src/app/types'
+import { EsappRequestHandlerService } from 'src/app/esapp-request-handler.service'
 
 @Component({
   selector: 'app-register-attendants-form',
@@ -19,31 +22,16 @@ export class FaabsAttendanceSheetComponent implements OnInit {
   mapOfCheckedId: { [key: string]: boolean } = {}
   numberOfChecked = 0
   listOfDisplayData: any[] = []
-  @Input() faabsGroupsId: number;
+  @Input() faabs: FaabsAPI;
 
-  faabs : Observable<any>;
-  faabsTopics : {};
-  faabsTopicsEnrollments : Observable<any>;
+
   faabsFacilitators = "ESAPP";
   faabsPartnerOrg = "IFADD"
 
-  campOfficerID = 10
-  // FormlyUploadField forms
   form = new FormGroup({})
   model = {};
   topics;
-  fields =  [
-    // {
-    //   key: "topic",
-    //   type: 'select',
-    //   templateOptions: {
-    //     type: 'text',
-    //     label: "Topic",
-    //     placeholder: "Select a Topic",
-    //     options: []
-    //   },
-    // }
-    ]
+  fields: FormlyFieldConfig[]
 
   currentPageDataChange($event: any[]): void {
     this.listOfDisplayData = $event
@@ -60,17 +48,92 @@ export class FaabsAttendanceSheetComponent implements OnInit {
         .some(item => this.mapOfCheckedId[item.id]) && !this.isAllDisplayDataChecked
     this.numberOfChecked = this.listOfAllData.filter(item => this.mapOfCheckedId[item.id]).length
   }
-  constructor(private http: DataService, private notification: NzNotificationService) {}
+  constructor(
+    private httpHandler: EsappRequestHandlerService,
+    private http: DataService, private notification: NzNotificationService) { }
 
   ngOnInit(): void {
-    this.http.getAllFarmers()
-      .subscribe((data: []) => this.listOfAllData = data)
-    this.http.getAllFaabsTopics()
-      .subscribe((data: []) => {
-        console.log("Topics")
-        console.log(data)
-        this.topics = data
-      })
+    this.http.getAllFarmers().subscribe((resp: { [key: string]: [] }) => {
+      this.listOfAllData = resp.farmers
+    })
+    this.fields = ([
+
+      {
+        templateOptions: { label: "Partner Organizer" },
+        fieldGroupClassName: 'row',
+        fieldGroup: []
+      },
+      {
+        templateOptions: { label: "Partner Organizer" },
+        fieldGroupClassName: 'row',
+        fieldGroup: [
+          { className: 'col-6', ...genericField('facilitators', 'Facilitators', 'Enter a Facillitator') },
+          { className: 'col-6', ...genericField('partnerOrganisations', 'Partner Organisations', 'Enter a Partner Organisation') },
+        ]
+      },
+      {
+        templateOptions: { label: "Date" },
+        fieldGroupClassName: 'row',
+        fieldGroup: [
+          {
+            key: 'trainingDate',
+            type: 'input',
+            className: 'col-md-6',
+            templateOptions: {
+              type: 'date',
+              label: 'Training Start Date',
+              placeholder: 'YYYY/MM/DD',
+              required: true,
+            },
+          },
+          {
+            key: 'trainingEndDate',
+            type: 'input',
+            className: 'col-md-6',
+            templateOptions: {
+              type: 'date',
+              label: 'Training End Date',
+              placeholder: 'YYYY/MM/DD',
+              required: true,
+            },
+          },
+        ]
+      },
+      {
+        templateOptions: { label: "Date" },
+        fieldGroupClassName: 'row',
+        fieldGroup: [{
+          key: "topic",
+          type: 'select',
+          className: 'col-md-12',
+          templateOptions: {
+            type: 'text',
+            label: "Topic",
+            placeholder: "Select a Topic",
+            options: this.faabs.topics,
+            labelProp: 'subComponent',
+            valueProp: 'id',
+          },
+        },
+          {
+            key: 'quarter',
+            type: 'select',
+            className: 'col-md-3',
+            templateOptions: {
+              type: 'number',
+              label: 'Quarter',
+              placeholder: '1',
+              options: [
+                { value: '1', label: 'First' },
+                { value: '2', label: 'Second' },
+                { value: '3', label: 'Third' },
+                { value: '4', label: 'Fourth' },
+              ],
+            },
+          },
+        ]
+      },
+    ])
   }
 
   checkAll(value: boolean): void {
@@ -89,39 +152,21 @@ export class FaabsAttendanceSheetComponent implements OnInit {
     }, 1000)
   }
 
-  submit(model: any){
-    // get choices
-    this.listOfAllData
-      .filter(item => this.mapOfCheckedId[item.id])
-      .map(item => { return{
-          faabs_group_id: this.faabsGroupsId,
-          facilitators: this.faabsFacilitators,
-          partner_organisations: this.faabsPartnerOrg,
-          training_date: new Date(),
-          duration: "2:30",
-          quarter: "2",
-          created_by: this.campOfficerID,
-          updated_by: this.campOfficerID,
+  submit() {
+    this.model['farmers'] = this.listOfAllData
+                            // .filter(farmer => this.mapOfCheckedId[farmer.id])
+                            .map(farmer => farmer.id)
 
-          topic: this.topics[0].topic,
-          topic_indicator: this.topics[0].output_level_indicator,
-          topic_subcomponent: this.topics[0].subcomponent,
-          training_type: "Participants under non-Direct/Other Training [Stream 2]",
-
-          farmer_id: item.id,
-          full_names: item.firstName + " " + item.other_names + item.last_name,
-          youth_non_youth: "Non Youth",
-          marital_status: item["marital_status"],
-          sex: item["sex"],
-          year_of_birth: "1992",
-        }
-      }).forEach(item => {
-        console.log(item)
-        this.http.postFaabsAttendance(item).subscribe(data => console.log(data))
-      }
-      // }).forEach(item => alert(JSON.stringify(item))
-    )
-  this.notification.success('Attendance Marked', 'Attendance have been successfully marked!')
+    this.model['duration'] = dateDiffInDays(new Date(this.model['trainingDate']), new Date(this.model['trainingEndDate']))
+    console.log(this.model)
+    // this.http.postFaabsAttendance(item).subscribe(data => console.log(data))
+    // }).forEach(item => alert(JSON.stringify(item))
+    this.notification.success('Attendance Marked', 'Attendance have been successfully marked!')
+    if(this.form.valid){
+      this.httpHandler.postDataAuthenticated(`/faabs/${this.faabs.id}/attendance/submit`, this.model)
+      .subscribe(data => this.notification.success('Faabs Sheet Completed', 'Farmer successfully registered!'),
+                 error => this.notification.error('Error', error))
+    }
   }
 
 
