@@ -4,7 +4,7 @@ export const initialState: object = {
   id: '19',
   // user will have a camp id
   // if the user has no camp id, then we cannot login
-  camp_id: '10',
+  camp_id: '12',
   name: 'Admin Essapp',
   role: 'camp_officer',
   email: 'admin@esapp.gov.zm',

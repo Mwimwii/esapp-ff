@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { NzNotificationService } from 'ng-zorro-antd/notification'
 import { select, Store } from '@ngrx/store'
 import { Observable, of } from 'rxjs'
-import { switchMap, filter } from 'rxjs/operators'
+import { switchMap, filter, map } from 'rxjs/operators'
 import * as Reducers from 'src/app/store/reducers'
 import * as UserActions from 'src/app/store/user/actions'
 import { HttpClient, HttpHeaders } from '@angular/common/http'
@@ -26,31 +26,24 @@ export class DataService {
   ) {
   }
 
-  // we will get a list of farmers and their location
-  getCategoryAFarmers(){
+  getAllFarmers(){
       return this.get('farmers')
   }
 
-  // getFaabsGroups(){
-  //     return this.store.pipe(select(Reducers.getUser))
-  //       .pipe(
-  //         switchMap(state => this.getFaabsByUserId(state.camp))
-  //       )
-  // }
-  getFaabsGroups(){
-      return this.get('faabs')
+  getFarmers(faabsId){
+      return this.get('farmers')
   }
 
-  getFaabsTopics(){
-    return this.get('faabs-topics')
-  }
-  // Get the association table for faabs groups and topics
-  getFaabsTopicsEnrollments(){
-    return this.get('faabs-topics-enrollments')
+  getAllFaabs(campId){
+      return this.get(`faabs/${campId}`)
   }
 
-  getFaabsAttendanceRegister(){
-    return this.get('faabs-attendance-registers')
+  getAllFaabsTopics(): Observable<any[]>{
+    return this.get(`faabs/topics/all`) as Observable<any[]>
+  }
+
+  getFaabsAttendance(faabsId){
+    return this.get(`faabs/${faabsId}/attendance`)
   }
 
   getError(){

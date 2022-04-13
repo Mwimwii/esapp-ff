@@ -11,7 +11,7 @@ import { Observable } from 'rxjs'
 export class AppAttendanceMainTableComponent implements OnInit {
   constructor(private http: DataService) {}
   ngOnInit() {
-    this.http.getFaabsTopics()
+    this.http.getAllFaabsTopics()
       .subscribe((data:[]) => {
         this.tableData = data
       })

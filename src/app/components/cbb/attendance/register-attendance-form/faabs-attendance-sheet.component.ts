@@ -63,9 +63,9 @@ export class FaabsAttendanceSheetComponent implements OnInit {
   constructor(private http: DataService, private notification: NzNotificationService) {}
 
   ngOnInit(): void {
-    this.http.getCategoryAFarmers()
+    this.http.getAllFarmers()
       .subscribe((data: []) => this.listOfAllData = data)
-    this.http.getFaabsTopics()
+    this.http.getAllFaabsTopics()
       .subscribe((data: []) => {
         console.log("Topics")
         console.log(data)

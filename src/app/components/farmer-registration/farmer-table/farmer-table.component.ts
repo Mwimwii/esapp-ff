@@ -24,7 +24,7 @@ export class AppFarmerTableComponent implements OnInit {
   constructor(private http: DataService) {}
 
   ngOnInit() {
-    this.http.getCategoryAFarmers().subscribe((resp: {[key: string]: []}) => {
+    this.http.getAllFarmers().subscribe((resp: {[key: string]: []}) => {
       this.farmers = resp.farmers
     })
   }

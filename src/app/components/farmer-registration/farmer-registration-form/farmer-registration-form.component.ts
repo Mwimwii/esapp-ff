@@ -18,6 +18,7 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
               private http: EsappRequestHandlerService,
               private notification: NzNotificationService) {}
 
+// This should be in the store
   setCurrentPosition = async () => {
    Geolocation.getCurrentPosition()
      .then(({coords}) => {
@@ -192,9 +193,9 @@ export class AppFarmerRegistrationFormComponent implements OnInit {
     this.genericField('contactNumber', 'Contact Number', '0977738827'),
   ]
 
-  submit(model: any): void {
-    this.model['latitude'] = this.latitude.toString()
-    this.model['longitude'] = this.longintude.toString()
+  submit(): void {
+    this.model['latitude'] = this.latitude
+    this.model['longitude'] = this.longintude
     let now = new Date()
     this.model['registration_date'] = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate()
 

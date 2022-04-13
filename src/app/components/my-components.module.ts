@@ -39,6 +39,7 @@ import { AppFarmerRegistrationFormComponent } from './farmer-registration/farmer
 import { MapComponent } from './map/map.component'
 import { FaabsTabComponent } from './cbb/faabs-tab/faabs-tab.component'
 import { FaabsAttendanceModalComponent } from './cbb/faabs-attendance-modal/faabs-attendance-modal.component'
+import { FaabsRegistrationComponent } from './faabs/faabs-registration/faabs-registration.component'
 
 const COMPONENTS = [
   //Common
@@ -75,7 +76,8 @@ const COMPONENTS = [
   AppFarmerTableDetailComponent,
   AppFarmerRegistrationFormComponent,
   FaabsTabComponent,
-  FaabsAttendanceModalComponent
+  FaabsAttendanceModalComponent,
+  FaabsRegistrationComponent
 
 ]
 
