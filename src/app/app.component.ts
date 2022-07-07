@@ -8,6 +8,7 @@ import { select, Store } from '@ngrx/store'
 import store from 'store'
 import * as SettingsActions from 'src/app/store/settings/actions'
 import * as Reducers from 'src/app/store/reducers'
+import { SwUpdate } from '@angular/service-worker'
 
 import english from './locales/en-US'
 import french from './locales/fr-FR'
@@ -42,7 +43,16 @@ export class AppComponent implements OnInit {
     private titleService: Title,
     private store: Store<any>,
     translate: TranslateService,
+    private swUpdate: SwUpdate,
   ) {
+    // check for update
+    if (swUpdate.isEnabled) {
+      swUpdate.available.subscribe(() => {
+        if (confirm('New version available. Load new version?')) {
+          window.location.reload()
+        }
+      })
+    }
     Object.keys(locales).forEach(locale => {
       translate.setTranslation(locale, locales[locale])
     })

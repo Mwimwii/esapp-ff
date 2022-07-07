@@ -34,7 +34,9 @@ import { FormlyModule } from '@ngx-formly/core'
 import { FormlyFieldFile } from './components/common/FormlyUploadField/file-component'
 import { FieldNgSelect } from './components/common/Quill/ng-select'
 import { FieldQuillType } from './components/common/Quill/quil-type'
-import { DataService } from './services/data-service'
+import { DataService } from './services/data-service';
+import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker'
 // import { NgZorroAntdMobileModule } from 'ng-zorro-antd-mobile';
 
 const LOCALE_PROVIDERS = [
@@ -86,7 +88,13 @@ registerLocaleData(localeEn, 'en')
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    // NgZorroAntdMobileModule
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerImmediately'
+    }),
+     // NgZorroAntdMobileModule
   ],
   providers: [
     // auth services
